@@ -1,0 +1,409 @@
+2026-07-17 00:47:09 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-17 00:48:27 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-17 00:49:48 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-17 00:51:21 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-17 00:51:51 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-17 00:58:01 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-17 00:58:39 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-17 01:10:20 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-17 01:12:19 | INFO    | Alerts     | Score=91 � queuing send
+2026-07-17 01:13:19 | INFO    | Alerts     | Score=81 � queuing send
+2026-07-17 01:14:19 | INFO    | Alerts     | Score=89 � queuing send
+2026-07-17 01:15:19 | INFO    | Alerts     | Score=98 � queuing send
+2026-07-17 01:16:19 | INFO    | Alerts     | Score=98 � queuing send
+2026-07-17 01:17:19 | INFO    | Alerts     | Score=100 � queuing send
+2026-07-17 01:18:22 | INFO    | Alerts     | Score=100 � queuing send
+2026-07-17 01:19:34 | INFO    | Alerts     | Score=100 � queuing send
+2026-07-18 11:30:17 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-18 15:07:03 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-26 13:42:13 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-26 14:02:35 | INFO    | Alerts     | Telegram bot ready.
+2026-07-26 14:09:12 | INFO    | Alerts     | Telegram bot ready.
+2026-07-26 14:09:51 | ERROR   | Alerts     | Telegram error: module 'asyncio' has no attribute 'timeout'
+2026-07-26 14:10:04 | ERROR   | Alerts     | Telegram error: module 'asyncio' has no attribute 'timeout'
+2026-07-26 14:10:14 | ERROR   | Alerts     | Telegram error: module 'asyncio' has no attribute 'timeout'
+2026-07-26 14:10:27 | ERROR   | Alerts     | Telegram error: module 'asyncio' has no attribute 'timeout'
+2026-07-26 14:15:36 | INFO    | Alerts     | Telegram bot ready.
+2026-07-26 14:16:16 | INFO    | Alerts     | Telegram bot ready.
+2026-07-26 14:16:56 | ERROR   | Alerts     | Telegram error: module 'asyncio' has no attribute 'timeout'
+2026-07-26 14:21:10 | INFO    | Alerts     | Telegram bot ready.
+2026-07-26 14:21:59 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-26 14:22:01 | INFO    | Alerts     | Telegram photo sent
+2026-07-26 14:25:17 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-26 14:25:19 | INFO    | Alerts     | Telegram photo sent
+2026-07-26 14:26:19 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-26 14:26:20 | INFO    | Alerts     | Telegram photo sent
+2026-07-26 14:28:24 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-26 14:28:25 | INFO    | Alerts     | Telegram photo sent
+2026-07-26 14:33:39 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-26 14:33:40 | INFO    | Alerts     | Telegram photo sent
+2026-07-26 14:33:49 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-26 14:33:50 | INFO    | Alerts     | Telegram photo sent
+2026-07-26 14:34:07 | WARNING | Alerts     | Camera tamper detected!
+2026-07-26 14:34:09 | INFO    | Alerts     | Telegram text sent
+2026-07-26 14:34:12 | INFO    | Alerts     | Telegram video sent
+2026-07-26 14:34:37 | WARNING | Alerts     | Camera tamper detected!
+2026-07-26 14:34:39 | INFO    | Alerts     | Telegram text sent
+2026-07-26 14:39:47 | INFO    | Alerts     | Telegram bot ready.
+2026-07-26 14:41:05 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-26 14:41:06 | INFO    | Alerts     | Telegram photo sent
+2026-07-26 14:41:16 | WARNING | Alerts     | Camera tamper detected!
+2026-07-26 14:41:17 | INFO    | Alerts     | Telegram text sent
+2026-07-26 14:41:21 | INFO    | Alerts     | Telegram video sent
+2026-07-26 14:44:27 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-26 14:44:28 | INFO    | Alerts     | Telegram photo sent
+2026-07-26 14:44:38 | WARNING | Alerts     | Camera tamper detected!
+2026-07-26 14:44:39 | INFO    | Alerts     | Telegram text sent
+2026-07-26 14:44:41 | INFO    | Alerts     | Telegram video sent
+2026-07-26 14:45:08 | WARNING | Alerts     | Camera tamper detected!
+2026-07-26 14:45:09 | INFO    | Alerts     | Telegram text sent
+2026-07-28 21:08:50 | INFO    | Alerts     | Telegram bot ready.
+2026-07-28 21:10:04 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-28 21:10:05 | INFO    | Alerts     | Telegram photo sent
+2026-07-28 21:10:12 | WARNING | Alerts     | Camera tamper detected!
+2026-07-28 21:10:13 | INFO    | Alerts     | Telegram text sent
+2026-07-28 21:10:17 | INFO    | Alerts     | Telegram video sent
+2026-07-28 22:57:49 | INFO    | Alerts     | Telegram bot ready.
+2026-07-28 22:58:45 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-28 22:58:46 | INFO    | Alerts     | Telegram photo sent
+2026-07-28 22:58:53 | WARNING | Alerts     | Camera tamper detected!
+2026-07-28 22:58:54 | INFO    | Alerts     | Telegram text sent
+2026-07-28 22:59:00 | INFO    | Alerts     | Telegram video sent
+2026-07-28 23:09:55 | INFO    | Alerts     | Telegram bot ready.
+2026-07-28 23:11:25 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-28 23:11:27 | INFO    | Alerts     | Telegram photo sent
+2026-07-28 23:22:15 | INFO    | Alerts     | Telegram bot ready.
+2026-07-28 23:23:37 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-28 23:23:38 | INFO    | Alerts     | Telegram photo sent
+2026-07-28 23:23:47 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-28 23:23:48 | INFO    | Alerts     | Telegram photo sent
+2026-07-28 23:23:57 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-28 23:23:57 | INFO    | Alerts     | Telegram photo sent
+2026-07-28 23:23:58 | WARNING | Alerts     | Camera tamper detected!
+2026-07-28 23:23:59 | INFO    | Alerts     | Telegram text sent
+2026-07-28 23:24:02 | INFO    | Alerts     | Telegram video sent
+2026-07-28 23:24:28 | WARNING | Alerts     | Camera tamper detected!
+2026-07-28 23:24:32 | INFO    | Alerts     | Telegram text sent
+2026-07-28 23:24:58 | WARNING | Alerts     | Camera tamper detected!
+2026-07-28 23:24:59 | INFO    | Alerts     | Telegram text sent
+2026-07-28 23:29:37 | INFO    | Alerts     | Telegram bot ready.
+2026-07-28 23:30:09 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-28 23:30:10 | INFO    | Alerts     | Telegram photo sent
+2026-07-28 23:30:19 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-28 23:30:20 | INFO    | Alerts     | Telegram photo sent
+2026-07-28 23:30:24 | WARNING | Alerts     | Camera tamper detected!
+2026-07-28 23:30:25 | INFO    | Alerts     | Telegram text sent
+2026-07-28 23:30:29 | INFO    | Alerts     | Telegram video sent
+2026-07-28 23:30:30 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-28 23:30:31 | INFO    | Alerts     | Telegram photo sent
+2026-07-28 23:31:46 | INFO    | Alerts     | Telegram bot ready.
+2026-07-28 23:32:09 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-28 23:32:10 | INFO    | Alerts     | Telegram photo sent
+2026-07-28 23:32:41 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-28 23:32:42 | INFO    | Alerts     | Telegram photo sent
+2026-07-28 23:33:03 | WARNING | Alerts     | Camera tamper detected!
+2026-07-28 23:33:04 | INFO    | Alerts     | Telegram text sent
+2026-07-28 23:33:06 | INFO    | Alerts     | Telegram video sent
+2026-07-28 23:33:44 | INFO    | Alerts     | Telegram text sent instantly
+2026-07-28 23:33:45 | INFO    | Alerts     | Telegram photo sent
+2026-07-28 23:57:32 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:57:32 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:57:32 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:57:32 | WARNING | Alerts     | Camera tamper detected!
+2026-07-28 23:58:03 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:58:03 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:58:03 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:58:03 | WARNING | Alerts     | Camera tamper detected!
+2026-07-28 23:58:23 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:58:23 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:58:24 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:58:24 | WARNING | Alerts     | Camera tamper detected!
+2026-07-28 23:58:40 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:58:40 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:58:40 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:58:40 | WARNING | Alerts     | Camera tamper detected!
+2026-07-28 23:59:14 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:59:14 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:59:14 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:59:14 | WARNING | Alerts     | Camera tamper detected!
+2026-07-28 23:59:50 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:59:50 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:59:50 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-28 23:59:50 | WARNING | Alerts     | Camera tamper detected!
+2026-07-29 00:00:07 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-29 00:00:07 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-29 00:00:07 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-07-29 00:00:07 | WARNING | Alerts     | Camera tamper detected!
+2026-07-29 00:02:38 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-04 12:24:14 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 13:07:36 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 13:40:26 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 13:40:26 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 13:40:26 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 13:40:26 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 13:43:34 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:13:15 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:13:15 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:13:15 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:13:15 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 14:14:22 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:14:22 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:14:22 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:14:22 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 14:15:25 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:15:25 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:15:25 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:15:25 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 14:17:12 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:17:12 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:17:12 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:17:12 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 14:18:36 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:18:36 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:18:36 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 14:18:36 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 16:49:16 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 17:02:48 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 17:17:34 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 17:17:34 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 17:17:34 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 17:17:34 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 17:40:32 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:05:56 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:05:56 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:05:56 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:05:56 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 18:09:20 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:09:20 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:09:20 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:09:20 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 18:10:55 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:10:55 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:10:55 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:10:55 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 18:11:30 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:11:30 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:11:30 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:11:30 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 18:16:41 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:16:41 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:16:41 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:16:41 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 18:17:39 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:17:39 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:17:39 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:17:39 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 18:18:15 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:18:46 | INFO    | Alerts     | No Telegram token � terminal alerts only.
+2026-08-17 18:50:55 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 18:50:55 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 18:50:55 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 18:50:55 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 18:57:26 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 18:57:26 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 18:57:26 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 18:57:26 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 18:58:01 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 18:58:01 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 18:58:01 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 18:58:01 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 18:58:21 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 18:58:21 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 18:58:21 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 18:58:21 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 19:12:28 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 19:12:28 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 19:12:28 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 19:12:28 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 19:13:10 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 19:14:56 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 19:17:14 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 19:17:14 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 19:17:14 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 19:17:14 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 19:50:14 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 19:51:08 | INFO    | Alerts     | 🔴 Security Alert — High Risk
+━━━━━━━━━━━━━━━━━━━━
+🕐 Time: 07:51:08 PM
+📍 Location: Restricted Area
+📊 Risk Score: 100 / 100
+━━━━━━━━━━━━━━━━━━━━
+👁 What is happening:
+  • Person is entered a restricted area
+━━━━━━━━━━━━━━━━━━━━
+SmartGuard 🛡
+2026-08-17 19:51:54 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 19:52:24 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 20:12:16 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:12:16 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:12:16 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:12:16 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 20:36:46 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:36:46 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:36:46 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:36:46 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 20:37:56 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:37:56 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:37:56 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:37:56 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 20:38:29 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:38:29 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:38:29 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:38:29 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 20:41:27 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:41:27 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:41:27 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:41:27 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 20:46:09 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:47:43 | INFO    | Alerts     | 🟠 Security Alert — Medium Risk
+━━━━━━━━━━━━━━━━━━━━
+🕐 Time: 08:47:43 PM
+📍 Location: Observation Area
+📊 Risk Score: 74 / 100
+━━━━━━━━━━━━━━━━━━━━
+SmartGuard 🛡
+2026-08-17 20:48:16 | INFO    | Alerts     | 🔴 Security Alert — High Risk
+━━━━━━━━━━━━━━━━━━━━
+🕐 Time: 08:48:16 PM
+📍 Location: Restricted Area
+📊 Risk Score: 100 / 100
+━━━━━━━━━━━━━━━━━━━━
+👁 What is happening:
+  • Person is entered a restricted area
+━━━━━━━━━━━━━━━━━━━━
+SmartGuard 🛡
+2026-08-17 20:48:26 | INFO    | Alerts     | 🔴 Security Alert — High Risk
+━━━━━━━━━━━━━━━━━━━━
+🕐 Time: 08:48:26 PM
+📍 Location: Observation Area
+📊 Risk Score: 82 / 100
+━━━━━━━━━━━━━━━━━━━━
+SmartGuard 🛡
+2026-08-17 20:48:32 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 20:49:02 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 20:49:19 | INFO    | Alerts     | 🟠 Security Alert — Medium Risk
+━━━━━━━━━━━━━━━━━━━━
+🕐 Time: 08:49:19 PM
+📍 Location: Observation Area
+📊 Risk Score: 64 / 100
+━━━━━━━━━━━━━━━━━━━━
+SmartGuard 🛡
+2026-08-17 20:58:43 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:58:43 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:58:43 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-17 20:58:43 | WARNING | Alerts     | Camera tamper detected!
+2026-08-17 21:27:12 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-21 23:54:36 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 00:51:42 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 00:51:42 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 00:51:42 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 00:51:42 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 00:55:02 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 00:55:02 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 00:55:02 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 00:55:02 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 01:09:21 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:09:21 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:09:21 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:09:21 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 01:11:48 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:11:48 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:11:48 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:11:48 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 01:21:21 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:24:42 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:30:23 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:30:23 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:30:23 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:30:23 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 01:31:49 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:43:20 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:43:20 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:43:20 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:43:20 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 01:45:02 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 01:46:02 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 01:46:05 | INFO    | Alerts     | 🟠 Security Alert — Medium Risk
+━━━━━━━━━━━━━━━━━━━━
+🕐 Time: 01:46:05 AM
+📍 Location: Observation Area
+📊 Risk Score: 66 / 100
+━━━━━━━━━━━━━━━━━━━━
+SmartGuard 🛡
+2026-08-22 01:46:45 | INFO    | Alerts     | 🟠 Security Alert — Medium Risk
+━━━━━━━━━━━━━━━━━━━━
+🕐 Time: 01:46:45 AM
+📍 Location: Restricted Area
+📊 Risk Score: 60 / 100
+━━━━━━━━━━━━━━━━━━━━
+👁 What is happening:
+  • Person is entered a restricted area
+━━━━━━━━━━━━━━━━━━━━
+SmartGuard 🛡
+2026-08-22 01:47:11 | INFO    | Alerts     | 🟠 Security Alert — Medium Risk
+━━━━━━━━━━━━━━━━━━━━
+🕐 Time: 01:47:11 AM
+📍 Location: Restricted Area
+📊 Risk Score: 60 / 100
+━━━━━━━━━━━━━━━━━━━━
+👁 What is happening:
+  • Person is entered a restricted area
+━━━━━━━━━━━━━━━━━━━━
+SmartGuard 🛡
+2026-08-22 02:36:54 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 02:36:54 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 02:36:54 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 02:36:54 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 02:38:09 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 02:42:36 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 02:47:20 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 02:53:03 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 02:54:52 | INFO    | Alerts     | 🟠 Security Alert — Medium Risk
+━━━━━━━━━━━━━━━━━━━━
+🕐 Time: 02:54:52 AM
+📍 Location: Restricted Area
+📊 Risk Score: 60 / 100
+━━━━━━━━━━━━━━━━━━━━
+👁 What is happening:
+  • Person is entered a restricted area
+━━━━━━━━━━━━━━━━━━━━
+SmartGuard 🛡
+2026-08-22 02:55:09 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 02:55:14 | INFO    | Alerts     | 🔴 Security Alert — High Risk
+━━━━━━━━━━━━━━━━━━━━
+🕐 Time: 02:55:14 AM
+📍 Location: Restricted Area
+📊 Risk Score: 100 / 100
+━━━━━━━━━━━━━━━━━━━━
+👁 What is happening:
+  • Person is entered a restricted area
+━━━━━━━━━━━━━━━━━━━━
+SmartGuard 🛡
+2026-08-22 03:20:21 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 03:20:21 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 03:20:21 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 03:20:21 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 03:21:47 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 03:21:47 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 03:21:47 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 03:21:47 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 03:30:26 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 03:30:26 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 03:30:26 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 03:30:26 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 03:33:21 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 03:37:31 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 04:05:59 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 04:05:59 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 04:05:59 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 04:05:59 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 04:07:40 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 04:07:40 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 04:07:40 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 04:07:40 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 04:08:35 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 04:08:35 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 04:08:35 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 04:08:35 | WARNING | Alerts     | Camera tamper detected!
+2026-08-22 04:09:21 | INFO    | Alerts     | No Telegram token — terminal alerts only.
+2026-08-22 04:13:52 | INFO    | Alerts     | No Telegram token — terminal alerts only.

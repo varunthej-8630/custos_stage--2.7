@@ -1,0 +1,27 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+
+# Data & Evidence (Private)
+data/snapshots/
+data/recordings/
+!data/weights/
+data/weights/*
+!data/weights/yolov8n.pt
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Unused/Graveyard
+unused/
+
+# IDEs
+.idea/
+.vscode/
+*.swp

@@ -80,12 +80,15 @@ class CameraPipeline(threading.Thread):
         self.socket_emitter = emitter
         incident_lifecycle_mgr.set_socket_emitter(emitter)
         storage_queue.set_socket_emitter(emitter)
+        ai_engine.set_socket_emitter(emitter)
 
     def set_app_context(self, app):
         self.flask_app = app
         incident_lifecycle_mgr.set_flask_app(app)
         storage_queue.set_app(app)
         storage_queue.start()
+        ai_engine.set_app(app)
+
 
     def set_zones(self, zones, types, monitoring):
         zone_store.set_zones(self.camera_id, zones, types, monitoring)
@@ -204,7 +207,8 @@ class CameraPipeline(threading.Thread):
                         zones=current_zones,
                         zone_types=current_types,
                         monitoring=is_monitoring,
-                        tamper=any_tamper
+                        tamper=any_tamper,
+                        camera_id=self.camera_id
                     )
                     
                     in_zone_count = sum(1 for t in tracks if t.get('current_zone') is not None)
@@ -215,10 +219,20 @@ class CameraPipeline(threading.Thread):
                         if bx and len(bx) == 4:
                             x1, y1, x2, y2 = bx
                             in_zone = t.get('current_zone') is not None
-                            col_p = (0, 200, 255) if in_zone else (160, 255, 160)
+                            cls = t.get('classification', 'UNIDENTIFIED')
+                            if cls == 'SUSPICIOUS':
+                                col_p = (0, 0, 255)
+                            elif cls == 'KNOWN':
+                                col_p = (255, 200, 0) if in_zone else (200, 255, 100)
+                            else:
+                                col_p = (0, 200, 255) if in_zone else (160, 255, 160)
+
                             cv2.rectangle(display, (int(x1), int(y1)), (int(x2), int(y2)), col_p, 2)
                             tid = t.get('track_id', 0)
-                            cv2.putText(display, f"#{tid}", (int(x1), int(y1)-5), cv2.FONT_HERSHEY_SIMPLEX, 0.45, col_p, 1)
+                            lbl = t.get('identity', f"#{tid}")
+                            tag = f"#{tid} {lbl}" if not lbl.startswith(f"#{tid}") else lbl
+                            cv2.putText(display, tag, (int(x1), max(15, int(y1)-5)), cv2.FONT_HERSHEY_SIMPLEX, 0.45, col_p, 1)
+
 
                     # Extract up to 15s of rolling pre-event camera frames
                     pre_roll_frames = self.frame_buffer.get_last_seconds(15.0)

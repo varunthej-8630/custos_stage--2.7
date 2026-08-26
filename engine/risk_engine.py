@@ -1,4 +1,4 @@
-# engine/risk_engine.py — CUSTOS 2.6 Deterministic & Explainable Risk Engine
+# engine/risk_engine.py — CUSTOS 2.8 Deterministic & Explainable Risk Engine with People Intelligence
 import time
 from typing import List, Dict, Any, Tuple, Optional
 
@@ -10,7 +10,11 @@ from engine.behavior_analyzer import BehaviorResult, BehaviorStatus
 class RiskEngine:
     """
     Deterministic & Explainable Risk Scoring Engine.
-    Consumes strictly VALIDATED security signals.
+    Consumes strictly VALIDATED security signals and Identity Classifications:
+      - Camera Tamper: Highest priority (100.0 score, independent).
+      - Suspicious Person: Direct security signal escalation (SUSPICIOUS_PERSON_DETECTED).
+      - Restricted High Zone: Evaluated for all persons (including Known/Unknown).
+      - Observation Watch Zone: Dwell-based evaluation.
     """
     def __init__(self):
         self.score = 0.0
@@ -44,12 +48,12 @@ class RiskEngine:
             app_logger.info(f'Schedule → {sched}')
 
     def should_alert(self) -> bool:
-        """Requires sustained score >= RISK_THRESHOLD for at least 2.0s before alerting."""
+        """Requires sustained score >= RISK_THRESHOLD for at least 1.8s before alerting."""
         now = time.time()
         if self.score >= config.RISK_THRESHOLD:
             if self._above_threshold_since is None:
                 self._above_threshold_since = now
-            return (now - self._above_threshold_since) >= 2.0
+            return (now - self._above_threshold_since) >= 1.8
         else:
             self._above_threshold_since = None
             return False
@@ -63,8 +67,7 @@ class RiskEngine:
         tamper: bool = False
     ) -> Tuple[float, List[str], bool]:
         """
-        Evaluates current validated signals and updates score and audit reasons.
-        
+        Evaluates current validated signals, identity classifications, and updates risk score and reasons.
         :return: (score: float, reasons: List[str], alert_active: bool)
         """
         now = time.time()
@@ -73,7 +76,7 @@ class RiskEngine:
         self.reasons = []
         self.event_log = []
 
-        # 1. Camera Tampering (Highest severity signal)
+        # 1. Camera Tampering (Highest severity signal — completely independent)
         if tamper:
             self.score = 100.0
             self.reasons.append("CAMERA TAMPER DETECTED")
@@ -84,58 +87,68 @@ class RiskEngine:
         if tracks:
             self._last_activity = now
 
-        # 2. Inspect active zone occupancies
         anyone_in_high = False
         anyone_in_watch = False
+        suspicious_detected = False
         target_delta = 0.0
 
         for track in tracks:
-            z_idx = track.get('current_zone')
-            if z_idx is None or z_idx < 0:
-                continue
-
-            z_type = zone_types[z_idx] if z_idx < len(zone_types) else 'WATCH'
-            dwell = track.get('dwell_time', 0.0)
             tid = track.get('track_id', 0)
+            classification = track.get('classification', 'UNIDENTIFIED')
+            identity_label = track.get('identity', f'Person-{tid}')
+            z_idx = track.get('current_zone')
+            dwell = track.get('dwell_time', 0.0)
 
-            if z_type == config.ZONE_TYPE_HIGH:
-                anyone_in_high = True
-                if self.mode == 'GUARD':
-                    target_delta = max(target_delta, 100.0)
-                    self.reasons.append(f"+ HIGH zone breach (Track #{tid}) [GUARD MODE]")
-                    self.event_log.append(f"[HIGH] #{tid} in restricted zone — GUARD MODE")
+            # 2. Identity Evaluation: Suspicious Person Signal
+            if classification == 'SUSPICIOUS':
+                suspicious_detected = True
+                sus_score = 90.0 if self.mode == 'GUARD' else 75.0
+                target_delta = max(target_delta, sus_score)
+                self.reasons.append(f"SUSPICIOUS_PERSON_DETECTED ({identity_label} on Track #{tid})")
+                self.event_log.append(f"[SECURITY] Suspicious person recognized: {identity_label}")
+
+            # 3. Zone Analysis
+            if z_idx is not None and 0 <= z_idx < len(zones):
+                z_type = zone_types[z_idx] if z_idx < len(zone_types) else 'WATCH'
+
+                if z_type == config.ZONE_TYPE_HIGH:
+                    anyone_in_high = True
+                    # High zone security rules apply to ALL persons (Known, Unknown, Suspicious)
+                    label_suffix = f" ({identity_label} on Track #{tid})" if (classification in ('KNOWN', 'SUSPICIOUS') and not identity_label.startswith('Person-')) else f" (Track #{tid})"
+                    if self.mode == 'GUARD':
+                        target_delta = max(target_delta, 100.0)
+                        self.reasons.append(f"+ HIGH zone breach{label_suffix} [GUARD MODE]")
+                        self.event_log.append(f"[HIGH] {identity_label} in restricted zone — GUARD MODE")
+                    else:
+                        target_delta = max(target_delta, float(config.RISK_THRESHOLD))
+                        self.reasons.append(f"+ HIGH zone breach{label_suffix}")
+                        self.event_log.append(f"[HIGH] {identity_label} entered restricted zone")
+
                 else:
-                    target_delta = max(target_delta, float(config.RISK_THRESHOLD))
-                    self.reasons.append(f"+ HIGH zone breach (Track #{tid})")
-                    self.event_log.append(f"[HIGH] #{tid} entered restricted zone")
-            else:
-                anyone_in_watch = True
-                # WATCH zone: evaluate dwell beyond grace period
-                grace_sec = getattr(config, 'WATCH_GRACE_SEC', 10.0)
-                if dwell >= grace_sec:
-                    # Dwell elevation
-                    dwell_score = min(50.0, 20.0 + (dwell - grace_sec) * 1.5)
-                    target_delta = max(target_delta, dwell_score)
-                    self.reasons.append(f"+ WATCH zone dwell {dwell:.1f}s (Track #{tid})")
-                    self.event_log.append(f"#{tid} in WATCH zone {dwell:.0f}s")
+                    anyone_in_watch = True
+                    # WATCH zone: evaluate dwell beyond grace period
+                    grace_sec = getattr(config, 'WATCH_GRACE_SEC', 10.0)
+                    if dwell >= grace_sec:
+                        dwell_score = min(50.0, 20.0 + (dwell - grace_sec) * 1.5)
+                        target_delta = max(target_delta, dwell_score)
+                        self.reasons.append(f"+ WATCH zone dwell {dwell:.1f}s ({identity_label} on Track #{tid})")
+                        self.event_log.append(f"#{tid} ({identity_label}) in WATCH zone {dwell:.0f}s")
 
-        # 3. Deterministic 3-State Score Smoothing & Decay
+        # 4. Deterministic 3-State Score Smoothing & Decay
         base_decay = getattr(config, 'SCORE_DECAY_RATE', 8.0)
-        if anyone_in_high:
+        if anyone_in_high or suspicious_detected:
             decay_rate = base_decay * 0.4
         elif anyone_in_watch:
             decay_rate = base_decay * 2.0
         else:
             decay_rate = base_decay * 6.0
 
-        if anyone_in_high:
+        if anyone_in_high or suspicious_detected:
             self.score = max(self.score, target_delta)
         elif target_delta > self.score:
-            # Rise smoothly towards target for non-high observations
             step = (target_delta - self.score) * 0.6
             self.score = min(100.0, self.score + step)
         else:
-            # Apply decay
             self.score = max(0.0, self.score - (decay_rate * elapsed))
 
         self.score = round(self.score, 1)

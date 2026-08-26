@@ -14,9 +14,14 @@ from flask_login import LoginManager, login_user, logout_user, login_required, c
 from config import settings as config
 from engine.logger import app_logger
 from engine.camera_manager import CameraManager
-from database import db, db_manager, User, UserRole, LoginHistory, AuditLog, Incident, Subject, Evidence, BehaviorLog
+from database import (
+    db, db_manager, User, UserRole, LoginHistory, AuditLog, Incident, Subject, Evidence, BehaviorLog,
+    PersonClassification, PersonProfile, PersonFace, PersonCluster, PersonAppearance
+)
 from database.database_manager import parse_events
 from engine.storage_queue import storage_queue
+from engine.face_engine import face_engine
+
 
 # Suppress OpenCV's verbose MSMF/DSHOW warning spam in the terminal
 os.environ['OPENCV_VIDEOIO_PRIORITY_MSMF'] = '0'
@@ -45,7 +50,7 @@ def load_user(user_id):
 @login_manager.unauthorized_handler
 def unauthorized_callback():
     if request.path.startswith('/api/') or request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-        return jsonify({'error': 'Unauthorized', 'message': 'Authentication required'}), 401
+        return jsonify({'success': False, 'error': {'code': 'UNAUTHORIZED', 'message': 'Authentication required. Please log in.'}}), 401
     return redirect('/login?next=' + request.path)
 
 # Initialize DB and create default admin via DatabaseManager
@@ -78,10 +83,11 @@ def role_required(role):
         @functools.wraps(f)
         def decorated_function(*args, **kwargs):
             if not current_user.is_authenticated or not current_user.has_role(role):
-                return jsonify({'error': 'Forbidden', 'message': 'Insufficient permissions'}), 403
+                return jsonify({'success': False, 'error': {'code': 'FORBIDDEN', 'message': 'Insufficient permissions to perform this action.'}}), 403
             return f(*args, **kwargs)
         return decorated_function
     return decorator
+
 
 def log_audit(action, target, details=""):
     if current_user.is_authenticated:
@@ -96,8 +102,9 @@ def login():
         
     error = ''
     if request.method == 'POST':
-        username = request.form.get('username')
-        password = request.form.get('password')
+        req_data = request.get_json(silent=True) or request.form
+        username = req_data.get('username')
+        password = req_data.get('password')
         user = User.query.filter_by(username=username).first()
         
         success = False
@@ -107,6 +114,8 @@ def login():
                 user.last_login = db.func.now()
                 success = True
                 db.session.commit()
+                if request.is_json:
+                    return jsonify({'success': True, 'user': user.to_dict()})
                 next_page = request.args.get('next')
                 if not next_page or not next_page.startswith('/'):
                     next_page = '/'
@@ -115,6 +124,10 @@ def login():
                 error = 'Account is disabled.'
         else:
             error = 'Invalid credentials.'
+
+        if request.is_json:
+            return jsonify({'success': False, 'error': error}), 401
+
             
         # Log login attempt
         hist = LoginHistory(
@@ -403,6 +416,443 @@ def get_evidence_stats():
 
 
 # ═══════════════════════════════════════════════════════
+# CUSTOS 2.8 — AI ANALYTICS / PEOPLE INTELLIGENCE APIS
+# ═══════════════════════════════════════════════════════
+
+@app.route('/api/people', methods=['GET'])
+@login_required
+def get_people_list():
+    filters = {
+        'classification': request.args.get('classification'),
+        'status': request.args.get('status'),
+        'include_inactive': request.args.get('include_inactive', '').lower() in ('1', 'true'),
+        'q': request.args.get('q'),
+        'page': request.args.get('page', 1, type=int),
+        'limit': request.args.get('limit', 20, type=int)
+    }
+    result = db_manager.query_person_profiles(app, filters)
+    return jsonify({
+        'success': True,
+        'data': result
+    })
+
+@app.route('/api/people/stats', methods=['GET'])
+@login_required
+def get_people_stats_endpoint():
+    stats = db_manager.get_people_stats(app)
+    return jsonify({
+        'success': True,
+        'data': stats
+    })
+
+@app.route('/api/people/suspicious', methods=['GET'])
+@login_required
+def get_suspicious_people_endpoint():
+    results = db_manager.get_suspicious_profiles(app)
+    return jsonify({
+        'success': True,
+        'data': results
+    })
+
+@app.route('/api/people/<string:person_id>', methods=['GET'])
+@login_required
+def get_single_person(person_id):
+    profile = db_manager.get_person_profile(app, person_id, include_appearances=True)
+    if not profile:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'PERSON_NOT_FOUND', 'message': f'Person {person_id} was not found.'}
+        }), 404
+    return jsonify({
+        'success': True,
+        'data': profile
+    })
+
+@app.route('/api/people', methods=['POST'])
+@login_required
+@role_required(UserRole.OPERATOR)
+def create_person():
+    data = request.json or {}
+    name = data.get('name', '').strip()
+    if not name:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'VALIDATION_ERROR', 'message': 'Person name is required.'}
+        }), 400
+
+    classification = data.get('classification', PersonClassification.KNOWN)
+    notes = data.get('notes', '')
+
+    profile = db_manager.create_person_profile(
+        app,
+        name=name,
+        classification=classification,
+        notes=notes
+    )
+    if not profile:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'CREATE_FAILED', 'message': 'Could not create person profile.'}
+        }), 500
+
+    face_engine.refresh_cache(app)
+    socket.emit('person_profile_created', profile)
+    log_audit('Create Person', f"Created person {profile['id']} ({profile['name']})")
+
+    return jsonify({
+        'success': True,
+        'data': profile
+    }), 201
+
+@app.route('/api/people/<string:person_id>', methods=['PATCH'])
+@login_required
+@role_required(UserRole.OPERATOR)
+def update_person(person_id):
+    data = request.json or {}
+    name = data.get('name')
+    classification = data.get('classification')
+    status = data.get('status')
+    notes = data.get('notes')
+
+    updated = db_manager.update_person_profile(
+        app,
+        person_id=person_id,
+        name=name,
+        classification=classification,
+        status=status,
+        notes=notes
+    )
+    if not updated:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'PERSON_NOT_FOUND', 'message': f'Person {person_id} was not found.'}
+        }), 404
+
+    face_engine.refresh_cache(app)
+    socket.emit('person_profile_updated', updated)
+    log_audit('Update Person', f"Updated profile {person_id}")
+
+    return jsonify({
+        'success': True,
+        'data': updated
+    })
+
+@app.route('/api/people/<string:person_id>', methods=['DELETE'])
+@login_required
+@role_required(UserRole.OPERATOR)
+def deactivate_person(person_id):
+    success = db_manager.deactivate_person_profile(app, person_id)
+    if not success:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'PERSON_NOT_FOUND', 'message': f'Person {person_id} was not found.'}
+        }), 404
+
+    face_engine.refresh_cache(app)
+    socket.emit('person_profile_deactivated', {'person_id': person_id})
+    log_audit('Deactivate Person', f"Deactivated profile {person_id}")
+
+    return jsonify({
+        'success': True,
+        'data': {'person_id': person_id, 'status': 'INACTIVE'}
+    })
+
+@app.route('/api/people/enroll', methods=['POST'])
+@login_required
+@role_required(UserRole.OPERATOR)
+def enroll_person_photo():
+    if 'photo' not in request.files:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'NO_FILE', 'message': 'Please upload a photo file.'}
+        }), 400
+
+    file = request.files['photo']
+    if not file or file.filename == '':
+        return jsonify({
+            'success': False,
+            'error': {'code': 'EMPTY_FILE', 'message': 'Uploaded file is empty.'}
+        }), 400
+
+    name = request.form.get('name', '').strip()
+    if not name:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'VALIDATION_ERROR', 'message': 'Person name is required.'}
+        }), 400
+
+    classification = request.form.get('classification', PersonClassification.KNOWN)
+    notes = request.form.get('notes', '')
+
+    # Read image bytes using OpenCV
+    file_bytes = np.frombuffer(file.read(), np.uint8)
+    img_bgr = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
+
+    if img_bgr is None:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'DECODE_ERROR', 'message': 'Unable to decode image. Please upload a valid JPG or PNG.'}
+        }), 400
+
+    # Validate uploaded photo (face detection, single face, quality, embedding)
+    valid, embedding, aligned_face, quality_score, msg = face_engine.validate_uploaded_image(img_bgr)
+    if not valid:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'FACE_VALIDATION_FAILED', 'message': msg}
+        }), 422
+
+    # 1. Create Person Profile record
+    profile_data = db_manager.create_person_profile(
+        app,
+        name=name,
+        classification=classification,
+        notes=notes
+    )
+    if not profile_data:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'ENROLL_FAILED', 'message': 'Failed to save person profile in database.'}
+        }), 500
+
+    pid = profile_data['id']
+
+    # 2. Save reference face image to protected disk directory
+    profile_dir = os.path.join(getattr(config, 'PEOPLE_PROFILES_DIR', 'data/people/profiles'), pid)
+    os.makedirs(profile_dir, exist_ok=True)
+    ref_filename = f"ref_{int(time.time())}.jpg"
+    ref_path = os.path.join(profile_dir, ref_filename)
+    cv2.imwrite(ref_path, aligned_face if aligned_face is not None else img_bgr)
+
+    # 3. Add PersonFace with binary embedding
+    db_manager.add_reference_face(
+        app,
+        person_id=pid,
+        image_path=ref_path,
+        embedding_bytes=embedding.tobytes(),
+        quality_score=quality_score,
+        is_profile_display=True
+    )
+
+    # 4. Refresh recognition engine cache so person is IMMEDIATELY recognized
+    face_engine.refresh_cache(app)
+
+    full_profile = db_manager.get_person_profile(app, pid, include_appearances=True)
+    socket.emit('person_profile_created', full_profile)
+    log_audit('Enroll Person', f"Enrolled {pid} ({name}) with quality {quality_score}")
+
+    return jsonify({
+        'success': True,
+        'data': full_profile
+    }), 201
+
+@app.route('/api/people/<string:person_id>/faces', methods=['POST'])
+@login_required
+@role_required(UserRole.OPERATOR)
+def add_person_reference_photo(person_id):
+    profile = db_manager.get_person_profile(app, person_id)
+    if not profile:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'PERSON_NOT_FOUND', 'message': f'Person {person_id} not found.'}
+        }), 404
+
+    if 'photo' not in request.files:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'NO_FILE', 'message': 'Please upload a photo file.'}
+        }), 400
+
+    file = request.files['photo']
+    file_bytes = np.frombuffer(file.read(), np.uint8)
+    img_bgr = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
+
+    if img_bgr is None:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'DECODE_ERROR', 'message': 'Unable to decode image file.'}
+        }), 400
+
+    valid, embedding, aligned_face, quality_score, msg = face_engine.validate_uploaded_image(img_bgr)
+    if not valid:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'FACE_VALIDATION_FAILED', 'message': msg}
+        }), 422
+
+    profile_dir = os.path.join(getattr(config, 'PEOPLE_PROFILES_DIR', 'data/people/profiles'), person_id)
+    os.makedirs(profile_dir, exist_ok=True)
+    ref_filename = f"ref_{int(time.time())}.jpg"
+    ref_path = os.path.join(profile_dir, ref_filename)
+    cv2.imwrite(ref_path, aligned_face if aligned_face is not None else img_bgr)
+
+    face_dict = db_manager.add_reference_face(
+        app,
+        person_id=person_id,
+        image_path=ref_path,
+        embedding_bytes=embedding.tobytes(),
+        quality_score=quality_score
+    )
+
+    face_engine.refresh_cache(app)
+    socket.emit('person_profile_updated', db_manager.get_person_profile(app, person_id, include_appearances=True))
+    log_audit('Add Reference Face', f"Added reference photo to {person_id}")
+
+    return jsonify({
+        'success': True,
+        'data': face_dict
+    }), 201
+
+@app.route('/api/people/<string:person_id>/faces/<int:face_id>', methods=['DELETE'])
+@login_required
+@role_required(UserRole.OPERATOR)
+def remove_person_reference_photo(person_id, face_id):
+    success = db_manager.remove_reference_face(app, face_id)
+    if not success:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'FACE_NOT_FOUND', 'message': f'Face record #{face_id} was not found.'}
+        }), 404
+
+    face_engine.refresh_cache(app)
+    socket.emit('person_profile_updated', db_manager.get_person_profile(app, person_id, include_appearances=True))
+    log_audit('Remove Reference Face', f"Removed face #{face_id} from {person_id}")
+
+    return jsonify({
+        'success': True,
+        'data': {'face_id': face_id, 'person_id': person_id}
+    })
+
+@app.route('/api/people/<string:person_id>/appearances', methods=['GET'])
+@login_required
+def get_person_appearances(person_id):
+    page = request.args.get('page', 1, type=int)
+    limit = request.args.get('limit', 20, type=int)
+    result = db_manager.query_person_appearances(app, person_id=person_id, page=page, limit=limit)
+    return jsonify({
+        'success': True,
+        'data': result
+    })
+
+@app.route('/api/faces/clusters', methods=['GET'])
+@login_required
+def get_clusters_list():
+    status = request.args.get('status', 'ACTIVE')
+    clusters = db_manager.query_clusters(app, status=status)
+    return jsonify({
+        'success': True,
+        'data': clusters
+    })
+
+@app.route('/api/faces/clusters/<string:cluster_id>', methods=['GET'])
+@login_required
+def get_single_cluster(cluster_id):
+    data = db_manager.get_cluster_by_id(app, cluster_id)
+    if not data:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'CLUSTER_NOT_FOUND', 'message': f'Cluster {cluster_id} not found.'}
+        }), 404
+    return jsonify({
+        'success': True,
+        'data': data
+    })
+
+@app.route('/api/faces/clusters/<string:cluster_id>/profile', methods=['POST'])
+@login_required
+@role_required(UserRole.OPERATOR)
+def convert_cluster_to_person(cluster_id):
+    data = request.json or {}
+    name = data.get('name', '').strip()
+    classification = data.get('classification', PersonClassification.KNOWN)
+    notes = data.get('notes', '')
+    target_person_id = data.get('target_person_id')
+
+    profile = db_manager.convert_cluster_to_profile(
+        app,
+        cluster_id=cluster_id,
+        name=name,
+        classification=classification,
+        notes=notes,
+        target_person_id=target_person_id
+    )
+
+    if not profile:
+        return jsonify({
+            'success': False,
+            'error': {'code': 'CONVERT_FAILED', 'message': f'Could not link cluster {cluster_id} to profile.'}
+        }), 500
+
+    face_engine.refresh_cache(app)
+    socket.emit('person_profile_created', profile)
+    socket.emit('cluster_updated', {'cluster_id': cluster_id, 'status': 'LINKED', 'person_id': profile['id']})
+    log_audit('Convert Cluster', f"Linked cluster {cluster_id} to {profile['id']} ({profile['name']})")
+
+    return jsonify({
+        'success': True,
+        'data': profile
+    }), 201
+
+# ═══════════════════════════════════════════════════════
+# PROTECTED MEDIA SERVING FOR PEOPLE & APPEARANCES
+# ═══════════════════════════════════════════════════════
+
+def _serve_safe_file(file_path, default_mime='image/jpeg'):
+    from flask import send_file
+    if not file_path:
+        return jsonify({'success': False, 'error': {'code': 'MEDIA_UNAVAILABLE', 'message': 'Media not found.'}}), 404
+
+    base_project_dir = os.path.abspath(_PROJECT_ROOT)
+    target_path = os.path.abspath(file_path)
+
+    # Path traversal check
+    if not target_path.startswith(base_project_dir) or not os.path.exists(target_path):
+        return jsonify({'success': False, 'error': {'code': 'FILE_NOT_FOUND', 'message': 'Media file missing on disk.'}}), 404
+
+    return send_file(target_path, mimetype=default_mime, conditional=True)
+
+@app.route('/api/people/<string:person_id>/media/<string:media_type>', methods=['GET'])
+@login_required
+def serve_person_media(person_id, media_type):
+    profile = PersonProfile.query.filter_by(id=person_id).first()
+    if not profile:
+        return jsonify({'success': False, 'error': {'code': 'NOT_FOUND', 'message': 'Profile not found.'}}), 404
+
+    target_file = None
+    if media_type == 'profile':
+        target_file = profile.profile_image_path
+        if not target_file and profile.faces:
+            target_file = profile.faces[0].image_path
+    elif media_type.startswith('face_'):
+        try:
+            face_id = int(media_type.replace('face_', ''))
+            face = PersonFace.query.filter_by(id=face_id, person_id=person_id).first()
+            if face:
+                target_file = face.image_path
+        except ValueError:
+            pass
+
+    return _serve_safe_file(target_file)
+
+@app.route('/api/faces/clusters/<string:cluster_id>/media', methods=['GET'])
+@login_required
+def serve_cluster_media(cluster_id):
+    cluster = PersonCluster.query.filter_by(id=cluster_id).first()
+    if not cluster or not cluster.representative_image:
+        return jsonify({'success': False, 'error': {'code': 'NOT_FOUND', 'message': 'Cluster image not found.'}}), 404
+    return _serve_safe_file(cluster.representative_image)
+
+@app.route('/api/people/appearances/<int:appearance_id>/media', methods=['GET'])
+@login_required
+def serve_appearance_media(appearance_id):
+    app_rec = PersonAppearance.query.filter_by(id=appearance_id).first()
+    if not app_rec or not app_rec.snapshot_path:
+        return jsonify({'success': False, 'error': {'code': 'NOT_FOUND', 'message': 'Appearance snapshot not found.'}}), 404
+    return _serve_safe_file(app_rec.snapshot_path)
+
+
+# ═══════════════════════════════════════════════════════
+
 # BACKWARD COMPATIBILITY ENDPOINTS
 # ═══════════════════════════════════════════════════════
 

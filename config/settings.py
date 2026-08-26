@@ -104,3 +104,18 @@ CLASS_CAR        = 2
 CLASS_MOTORCYCLE = 3
 CLASS_HANDBAG    = 26
 CLASS_SUITCASE   = 28
+
+# ── PEOPLE INTELLIGENCE & FACE RECOGNITION ───────────────
+FACE_DETECTOR_PATH       = 'data/weights/face_detection_yunet_2023mar.onnx'
+FACE_RECOGNIZER_PATH     = 'data/weights/face_recognition_sface_2021dec.onnx'
+FACE_MATCH_THRESHOLD     = 0.40    # SFace cosine similarity threshold (OpenCV benchmark default: 0.363)
+FACE_CLUSTER_THRESHOLD   = 0.38    # Minimum similarity to cluster unknown face appearances
+FACE_MIN_SIZE_PX         = 36      # Minimum face bounding box size in pixels
+FACE_MIN_BLUR_VAR        = 35.0    # Minimum Laplacian variance for blur filter
+FACE_MIN_CONFIDENCE      = 0.60    # YuNet face detection confidence threshold
+FACE_CACHE_PER_TRACK     = True    # Cache resolved identity per active track for maximum performance
+PEOPLE_DATA_DIR          = 'data/people'
+PEOPLE_PROFILES_DIR      = 'data/people/profiles'
+PEOPLE_CLUSTERS_DIR      = 'data/people/clusters'
+PEOPLE_APPEARANCES_DIR   = 'data/people/appearances'
+

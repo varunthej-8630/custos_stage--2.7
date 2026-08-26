@@ -47,6 +47,16 @@ class User(UserMixin, db.Model):
         }
         return roles_hierarchy.get(self.role, 0) >= roles_hierarchy.get(role, 0)
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'username': self.username,
+            'email': self.email,
+            'role': self.role,
+            'is_active': self.is_active
+        }
+
+
 class LoginHistory(db.Model):
     __tablename__ = 'login_history'
     
@@ -355,3 +365,171 @@ class BehaviorLog(db.Model):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+
+
+# ═══════════════════════════════════════════════════════════════
+# CUSTOS 2.8 — PEOPLE INTELLIGENCE & IDENTITY DATABASE MODELS
+# ═══════════════════════════════════════════════════════════════
+
+class PersonClassification:
+    KNOWN = 'KNOWN'
+    UNKNOWN = 'UNKNOWN'
+    SUSPICIOUS = 'SUSPICIOUS'
+
+class PersonProfile(db.Model):
+    __tablename__ = 'person_profiles'
+
+    id = db.Column(db.String(64), primary_key=True) # e.g. person_001
+    name = db.Column(db.String(128), nullable=False, index=True)
+    classification = db.Column(db.String(32), default=PersonClassification.UNKNOWN, index=True)
+    status = db.Column(db.String(32), default='ACTIVE', index=True) # ACTIVE / INACTIVE
+    profile_image_path = db.Column(db.String(255), nullable=True)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    first_seen_at = db.Column(db.DateTime, default=datetime.utcnow)
+    last_seen_at = db.Column(db.DateTime, default=datetime.utcnow)
+    notes = db.Column(db.Text, nullable=True)
+
+    faces = db.relationship('PersonFace', backref='person', lazy=True, cascade='all, delete-orphan')
+    appearances = db.relationship('PersonAppearance', backref='person', lazy=True)
+    clusters = db.relationship('PersonCluster', backref='person', lazy=True)
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def to_dict(self, include_appearances=False):
+        active_faces = [f for f in (self.faces or []) if f.is_active]
+        display_img = self.profile_image_path
+        if not display_img and active_faces:
+            display_img = active_faces[0].image_path
+
+        # Gather unique cameras seen on
+        cams = set()
+        for app in (self.appearances or []):
+            cams.add(f"Camera {app.camera_id}" if app.camera_id > 0 else "Built-in Camera")
+
+        data = {
+            'id': self.id,
+            'name': self.name,
+            'classification': self.classification or PersonClassification.UNKNOWN,
+            'status': self.status or 'ACTIVE',
+            'profile_image': f"/api/people/{self.id}/media/profile" if display_img else None,
+            'has_profile_image': bool(display_img),
+            'reference_face_count': len(active_faces),
+            'appearance_count': len(self.appearances or []),
+            'created_at': self.created_at.isoformat() if self.created_at else None,
+            'updated_at': self.updated_at.isoformat() if self.updated_at else None,
+            'first_seen_at': self.first_seen_at.isoformat() if self.first_seen_at else None,
+            'last_seen_at': self.last_seen_at.isoformat() if self.last_seen_at else None,
+            'cameras_seen': sorted(list(cams)),
+            'notes': self.notes or ''
+        }
+
+        if include_appearances:
+            data['appearances'] = [app.to_dict() for app in sorted(self.appearances, key=lambda x: x.timestamp or datetime.min, reverse=True)]
+            data['reference_faces'] = [f.to_dict() for f in active_faces]
+
+        return data
+
+
+class PersonFace(db.Model):
+    __tablename__ = 'person_faces'
+
+    id = db.Column(db.Integer, primary_key=True)
+    person_id = db.Column(db.String(64), db.ForeignKey('person_profiles.id', ondelete='CASCADE'), index=True, nullable=False)
+    image_path = db.Column(db.String(255), nullable=False)
+    embedding_blob = db.Column(db.LargeBinary, nullable=True) # 128-dim float32 binary
+    quality_score = db.Column(db.Float, default=1.0)
+    is_active = db.Column(db.Boolean, default=True)
+    is_profile_display = db.Column(db.Boolean, default=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'person_id': self.person_id,
+            'image_url': f"/api/people/{self.person_id}/media/face_{self.id}",
+            'quality_score': round(self.quality_score or 0.0, 2),
+            'is_active': self.is_active,
+            'is_profile_display': self.is_profile_display,
+            'created_at': self.created_at.isoformat() if self.created_at else None
+        }
+
+
+class PersonCluster(db.Model):
+    __tablename__ = 'person_clusters'
+
+    id = db.Column(db.String(64), primary_key=True) # e.g. cluster_001
+    cluster_code = db.Column(db.String(64), nullable=False, index=True) # e.g. UNKNOWN PERSON #1
+    person_id = db.Column(db.String(64), db.ForeignKey('person_profiles.id', ondelete='SET NULL'), nullable=True, index=True)
+    representative_image = db.Column(db.String(255), nullable=True)
+    representative_embedding_blob = db.Column(db.LargeBinary, nullable=True)
+    status = db.Column(db.String(32), default='ACTIVE', index=True) # ACTIVE, LINKED, INACTIVE
+    first_seen_at = db.Column(db.DateTime, default=datetime.utcnow)
+    last_seen_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    appearances = db.relationship('PersonAppearance', backref='cluster', lazy=True)
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def to_dict(self):
+        apps = self.appearances or []
+        last_cam = "Camera 0"
+        if apps:
+            latest = max(apps, key=lambda x: x.timestamp or datetime.min)
+            last_cam = f"Camera {latest.camera_id}" if latest.camera_id > 0 else "Built-in Camera"
+
+        return {
+            'id': self.id,
+            'cluster_code': self.cluster_code,
+            'person_id': self.person_id,
+            'status': self.status,
+            'representative_image_url': f"/api/faces/clusters/{self.id}/media" if self.representative_image else None,
+            'appearance_count': len(apps),
+            'first_seen_at': self.first_seen_at.isoformat() if self.first_seen_at else None,
+            'last_seen_at': self.last_seen_at.isoformat() if self.last_seen_at else None,
+            'last_camera': last_cam
+        }
+
+
+class PersonAppearance(db.Model):
+    __tablename__ = 'person_appearances'
+
+    id = db.Column(db.Integer, primary_key=True)
+    person_id = db.Column(db.String(64), db.ForeignKey('person_profiles.id', ondelete='SET NULL'), nullable=True, index=True)
+    cluster_id = db.Column(db.String(64), db.ForeignKey('person_clusters.id', ondelete='SET NULL'), nullable=True, index=True)
+    camera_id = db.Column(db.Integer, default=0, index=True)
+    track_id = db.Column(db.Integer, default=0)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow, index=True)
+    zone_name = db.Column(db.String(64), default='Observation Area')
+    recognition_score = db.Column(db.Float, default=0.0)
+    identity_status = db.Column(db.String(32), default='UNKNOWN') # KNOWN, UNKNOWN, SUSPICIOUS, UNIDENTIFIED
+    snapshot_path = db.Column(db.String(255), nullable=True)
+    incident_id = db.Column(db.Integer, db.ForeignKey('incidents.id', ondelete='SET NULL'), nullable=True, index=True)
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'person_id': self.person_id,
+            'cluster_id': self.cluster_id,
+            'camera_id': self.camera_id,
+            'camera_name': 'Built-in Camera' if self.camera_id == 0 else f'Camera {self.camera_id}',
+            'track_id': self.track_id,
+            'timestamp': self.timestamp.isoformat() if self.timestamp else None,
+            'time_display': self.timestamp.strftime('%d %b %Y, %I:%M %p') if self.timestamp else '',
+            'time_short': self.timestamp.strftime('%I:%M:%S %p') if self.timestamp else '',
+            'zone_name': self.zone_name or 'Observation Area',
+            'recognition_score': round(self.recognition_score or 0.0, 2),
+            'identity_status': self.identity_status or 'UNKNOWN',
+            'has_snapshot': bool(self.snapshot_path),
+            'snapshot_url': f"/api/people/appearances/{self.id}/media" if self.snapshot_path else None,
+            'incident_id': self.incident_id
+        }
+

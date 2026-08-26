@@ -69,6 +69,7 @@ class IncidentMediaRecorder:
             app_logger.error(f"[MEDIA RECORDER] Empty frame passed for snapshot (Incident: {incident_id})")
             return MediaVerificationResult(False, '', '', 0, error='Empty frame buffer')
 
+        app_logger.info(f"[SNAPSHOT_CAPTURE_STARTED] incident_id={incident_id}")
         ts = time.strftime('%Y%m%d_%H%M%S')
         file_name = f"{prefix}_{incident_id}_{ts}.jpg"
         full_path = os.path.join(self.snapshot_dir, file_name)
@@ -80,20 +81,25 @@ class IncidentMediaRecorder:
                 app_logger.error(f"[SNAPSHOT_FAILED] cv2.imwrite returned False for {full_path}")
                 return MediaVerificationResult(False, full_path, file_name, 0, error='cv2.imwrite failed')
 
+            app_logger.info(f"[SNAPSHOT_CAPTURED] incident_id={incident_id} path={file_name}")
+
             # Verification: file exists, size > 0, decodable by OpenCV with valid dimensions
             if not os.path.exists(full_path):
+                app_logger.error(f"[SNAPSHOT_FAILED] incident_id={incident_id} File does not exist after write")
                 return MediaVerificationResult(False, full_path, file_name, 0, error='File does not exist after write')
 
             file_size = os.path.getsize(full_path)
             if file_size <= 0:
+                app_logger.error(f"[SNAPSHOT_FAILED] incident_id={incident_id} File size is 0 bytes")
                 return MediaVerificationResult(False, full_path, file_name, 0, error='File size is 0 bytes')
 
             test_img = cv2.imread(full_path)
             if test_img is None or test_img.shape[0] <= 0 or test_img.shape[1] <= 0:
+                app_logger.error(f"[SNAPSHOT_FAILED] incident_id={incident_id} Decoded image is invalid or corrupted")
                 return MediaVerificationResult(False, full_path, file_name, file_size, error='Decoded image is invalid or corrupted')
 
             h, w = test_img.shape[:2]
-            app_logger.info(f"[SNAPSHOT_CAPTURED] Incident {incident_id} -> {file_name} ({file_size} bytes, {w}x{h})")
+            app_logger.info(f"[SNAPSHOT_VALIDATED] incident_id={incident_id} path={file_name} size={file_size} dims={w}x{h}")
             if prefix == 'tamper':
                 app_logger.info(f"[TAMPER_SNAPSHOT_CAPTURED] incident_id={incident_id} path={file_name} size={file_size}")
             return MediaVerificationResult(True, full_path, file_name, file_size, width=w, height=h)
@@ -101,6 +107,7 @@ class IncidentMediaRecorder:
         except Exception as e:
             app_logger.error(f"[SNAPSHOT_FAILED] Exception writing snapshot: {e}")
             return MediaVerificationResult(False, full_path, file_name, 0, error=str(e))
+
 
     def start_video_session(self, session_key: str, incident_id: Any, pre_event_frames: Optional[List[np.ndarray]] = None):
         """
@@ -158,14 +165,16 @@ class IncidentMediaRecorder:
         if not test_cap.isOpened():
             return MediaVerificationResult(False, file_path, os.path.basename(file_path), file_size, error='Encoded MP4 container cannot be opened')
 
+        ret, frame0 = test_cap.read()
         frame_count = int(test_cap.get(cv2.CAP_PROP_FRAME_COUNT))
         fps = float(test_cap.get(cv2.CAP_PROP_FPS) or 20.0)
         w = int(test_cap.get(cv2.CAP_PROP_FRAME_WIDTH))
         h = int(test_cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
         test_cap.release()
 
-        if frame_count <= 0:
+        if not ret or frame0 is None or frame_count <= 0 or w <= 0 or h <= 0:
             return MediaVerificationResult(False, file_path, os.path.basename(file_path), file_size, error='MP4 container has 0 decodable frames')
+
 
         duration = round(frame_count / max(1.0, fps), 2)
         return MediaVerificationResult(

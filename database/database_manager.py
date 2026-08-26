@@ -1,7 +1,12 @@
 import json
 import threading
+import uuid
 from datetime import datetime
-from database.models import db, Incident, Subject, Evidence, BehaviorLog, User, UserRole
+import numpy as np
+from database.models import (
+    db, Incident, Subject, Evidence, BehaviorLog, User, UserRole,
+    PersonClassification, PersonProfile, PersonFace, PersonCluster, PersonAppearance
+)
 from engine.logger import app_logger
 
 def parse_events(data):
@@ -484,4 +489,434 @@ class DatabaseManager:
                 'tamper_count': tamper_count
             }
 
+    # ═══════════════════════════════════════════════════════════════
+    # PEOPLE INTELLIGENCE & IDENTITY OPERATIONS
+    # ═══════════════════════════════════════════════════════════════
+
+    def _generate_person_id(self):
+        count = PersonProfile.query.count() + 1
+        return f"person_{count:03d}"
+
+    def create_person_profile(self, app, name, classification=PersonClassification.KNOWN, notes='', profile_image_path=None, custom_id=None):
+        with app.app_context():
+            with self.lock:
+                try:
+                    pid = custom_id or self._generate_person_id()
+                    # If id already exists, generate unique
+                    existing = db.session.get(PersonProfile, pid)
+                    if existing:
+                        pid = f"person_{uuid.uuid4().hex[:6]}"
+
+                    profile = PersonProfile(
+                        id=pid,
+                        name=name.strip() if name else 'Unnamed Person',
+                        classification=classification if classification in (PersonClassification.KNOWN, PersonClassification.UNKNOWN, PersonClassification.SUSPICIOUS) else PersonClassification.UNKNOWN,
+                        status='ACTIVE',
+                        profile_image_path=profile_image_path,
+                        notes=notes,
+                        created_at=datetime.utcnow(),
+                        updated_at=datetime.utcnow(),
+                        first_seen_at=datetime.utcnow(),
+                        last_seen_at=datetime.utcnow()
+                    )
+                    db.session.add(profile)
+                    db.session.commit()
+                    app_logger.info(f"[PEOPLE_DB] Created Person Profile {pid}: {name} [{classification}]")
+                    return profile.to_dict(include_appearances=True)
+                except Exception as e:
+                    db.session.rollback()
+                    app_logger.error(f"[PEOPLE_DB] Create Profile Error: {e}")
+                    return None
+
+    def get_person_profile(self, app, person_id, include_appearances=False):
+        with app.app_context():
+            profile = db.session.get(PersonProfile, person_id)
+            if not profile:
+                return None
+            return profile.to_dict(include_appearances=include_appearances)
+
+    def update_person_profile(self, app, person_id, name=None, classification=None, status=None, notes=None, profile_image_path=None):
+        with app.app_context():
+            with self.lock:
+                try:
+                    profile = db.session.get(PersonProfile, person_id)
+                    if not profile:
+                        return None
+                    if name is not None:
+                        profile.name = name.strip()
+                    if classification is not None and classification in (PersonClassification.KNOWN, PersonClassification.UNKNOWN, PersonClassification.SUSPICIOUS):
+                        profile.classification = classification
+                    if status is not None and status in ('ACTIVE', 'INACTIVE'):
+                        profile.status = status
+                    if notes is not None:
+                        profile.notes = notes
+                    if profile_image_path is not None:
+                        profile.profile_image_path = profile_image_path
+                    profile.updated_at = datetime.utcnow()
+                    db.session.commit()
+                    app_logger.info(f"[PEOPLE_DB] Updated Person Profile {person_id}: Name={profile.name}, Class={profile.classification}, Status={profile.status}")
+                    return profile.to_dict(include_appearances=True)
+                except Exception as e:
+                    db.session.rollback()
+                    app_logger.error(f"[PEOPLE_DB] Update Profile Error: {e}")
+                    return None
+
+    def deactivate_person_profile(self, app, person_id):
+        with app.app_context():
+            with self.lock:
+                try:
+                    profile = db.session.get(PersonProfile, person_id)
+                    if not profile:
+                        return False
+                    profile.status = 'INACTIVE'
+                    profile.updated_at = datetime.utcnow()
+                    db.session.commit()
+                    app_logger.info(f"[PEOPLE_DB] Deactivated Person Profile {person_id}")
+                    return True
+                except Exception as e:
+                    db.session.rollback()
+                    app_logger.error(f"[PEOPLE_DB] Deactivate Profile Error: {e}")
+                    return False
+
+    def add_reference_face(self, app, person_id, image_path, embedding_bytes, quality_score=1.0, is_profile_display=False):
+        with app.app_context():
+            with self.lock:
+                try:
+                    profile = db.session.get(PersonProfile, person_id)
+                    if not profile:
+                        return None
+
+                    face = PersonFace(
+                        person_id=person_id,
+                        image_path=image_path,
+                        embedding_blob=embedding_bytes,
+                        quality_score=quality_score,
+                        is_active=True,
+                        is_profile_display=is_profile_display,
+                        created_at=datetime.utcnow()
+                    )
+                    db.session.add(face)
+                    if is_profile_display or not profile.profile_image_path:
+                        profile.profile_image_path = image_path
+                    profile.updated_at = datetime.utcnow()
+                    db.session.commit()
+                    app_logger.info(f"[PEOPLE_DB] Added reference face #{face.id} to person {person_id}")
+                    return face.to_dict()
+                except Exception as e:
+                    db.session.rollback()
+                    app_logger.error(f"[PEOPLE_DB] Add Reference Face Error: {e}")
+                    return None
+
+    def remove_reference_face(self, app, face_id):
+        with app.app_context():
+            with self.lock:
+                try:
+                    face = db.session.get(PersonFace, face_id)
+                    if not face:
+                        return False
+                    person_id = face.person_id
+                    db.session.delete(face)
+                    db.session.commit()
+                    # Check remaining active faces for display photo
+                    profile = db.session.get(PersonProfile, person_id)
+                    if profile:
+                        active_faces = [f for f in profile.faces if f.is_active]
+                        if active_faces and profile.profile_image_path == face.image_path:
+                            profile.profile_image_path = active_faces[0].image_path
+                        elif not active_faces:
+                            profile.profile_image_path = None
+                        profile.updated_at = datetime.utcnow()
+                        db.session.commit()
+                    app_logger.info(f"[PEOPLE_DB] Removed reference face #{face_id} from person {person_id}")
+                    return True
+                except Exception as e:
+                    db.session.rollback()
+                    app_logger.error(f"[PEOPLE_DB] Remove Reference Face Error: {e}")
+                    return False
+
+    def get_active_reference_embeddings(self, app):
+        """
+        Loads all active enrolled profiles and their active 128-dim embeddings from DB into memory.
+        Returns: list of dicts [{'person_id': str, 'name': str, 'classification': str, 'embeddings': [np.ndarray]}]
+        """
+        results = []
+        if not app:
+            return results
+
+        with app.app_context():
+            profiles = PersonProfile.query.filter_by(status='ACTIVE').all()
+            for p in profiles:
+                embeddings = []
+                for f in p.faces:
+                    if f.is_active and f.embedding_blob:
+                        try:
+                            emb = np.frombuffer(f.embedding_blob, dtype=np.float32).copy()
+                            if emb.shape[0] == 128:
+                                embeddings.append(emb)
+                        except Exception as e:
+                            app_logger.warning(f"Failed to decode embedding for face #{f.id}: {e}")
+                if embeddings:
+                    results.append({
+                        'person_id': p.id,
+                        'name': p.name,
+                        'classification': p.classification,
+                        'embeddings': embeddings
+                    })
+        return results
+
+    def query_person_profiles(self, app, filters=None):
+        filters = filters or {}
+        with app.app_context():
+            query = PersonProfile.query
+
+            classification = filters.get('classification')
+            if classification and classification.upper() != 'ALL':
+                query = query.filter(PersonProfile.classification == classification.upper())
+
+            status = filters.get('status')
+            if status and status.upper() != 'ALL':
+                query = query.filter(PersonProfile.status == status.upper())
+            else:
+                # By default show ACTIVE profiles unless specifically requested
+                if not filters.get('include_inactive'):
+                    query = query.filter(PersonProfile.status == 'ACTIVE')
+
+            q = filters.get('q')
+            if q:
+                pattern = f"%{q}%"
+                query = query.filter(db.or_(
+                    PersonProfile.name.ilike(pattern),
+                    PersonProfile.id.ilike(pattern),
+                    PersonProfile.notes.ilike(pattern)
+                ))
+
+            total_count = query.count()
+            page = max(1, int(filters.get('page', 1)))
+            limit = max(1, min(100, int(filters.get('limit', 20))))
+            offset = (page - 1) * limit
+
+            profiles = query.order_by(PersonProfile.updated_at.desc()).offset(offset).limit(limit).all()
+            items = [p.to_dict() for p in profiles]
+
+            return {
+                'items': items,
+                'total': total_count,
+                'page': page,
+                'limit': limit,
+                'pages': max(1, (total_count + limit - 1) // limit)
+            }
+
+    def get_people_stats(self, app):
+        with app.app_context():
+            total = PersonProfile.query.filter_by(status='ACTIVE').count()
+            known = PersonProfile.query.filter_by(status='ACTIVE', classification=PersonClassification.KNOWN).count()
+            unknown = PersonProfile.query.filter_by(status='ACTIVE', classification=PersonClassification.UNKNOWN).count()
+            suspicious = PersonProfile.query.filter_by(status='ACTIVE', classification=PersonClassification.SUSPICIOUS).count()
+            total_appearances = PersonAppearance.query.count()
+            total_clusters = PersonCluster.query.filter_by(status='ACTIVE').count()
+
+            return {
+                'total_profiles': total,
+                'known_profiles': known,
+                'unknown_profiles': unknown,
+                'suspicious_profiles': suspicious,
+                'total_appearances': total_appearances,
+                'active_clusters': total_clusters
+            }
+
+    def get_or_create_cluster(self, app, cluster_id, representative_image=None, representative_embedding=None, cluster_code=None):
+        with app.app_context():
+            with self.lock:
+                try:
+                    cluster = db.session.get(PersonCluster, cluster_id)
+                    if not cluster:
+                        if not cluster_code:
+                            cnt = PersonCluster.query.count() + 1
+                            cluster_code = f"UNKNOWN PERSON #{cnt}"
+                        cluster = PersonCluster(
+                            id=cluster_id,
+                            cluster_code=cluster_code,
+                            representative_image=representative_image,
+                            representative_embedding_blob=representative_embedding.tobytes() if isinstance(representative_embedding, np.ndarray) else representative_embedding,
+                            status='ACTIVE',
+                            first_seen_at=datetime.utcnow(),
+                            last_seen_at=datetime.utcnow()
+                        )
+                        db.session.add(cluster)
+                    else:
+                        cluster.last_seen_at = datetime.utcnow()
+                        if representative_image and not cluster.representative_image:
+                            cluster.representative_image = representative_image
+                    db.session.commit()
+                    return cluster.to_dict()
+                except Exception as e:
+                    db.session.rollback()
+                    app_logger.error(f"[PEOPLE_DB] Get/Create Cluster Error: {e}")
+                    return None
+
+    def query_clusters(self, app, status='ACTIVE', limit=50):
+        with app.app_context():
+            query = PersonCluster.query
+            if status and status.upper() != 'ALL':
+                query = query.filter(PersonCluster.status == status.upper())
+            clusters = query.order_by(PersonCluster.last_seen_at.desc()).limit(limit).all()
+            return [c.to_dict() for c in clusters]
+
+    def get_cluster_by_id(self, app, cluster_id):
+        with app.app_context():
+            cluster = db.session.get(PersonCluster, cluster_id)
+            if not cluster:
+                return None
+            data = cluster.to_dict()
+            data['appearances'] = [a.to_dict() for a in sorted(cluster.appearances or [], key=lambda x: x.timestamp or datetime.min, reverse=True)]
+            return data
+
+    def convert_cluster_to_profile(self, app, cluster_id, name, classification=PersonClassification.KNOWN, notes='', target_person_id=None):
+        with app.app_context():
+            with self.lock:
+                try:
+                    cluster = db.session.get(PersonCluster, cluster_id)
+                    if not cluster:
+                        return None
+
+                    if target_person_id:
+                        profile = db.session.get(PersonProfile, target_person_id)
+                        if not profile:
+                            return None
+                    else:
+                        pid = self._generate_person_id()
+                        profile = PersonProfile(
+                            id=pid,
+                            name=name.strip() if name else cluster.cluster_code,
+                            classification=classification,
+                            status='ACTIVE',
+                            profile_image_path=cluster.representative_image,
+                            notes=notes,
+                            created_at=datetime.utcnow(),
+                            updated_at=datetime.utcnow(),
+                            first_seen_at=cluster.first_seen_at or datetime.utcnow(),
+                            last_seen_at=cluster.last_seen_at or datetime.utcnow()
+                        )
+                        db.session.add(profile)
+                        db.session.flush()
+
+                    # Add representative face to profile
+                    if cluster.representative_image and cluster.representative_embedding_blob:
+                        face = PersonFace(
+                            person_id=profile.id,
+                            image_path=cluster.representative_image,
+                            embedding_blob=cluster.representative_embedding_blob,
+                            quality_score=1.0,
+                            is_active=True,
+                            is_profile_display=True,
+                            created_at=datetime.utcnow()
+                        )
+                        db.session.add(face)
+
+                    # Link cluster and re-assign appearances
+                    cluster.status = 'LINKED'
+                    cluster.person_id = profile.id
+                    for app_rec in (cluster.appearances or []):
+                        app_rec.person_id = profile.id
+                        app_rec.identity_status = profile.classification
+
+                    db.session.commit()
+                    app_logger.info(f"[PEOPLE_DB] Linked Cluster {cluster_id} to Profile {profile.id} ({profile.name})")
+                    return profile.to_dict(include_appearances=True)
+                except Exception as e:
+                    db.session.rollback()
+                    app_logger.error(f"[PEOPLE_DB] Convert Cluster Error: {e}")
+                    return None
+
+    def log_person_appearance(self, app, camera_id, track_id, person_id=None, cluster_id=None,
+                              zone_name='Observation Area', recognition_score=0.0,
+                              identity_status='UNKNOWN', snapshot_path=None, incident_id=None):
+        if not app:
+            return None
+
+        with app.app_context():
+            with self.lock:
+                try:
+                    now = datetime.utcnow()
+                    app_rec = PersonAppearance(
+                        person_id=person_id,
+                        cluster_id=cluster_id,
+                        camera_id=int(camera_id),
+                        track_id=int(track_id),
+                        timestamp=now,
+                        zone_name=zone_name,
+                        recognition_score=float(recognition_score),
+                        identity_status=identity_status,
+                        snapshot_path=snapshot_path,
+                        incident_id=incident_id
+                    )
+                    db.session.add(app_rec)
+
+                    # Update last seen on PersonProfile
+                    if person_id:
+                        prof = db.session.get(PersonProfile, person_id)
+                        if prof:
+                            prof.last_seen_at = now
+                            prof.updated_at = now
+
+                    # Update last seen on PersonCluster
+                    if cluster_id:
+                        clust = db.session.get(PersonCluster, cluster_id)
+                        if clust:
+                            clust.last_seen_at = now
+
+                    db.session.commit()
+                    return app_rec.id
+                except Exception as e:
+                    db.session.rollback()
+                    app_logger.error(f"[PEOPLE_DB] Log Appearance Error: {e}")
+                    return None
+
+    def query_person_appearances(self, app, person_id=None, cluster_id=None, camera_id=None, page=1, limit=20):
+        with app.app_context():
+            query = PersonAppearance.query
+            if person_id:
+                query = query.filter(PersonAppearance.person_id == person_id)
+            if cluster_id:
+                query = query.filter(PersonAppearance.cluster_id == cluster_id)
+            if camera_id is not None and camera_id != '' and camera_id != 'all':
+                try:
+                    query = query.filter(PersonAppearance.camera_id == int(camera_id))
+                except ValueError:
+                    pass
+
+            total_count = query.count()
+            page = max(1, int(page))
+            limit = max(1, min(100, int(limit)))
+            offset = (page - 1) * limit
+
+            appearances = query.order_by(PersonAppearance.timestamp.desc()).offset(offset).limit(limit).all()
+            return {
+                'items': [a.to_dict() for a in appearances],
+                'total': total_count,
+                'page': page,
+                'limit': limit,
+                'pages': max(1, (total_count + limit - 1) // limit)
+            }
+
+    def get_suspicious_profiles(self, app):
+        with app.app_context():
+            profiles = PersonProfile.query.filter_by(status='ACTIVE', classification=PersonClassification.SUSPICIOUS).all()
+            results = []
+            for p in profiles:
+                d = p.to_dict(include_appearances=False)
+                apps = sorted(p.appearances or [], key=lambda x: x.timestamp or datetime.min, reverse=True)
+                d['recent_appearance'] = apps[0].to_dict() if apps else None
+                # Get linked incidents
+                incidents = Incident.query.filter(Incident.subject_id == f"Person-{p.id}").order_by(Incident.timestamp.desc()).limit(5).all()
+                if not incidents and apps:
+                    # check incident_id on appearances
+                    inc_ids = [a.incident_id for a in apps if a.incident_id]
+                    if inc_ids:
+                        incidents = Incident.query.filter(Incident.id.in_(inc_ids)).all()
+                d['recent_incidents'] = [inc.to_alert_dict() for inc in incidents]
+                results.append(d)
+            return results
+
 db_manager = DatabaseManager()
+

@@ -98,30 +98,50 @@ class IncidentLifecycleManager:
         active_zone_keys_this_frame = set()
 
         with self.lock:
-            # Evaluate tracks in zones
+            # Evaluate tracks for High Zone breaches and Suspicious Person detections
             for t in tracks:
-                z_idx = t.get('current_zone')
-                if z_idx is None or z_idx < 0 or z_idx >= len(zones):
-                    continue
-
-                z_type = zone_types[z_idx] if z_idx < len(zone_types) else 'WATCH'
-                if z_type != getattr(config, 'ZONE_TYPE_HIGH', 'HIGH'):
-                    # Only trigger high-priority security incidents on HIGH zone breaches
-                    continue
-
                 tid = t.get('track_id', 0)
-                subject_id = f"Person-{tid}"
-                zone_name = f"Zone-{z_idx+1} (HIGH)"
-                incident_type = 'ZONE_BREACH'
-                session_key = self._generate_zone_key(camera_id, subject_id, zone_name, incident_type)
-                active_zone_keys_this_frame.add(session_key)
+                classification = t.get('classification', 'UNIDENTIFIED')
+                subject_name = t.get('identity', f"Person-{tid}")
+                person_id = t.get('person_id')
+                subject_id = person_id or f"Person-{tid}"
 
+                z_idx = t.get('current_zone')
+                is_in_valid_zone = (z_idx is not None and 0 <= z_idx < len(zones))
+                z_type = zone_types[z_idx] if is_in_valid_zone and z_idx < len(zone_types) else 'WATCH'
+                is_high_breach = (is_in_valid_zone and z_type == getattr(config, 'ZONE_TYPE_HIGH', 'HIGH'))
+                is_suspicious = (classification == 'SUSPICIOUS')
+
+                if not is_high_breach and not is_suspicious:
+                    continue
+
+                if is_suspicious:
+                    incident_type = 'SUSPICIOUS_PERSON'
+                    zone_name = f"Zone-{z_idx+1} ({z_type})" if is_in_valid_zone else "Monitored Area"
+                    session_key = f"suspicious:{camera_id}:{subject_id}:{incident_type}"
+                    events_list = [f"SUSPICIOUS PERSON DETECTED: {subject_name}", f"Subject {subject_name} identified in {zone_name}"]
+                    ai_summary = f"Suspicious individual {subject_name} detected in {zone_name}."
+                    rec_action = "Verify security perimeter and track subject movements."
+                else:
+                    incident_type = 'ZONE_BREACH'
+                    zone_name = f"Zone-{z_idx+1} (HIGH)"
+                    session_key = self._generate_zone_key(camera_id, subject_id, zone_name, incident_type)
+                    events_list = [f"Intrusion detected in {zone_name}", f"Subject {subject_name} entered restricted zone"]
+                    ai_summary = f"Restricted {zone_name} breach by {subject_name}."
+                    rec_action = "Dispatch security guard to verify perimeter breach."
+
+                active_zone_keys_this_frame.add(session_key)
                 session = self.active_sessions.get(session_key)
 
                 # A. New Incident Trigger
                 if not session:
+                    if is_high_breach:
+                        app_logger.warning(f"[ZONE_BREACH_CONFIRMED] camera={camera_id} zone={zone_name} subject={subject_name} (Track #{tid})")
+                    elif is_suspicious:
+                        app_logger.warning(f"[SUSPICIOUS_PERSON_CONFIRMED] camera={camera_id} subject={subject_name} (Track #{tid})")
+
                     # 1. Persist initial Incident row to database
-                    events_list = [f"Intrusion detected in {zone_name}", f"Subject {subject_id} entered restricted zone"]
+
                     initial_pkg = {
                         'camera_id': camera_id,
                         'zone_name': zone_name,
@@ -130,15 +150,16 @@ class IncidentLifecycleManager:
                         'subject_id': subject_id,
                         'subject_dwell_time': 0.0,
                         'events': events_list,
-                        'ai_summary': f"Restricted {zone_name} breach by {subject_id}.",
-                        'recommended_action': "Dispatch security guard to verify perimeter breach.",
+                        'ai_summary': ai_summary,
+                        'recommended_action': rec_action,
                         'timeline': [
-                            {'step': 1, 'time': time.strftime("%H:%M:%S"), 'event': f"Zone breach triggered: {subject_id} in {zone_name}", 'severity': 'CRITICAL'}
+                            {'step': 1, 'time': time.strftime("%H:%M:%S"), 'event': f"{incident_type.replace('_', ' ').title()}: {subject_name} in {zone_name}", 'severity': 'CRITICAL'}
                         ],
                         'snapshot_path': '',
                         'clip_path': '',
                         'status': 'Active'
                     }
+
 
                     # Synchronously or via DB Manager get canonical ID
                     from database.database_manager import db_manager

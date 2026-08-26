@@ -43,10 +43,66 @@ class PersonMemory:
         self.risk_score_history = collections.deque(maxlen=30)
         self.peak_risk_score = 0.0
         self.identity = {
-            'status': 'TRACKED_SUBJECT', # Temporary Track ID (Stage 2)
+            'status': 'TRACKED_SUBJECT',
             'label': f'Person-{track_id}',
-            'confidence': 1.0
+            'person_id': None,
+            'cluster_id': None,
+            'classification': 'UNIDENTIFIED',
+            'confidence': 0.0,
+            'recognition_score': 0.0,
+            'is_locked': False,
+            'last_face_attempt': 0.0,
+            'appearance_logged': False,
+            'snapshot_path': None
         }
+
+
+    def should_attempt_face_recognition(self, min_interval_sec: float = 1.0) -> bool:
+        """Determines if a new face recognition attempt should be executed for this track."""
+        if self.identity.get('is_locked', False):
+            # Already recognized and locked on this track
+            return False
+        now = time.time()
+        last_attempt = self.identity.get('last_face_attempt', 0.0)
+        return (now - last_attempt) >= min_interval_sec
+
+    def set_identity(self, identity_data: dict, lock: bool = True):
+        """Locks or updates the identity classification on this track."""
+        self.identity['last_face_attempt'] = time.time()
+        if not identity_data:
+            return
+
+        status = identity_data.get('status', 'UNIDENTIFIED')
+        classification = identity_data.get('classification', 'UNIDENTIFIED')
+        person_id = identity_data.get('person_id')
+        cluster_id = identity_data.get('cluster_id')
+        label = identity_data.get('label') or identity_data.get('identity') or f'Person-{self.track_id}'
+        score = identity_data.get('recognition_score', 0.0)
+
+
+        if status in ('KNOWN', 'SUSPICIOUS'):
+            self.identity['status'] = status
+            self.identity['classification'] = classification
+            self.identity['person_id'] = person_id
+            self.identity['label'] = label
+            self.identity['confidence'] = score
+            self.identity['recognition_score'] = score
+            if lock:
+                self.identity['is_locked'] = True
+        elif status == 'UNKNOWN' and cluster_id:
+            self.identity['status'] = 'UNKNOWN'
+            self.identity['classification'] = 'UNKNOWN'
+            self.identity['cluster_id'] = cluster_id
+            self.identity['label'] = f"Unknown ({cluster_id})"
+            self.identity['confidence'] = score
+            self.identity['recognition_score'] = score
+            if lock:
+                self.identity['is_locked'] = True
+        elif status != 'UNIDENTIFIED':
+            self.identity['status'] = status
+            self.identity['confidence'] = score
+            self.identity['recognition_score'] = score
+
 
     def update_position(self, cx, cy, foot_x, foot_y):
         now = time.time()

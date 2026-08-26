@@ -17679,3 +17679,1015 @@ FROM incidents) AS anon_1]
 2026-08-22 04:16:02 | INFO    | App        | ZoneStore: Updated Camera 0 with 0 zone(s), monitoring=False
 2026-08-22 04:16:02 | INFO    | App        | ZoneStore: Updated Camera 0 with 0 zone(s), monitoring=False
 2026-08-22 04:16:02 | INFO    | Camera-0   | 0 zone(s) monitoring=False
+2026-08-23 23:26:36 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:26:36 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-23 23:26:36 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:26:36 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-23 23:26:37 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:26:37 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:27:40 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:27:40 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-23 23:27:40 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:27:40 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-23 23:27:41 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:27:41 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:27:41 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: Test Varun [KNOWN]
+2026-08-23 23:27:41 | INFO    | App        | [PEOPLE_DB] Added reference face #1 to person person_001
+2026-08-23 23:28:12 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:28:12 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-23 23:28:13 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:28:13 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-23 23:28:13 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:28:13 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:28:13 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: Test Varun [KNOWN]
+2026-08-23 23:28:13 | INFO    | App        | [PEOPLE_DB] Added reference face #1 to person person_001
+2026-08-23 23:29:19 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:29:19 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-23 23:29:19 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:29:19 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-23 23:29:19 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:29:19 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:29:20 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: Test Varun [KNOWN]
+2026-08-23 23:29:20 | INFO    | App        | [PEOPLE_DB] Added reference face #1 to person person_001
+2026-08-23 23:29:20 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: API Guard [KNOWN]
+2026-08-23 23:29:20 | INFO    | App        | [PEOPLE_DB] Updated Person Profile person_001: Name=API Guard Updated, Class=SUSPICIOUS, Status=ACTIVE
+2026-08-23 23:29:20 | INFO    | App        | [PEOPLE_DB] Deactivated Person Profile person_001
+2026-08-23 23:29:31 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:29:31 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-23 23:29:31 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:29:31 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-23 23:29:35 | INFO    | App        | Incident 3 saved to Database
+2026-08-23 23:29:35 | INFO    | App        | Incident passed through Evidence Cache (Key: None)
+2026-08-23 23:29:35 | INFO    | App        | Incident passed through Evidence Engine (Subject: Person-99)
+2026-08-23 23:29:38 | INFO    | App        | Incident passed through Evidence Engine (Subject: Person-99)
+2026-08-23 23:29:38 | WARNING | App        | Camera 0: Feed disconnected (Count: 1)
+2026-08-23 23:29:38 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:29:38 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> incident_1_20260823_232938.jpg (5427 bytes, 640x480)
+2026-08-23 23:29:38 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 0 pre-event frames
+2026-08-23 23:29:38 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_1_20260823_232938.jpg
+2026-08-23 23:29:38 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-23 23:29:38 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260823_232938.mp4 (45760 bytes, 102 frames, 640x480 @ 20fps, 5.1s)
+2026-08-23 23:29:38 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:29:38 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260823_232938.mp4 Status: COMPLETE
+2026-08-23 23:29:38 | INFO    | App        | Incident 2 saved to Database
+2026-08-23 23:29:38 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 2 -> incident_2_20260823_232938.jpg (5427 bytes, 640x480)
+2026-08-23 23:29:38 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-23 23:29:38 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_2_20260823_232938.jpg
+2026-08-23 23:29:38 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-23 23:29:38 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:29:38 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:29:39 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> incident_1_20260823_232939.jpg (13614 bytes, 640x480)
+2026-08-23 23:29:39 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 10 pre-event frames
+2026-08-23 23:29:39 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 90.0 Snapshot: incident_1_20260823_232939.jpg
+2026-08-23 23:29:39 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-23 23:29:39 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260823_232939.mp4 (102105 bytes, 72 frames, 640x480 @ 20fps, 3.6s)
+2026-08-23 23:29:39 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:29:39 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260823_232939.mp4 Status: COMPLETE
+2026-08-23 23:29:39 | INFO    | App        | Incident 2 saved to Database
+2026-08-23 23:29:39 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 2 -> incident_2_20260823_232939.jpg (13614 bytes, 640x480)
+2026-08-23 23:29:39 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-23 23:29:39 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_2_20260823_232939.jpg
+2026-08-23 23:29:39 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-23 23:29:39 | INFO    | App        | Incident 3 saved to Database
+2026-08-23 23:29:39 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 3 -> tamper_3_20260823_232939.jpg (5427 bytes, 640x480)
+2026-08-23 23:29:39 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=3 path=tamper_3_20260823_232939.jpg size=5427
+2026-08-23 23:29:39 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 3) initialized with 10 pre-event frames
+2026-08-23 23:29:39 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=10 duration=0.4s
+2026-08-23 23:29:39 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=3
+2026-08-23 23:29:39 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #3: SUDDEN DARKNESS / LENS COVERED
+2026-08-23 23:29:39 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=3
+2026-08-23 23:29:41 | INFO    | App        | [VIDEO_FINALIZED] Incident 3 -> tamper_3_20260823_232941.mp4 (34825 bytes, 42 frames, 640x480 @ 20fps, 2.1s)
+2026-08-23 23:29:41 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=42 duration=2.1s
+2026-08-23 23:29:41 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_3_20260823_232941.mp4 size=34825 frames=42
+2026-08-23 23:29:41 | INFO    | App        | Incident 3 finalized and closed in Database
+2026-08-23 23:29:41 | INFO    | App        | [INCIDENT_CLOSED] #3 Video: tamper_3_20260823_232941.mp4 Status: COMPLETE
+2026-08-23 23:29:41 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=3
+2026-08-23 23:29:41 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #3 recovered
+2026-08-23 23:29:41 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 101 -> incident_101_20260823_232941.jpg (8743 bytes, 640x480)
+2026-08-23 23:29:41 | ERROR   | App        | [MEDIA RECORDER] Empty frame passed for snapshot (Incident: 102)
+2026-08-23 23:29:41 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1:BREACH (Incident: 201) initialized with 10 pre-event frames
+2026-08-23 23:29:41 | INFO    | App        | [VIDEO_FINALIZED] Incident 201 -> incident_201_20260823_232941.mp4 (11585 bytes, 25 frames, 320x240 @ 10fps, 2.5s)
+2026-08-23 23:29:43 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:29:43 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:29:43 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: Test Varun [KNOWN]
+2026-08-23 23:29:43 | INFO    | App        | [PEOPLE_DB] Added reference face #1 to person person_001
+2026-08-23 23:29:44 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: API Guard [KNOWN]
+2026-08-23 23:29:44 | INFO    | App        | [PEOPLE_DB] Updated Person Profile person_001: Name=API Guard Updated, Class=SUSPICIOUS, Status=ACTIVE
+2026-08-23 23:29:44 | INFO    | App        | [PEOPLE_DB] Deactivated Person Profile person_001
+2026-08-23 23:29:44 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:29:44 | INFO    | App        | Incident passed through Evidence Cache (Key: 2026-08-23T17:59:44.521768)
+2026-08-23 23:29:44 | INFO    | App        | Mode → GUARD
+2026-08-23 23:29:47 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:29:47 | INFO    | App        | Incident passed through Evidence Cache (Key: None)
+2026-08-23 23:29:47 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:29:47 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.2s)
+2026-08-23 23:29:47 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.2s confirmation)
+2026-08-23 23:29:47 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-23 23:29:47 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:29:47 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.4s)
+2026-08-23 23:29:47 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:29:47 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> tamper_1_20260823_232947.jpg (1827 bytes, 320x240)
+2026-08-23 23:29:47 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=1 path=tamper_1_20260823_232947.jpg size=1827
+2026-08-23 23:29:47 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 1) initialized with 150 pre-event frames
+2026-08-23 23:29:47 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=150 duration=6.0s
+2026-08-23 23:29:47 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=1
+2026-08-23 23:29:47 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #1: SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:29:47 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=1
+2026-08-23 23:29:47 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.5s confirmation)
+2026-08-23 23:29:47 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-23 23:29:48 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> tamper_1_20260823_232947.mp4 (122185 bytes, 182 frames, 320x240 @ 20fps, 9.1s)
+2026-08-23 23:29:48 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=182 duration=9.1s
+2026-08-23 23:29:48 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_1_20260823_232947.mp4 size=122185 frames=182
+2026-08-23 23:29:48 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:29:48 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: tamper_1_20260823_232947.mp4 Status: COMPLETE
+2026-08-23 23:29:48 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=1
+2026-08-23 23:29:48 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #1 recovered
+2026-08-23 23:29:48 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=True
+2026-08-23 23:29:48 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=True
+2026-08-23 23:30:51 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:30:51 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-23 23:30:51 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:30:51 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-23 23:30:54 | INFO    | App        | Incident 3 saved to Database
+2026-08-23 23:30:54 | INFO    | App        | Incident passed through Evidence Cache (Key: None)
+2026-08-23 23:30:54 | INFO    | App        | Incident passed through Evidence Engine (Subject: Person-99)
+2026-08-23 23:30:57 | INFO    | App        | Incident passed through Evidence Engine (Subject: Person-99)
+2026-08-23 23:30:57 | WARNING | App        | Camera 0: Feed disconnected (Count: 1)
+2026-08-23 23:30:57 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:30:57 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> incident_1_20260823_233057.jpg (5427 bytes, 640x480)
+2026-08-23 23:30:57 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 0 pre-event frames
+2026-08-23 23:30:57 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_1_20260823_233057.jpg
+2026-08-23 23:30:57 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-23 23:30:58 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260823_233058.mp4 (45760 bytes, 102 frames, 640x480 @ 20fps, 5.1s)
+2026-08-23 23:30:58 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:30:58 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260823_233058.mp4 Status: COMPLETE
+2026-08-23 23:30:58 | INFO    | App        | Incident 2 saved to Database
+2026-08-23 23:30:58 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 2 -> incident_2_20260823_233058.jpg (5427 bytes, 640x480)
+2026-08-23 23:30:58 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-23 23:30:58 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_2_20260823_233058.jpg
+2026-08-23 23:30:58 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-23 23:30:58 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:30:58 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:30:58 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> incident_1_20260823_233058.jpg (13614 bytes, 640x480)
+2026-08-23 23:30:58 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 10 pre-event frames
+2026-08-23 23:30:58 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 90.0 Snapshot: incident_1_20260823_233058.jpg
+2026-08-23 23:30:58 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-23 23:30:58 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260823_233058.mp4 (102105 bytes, 72 frames, 640x480 @ 20fps, 3.6s)
+2026-08-23 23:30:58 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:30:58 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260823_233058.mp4 Status: COMPLETE
+2026-08-23 23:30:58 | INFO    | App        | Incident 2 saved to Database
+2026-08-23 23:30:58 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 2 -> incident_2_20260823_233058.jpg (13614 bytes, 640x480)
+2026-08-23 23:30:58 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-23 23:30:58 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_2_20260823_233058.jpg
+2026-08-23 23:30:58 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-23 23:30:58 | INFO    | App        | Incident 3 saved to Database
+2026-08-23 23:30:58 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 3 -> tamper_3_20260823_233058.jpg (5427 bytes, 640x480)
+2026-08-23 23:30:58 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=3 path=tamper_3_20260823_233058.jpg size=5427
+2026-08-23 23:30:58 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 3) initialized with 10 pre-event frames
+2026-08-23 23:30:58 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=10 duration=0.4s
+2026-08-23 23:30:58 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=3
+2026-08-23 23:30:58 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #3: SUDDEN DARKNESS / LENS COVERED
+2026-08-23 23:30:58 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=3
+2026-08-23 23:31:01 | INFO    | App        | [VIDEO_FINALIZED] Incident 3 -> tamper_3_20260823_233101.mp4 (34825 bytes, 42 frames, 640x480 @ 20fps, 2.1s)
+2026-08-23 23:31:01 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=42 duration=2.1s
+2026-08-23 23:31:01 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_3_20260823_233101.mp4 size=34825 frames=42
+2026-08-23 23:31:01 | INFO    | App        | Incident 3 finalized and closed in Database
+2026-08-23 23:31:01 | INFO    | App        | [INCIDENT_CLOSED] #3 Video: tamper_3_20260823_233101.mp4 Status: COMPLETE
+2026-08-23 23:31:01 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=3
+2026-08-23 23:31:01 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #3 recovered
+2026-08-23 23:31:01 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 101 -> incident_101_20260823_233101.jpg (8743 bytes, 640x480)
+2026-08-23 23:31:01 | ERROR   | App        | [MEDIA RECORDER] Empty frame passed for snapshot (Incident: 102)
+2026-08-23 23:31:01 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1:BREACH (Incident: 201) initialized with 10 pre-event frames
+2026-08-23 23:31:01 | INFO    | App        | [VIDEO_FINALIZED] Incident 201 -> incident_201_20260823_233101.mp4 (11585 bytes, 25 frames, 320x240 @ 10fps, 2.5s)
+2026-08-23 23:31:02 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:31:02 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:31:03 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: Test Varun [KNOWN]
+2026-08-23 23:31:03 | INFO    | App        | [PEOPLE_DB] Added reference face #1 to person person_001
+2026-08-23 23:31:03 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: API Guard [KNOWN]
+2026-08-23 23:31:03 | INFO    | App        | [PEOPLE_DB] Updated Person Profile person_001: Name=API Guard Updated, Class=SUSPICIOUS, Status=ACTIVE
+2026-08-23 23:31:03 | INFO    | App        | [PEOPLE_DB] Deactivated Person Profile person_001
+2026-08-23 23:31:03 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:31:03 | INFO    | App        | Incident passed through Evidence Cache (Key: 2026-08-23T18:01:03.856599)
+2026-08-23 23:31:03 | INFO    | App        | Mode → GUARD
+2026-08-23 23:31:07 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:31:07 | INFO    | App        | Incident passed through Evidence Cache (Key: None)
+2026-08-23 23:31:07 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:31:07 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.2s)
+2026-08-23 23:31:07 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.2s confirmation)
+2026-08-23 23:31:07 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-23 23:31:07 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:31:07 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.4s)
+2026-08-23 23:31:07 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:31:07 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> tamper_1_20260823_233107.jpg (1827 bytes, 320x240)
+2026-08-23 23:31:07 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=1 path=tamper_1_20260823_233107.jpg size=1827
+2026-08-23 23:31:07 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 1) initialized with 150 pre-event frames
+2026-08-23 23:31:07 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=150 duration=6.0s
+2026-08-23 23:31:07 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=1
+2026-08-23 23:31:07 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #1: SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:31:07 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=1
+2026-08-23 23:31:07 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.5s confirmation)
+2026-08-23 23:31:07 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-23 23:31:07 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> tamper_1_20260823_233107.mp4 (122185 bytes, 182 frames, 320x240 @ 20fps, 9.1s)
+2026-08-23 23:31:07 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=182 duration=9.1s
+2026-08-23 23:31:07 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_1_20260823_233107.mp4 size=122185 frames=182
+2026-08-23 23:31:07 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:31:07 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: tamper_1_20260823_233107.mp4 Status: COMPLETE
+2026-08-23 23:31:07 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=1
+2026-08-23 23:31:07 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #1 recovered
+2026-08-23 23:31:08 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=True
+2026-08-23 23:31:08 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=True
+2026-08-23 23:31:34 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:31:34 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-23 23:31:34 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:31:34 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-23 23:31:37 | INFO    | App        | Incident 3 saved to Database
+2026-08-23 23:31:37 | INFO    | App        | Incident passed through Evidence Cache (Key: None)
+2026-08-23 23:31:37 | INFO    | App        | Incident passed through Evidence Engine (Subject: Person-99)
+2026-08-23 23:31:40 | INFO    | App        | Incident passed through Evidence Engine (Subject: Person-99)
+2026-08-23 23:31:40 | WARNING | App        | Camera 0: Feed disconnected (Count: 1)
+2026-08-23 23:31:40 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:31:40 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> incident_1_20260823_233140.jpg (5427 bytes, 640x480)
+2026-08-23 23:31:40 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 0 pre-event frames
+2026-08-23 23:31:40 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_1_20260823_233140.jpg
+2026-08-23 23:31:40 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-23 23:31:40 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260823_233140.mp4 (45760 bytes, 102 frames, 640x480 @ 20fps, 5.1s)
+2026-08-23 23:31:40 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:31:40 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260823_233140.mp4 Status: COMPLETE
+2026-08-23 23:31:40 | INFO    | App        | Incident 2 saved to Database
+2026-08-23 23:31:40 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 2 -> incident_2_20260823_233140.jpg (5427 bytes, 640x480)
+2026-08-23 23:31:40 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-23 23:31:40 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_2_20260823_233140.jpg
+2026-08-23 23:31:40 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-23 23:31:40 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:31:40 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:31:40 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> incident_1_20260823_233140.jpg (13614 bytes, 640x480)
+2026-08-23 23:31:40 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 10 pre-event frames
+2026-08-23 23:31:40 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 90.0 Snapshot: incident_1_20260823_233140.jpg
+2026-08-23 23:31:40 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-23 23:31:41 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260823_233141.mp4 (102105 bytes, 72 frames, 640x480 @ 20fps, 3.6s)
+2026-08-23 23:31:41 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:31:41 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260823_233141.mp4 Status: COMPLETE
+2026-08-23 23:31:41 | INFO    | App        | Incident 2 saved to Database
+2026-08-23 23:31:41 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 2 -> incident_2_20260823_233141.jpg (13614 bytes, 640x480)
+2026-08-23 23:31:41 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-23 23:31:41 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_2_20260823_233141.jpg
+2026-08-23 23:31:41 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-23 23:31:41 | INFO    | App        | Incident 3 saved to Database
+2026-08-23 23:31:41 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 3 -> tamper_3_20260823_233141.jpg (5427 bytes, 640x480)
+2026-08-23 23:31:41 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=3 path=tamper_3_20260823_233141.jpg size=5427
+2026-08-23 23:31:41 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 3) initialized with 10 pre-event frames
+2026-08-23 23:31:41 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=10 duration=0.4s
+2026-08-23 23:31:41 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=3
+2026-08-23 23:31:41 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #3: SUDDEN DARKNESS / LENS COVERED
+2026-08-23 23:31:41 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=3
+2026-08-23 23:31:43 | INFO    | App        | [VIDEO_FINALIZED] Incident 3 -> tamper_3_20260823_233143.mp4 (34825 bytes, 42 frames, 640x480 @ 20fps, 2.1s)
+2026-08-23 23:31:43 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=42 duration=2.1s
+2026-08-23 23:31:43 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_3_20260823_233143.mp4 size=34825 frames=42
+2026-08-23 23:31:43 | INFO    | App        | Incident 3 finalized and closed in Database
+2026-08-23 23:31:43 | INFO    | App        | [INCIDENT_CLOSED] #3 Video: tamper_3_20260823_233143.mp4 Status: COMPLETE
+2026-08-23 23:31:43 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=3
+2026-08-23 23:31:43 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #3 recovered
+2026-08-23 23:31:43 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 101 -> incident_101_20260823_233143.jpg (8743 bytes, 640x480)
+2026-08-23 23:31:43 | ERROR   | App        | [MEDIA RECORDER] Empty frame passed for snapshot (Incident: 102)
+2026-08-23 23:31:43 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1:BREACH (Incident: 201) initialized with 10 pre-event frames
+2026-08-23 23:31:43 | INFO    | App        | [VIDEO_FINALIZED] Incident 201 -> incident_201_20260823_233143.mp4 (11585 bytes, 25 frames, 320x240 @ 10fps, 2.5s)
+2026-08-23 23:31:45 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:31:45 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:31:45 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: Test Varun [KNOWN]
+2026-08-23 23:31:45 | INFO    | App        | [PEOPLE_DB] Added reference face #1 to person person_001
+2026-08-23 23:31:46 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: API Guard [KNOWN]
+2026-08-23 23:31:46 | INFO    | App        | [PEOPLE_DB] Updated Person Profile person_001: Name=API Guard Updated, Class=SUSPICIOUS, Status=ACTIVE
+2026-08-23 23:31:46 | INFO    | App        | [PEOPLE_DB] Deactivated Person Profile person_001
+2026-08-23 23:31:46 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:31:46 | INFO    | App        | Incident passed through Evidence Cache (Key: 2026-08-23T18:01:46.378170)
+2026-08-23 23:31:46 | INFO    | App        | Mode → GUARD
+2026-08-23 23:31:49 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:31:49 | INFO    | App        | Incident passed through Evidence Cache (Key: None)
+2026-08-23 23:31:49 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:31:49 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.2s)
+2026-08-23 23:31:49 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.2s confirmation)
+2026-08-23 23:31:49 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-23 23:31:49 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:31:49 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.4s)
+2026-08-23 23:31:49 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:31:49 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> tamper_1_20260823_233149.jpg (1827 bytes, 320x240)
+2026-08-23 23:31:49 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=1 path=tamper_1_20260823_233149.jpg size=1827
+2026-08-23 23:31:49 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 1) initialized with 150 pre-event frames
+2026-08-23 23:31:49 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=150 duration=6.0s
+2026-08-23 23:31:49 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=1
+2026-08-23 23:31:49 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #1: SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:31:49 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=1
+2026-08-23 23:31:49 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.5s confirmation)
+2026-08-23 23:31:49 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-23 23:31:49 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> tamper_1_20260823_233149.mp4 (122185 bytes, 182 frames, 320x240 @ 20fps, 9.1s)
+2026-08-23 23:31:49 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=182 duration=9.1s
+2026-08-23 23:31:49 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_1_20260823_233149.mp4 size=122185 frames=182
+2026-08-23 23:31:49 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:31:49 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: tamper_1_20260823_233149.mp4 Status: COMPLETE
+2026-08-23 23:31:49 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=1
+2026-08-23 23:31:49 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #1 recovered
+2026-08-23 23:31:50 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=True
+2026-08-23 23:31:50 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=True
+2026-08-23 23:32:06 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:32:06 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-23 23:32:06 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:32:06 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-23 23:32:09 | INFO    | App        | Incident 3 saved to Database
+2026-08-23 23:32:09 | INFO    | App        | Incident passed through Evidence Cache (Key: None)
+2026-08-23 23:32:09 | INFO    | App        | Incident passed through Evidence Engine (Subject: Person-99)
+2026-08-23 23:32:12 | INFO    | App        | Incident passed through Evidence Engine (Subject: Person-99)
+2026-08-23 23:32:12 | WARNING | App        | Camera 0: Feed disconnected (Count: 1)
+2026-08-23 23:32:12 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:32:12 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> incident_1_20260823_233212.jpg (5427 bytes, 640x480)
+2026-08-23 23:32:12 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 0 pre-event frames
+2026-08-23 23:32:12 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_1_20260823_233212.jpg
+2026-08-23 23:32:12 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-23 23:32:12 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260823_233212.mp4 (45760 bytes, 102 frames, 640x480 @ 20fps, 5.1s)
+2026-08-23 23:32:12 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:32:12 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260823_233212.mp4 Status: COMPLETE
+2026-08-23 23:32:12 | INFO    | App        | Incident 2 saved to Database
+2026-08-23 23:32:12 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 2 -> incident_2_20260823_233212.jpg (5427 bytes, 640x480)
+2026-08-23 23:32:12 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-23 23:32:12 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_2_20260823_233212.jpg
+2026-08-23 23:32:12 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-23 23:32:12 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:32:12 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:32:12 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> incident_1_20260823_233212.jpg (13614 bytes, 640x480)
+2026-08-23 23:32:12 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 10 pre-event frames
+2026-08-23 23:32:12 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 90.0 Snapshot: incident_1_20260823_233212.jpg
+2026-08-23 23:32:12 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-23 23:32:13 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260823_233213.mp4 (102105 bytes, 72 frames, 640x480 @ 20fps, 3.6s)
+2026-08-23 23:32:13 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:32:13 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260823_233213.mp4 Status: COMPLETE
+2026-08-23 23:32:13 | INFO    | App        | Incident 2 saved to Database
+2026-08-23 23:32:13 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 2 -> incident_2_20260823_233213.jpg (13614 bytes, 640x480)
+2026-08-23 23:32:13 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-23 23:32:13 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_2_20260823_233213.jpg
+2026-08-23 23:32:13 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-23 23:32:13 | INFO    | App        | Incident 3 saved to Database
+2026-08-23 23:32:13 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 3 -> tamper_3_20260823_233213.jpg (5427 bytes, 640x480)
+2026-08-23 23:32:13 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=3 path=tamper_3_20260823_233213.jpg size=5427
+2026-08-23 23:32:13 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 3) initialized with 10 pre-event frames
+2026-08-23 23:32:13 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=10 duration=0.4s
+2026-08-23 23:32:13 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=3
+2026-08-23 23:32:13 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #3: SUDDEN DARKNESS / LENS COVERED
+2026-08-23 23:32:13 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=3
+2026-08-23 23:32:15 | INFO    | App        | [VIDEO_FINALIZED] Incident 3 -> tamper_3_20260823_233215.mp4 (34825 bytes, 42 frames, 640x480 @ 20fps, 2.1s)
+2026-08-23 23:32:15 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=42 duration=2.1s
+2026-08-23 23:32:15 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_3_20260823_233215.mp4 size=34825 frames=42
+2026-08-23 23:32:15 | INFO    | App        | Incident 3 finalized and closed in Database
+2026-08-23 23:32:15 | INFO    | App        | [INCIDENT_CLOSED] #3 Video: tamper_3_20260823_233215.mp4 Status: COMPLETE
+2026-08-23 23:32:15 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=3
+2026-08-23 23:32:15 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #3 recovered
+2026-08-23 23:32:15 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 101 -> incident_101_20260823_233215.jpg (8743 bytes, 640x480)
+2026-08-23 23:32:15 | ERROR   | App        | [MEDIA RECORDER] Empty frame passed for snapshot (Incident: 102)
+2026-08-23 23:32:15 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1:BREACH (Incident: 201) initialized with 10 pre-event frames
+2026-08-23 23:32:15 | INFO    | App        | [VIDEO_FINALIZED] Incident 201 -> incident_201_20260823_233215.mp4 (11585 bytes, 25 frames, 320x240 @ 10fps, 2.5s)
+2026-08-23 23:32:17 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:32:17 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:32:17 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: Test Varun [KNOWN]
+2026-08-23 23:32:17 | INFO    | App        | [PEOPLE_DB] Added reference face #1 to person person_001
+2026-08-23 23:32:17 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: API Guard [KNOWN]
+2026-08-23 23:32:17 | INFO    | App        | [PEOPLE_DB] Updated Person Profile person_001: Name=API Guard Updated, Class=SUSPICIOUS, Status=ACTIVE
+2026-08-23 23:32:17 | INFO    | App        | [PEOPLE_DB] Deactivated Person Profile person_001
+2026-08-23 23:32:18 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:32:18 | INFO    | App        | Incident passed through Evidence Cache (Key: 2026-08-23T18:02:18.313044)
+2026-08-23 23:32:18 | INFO    | App        | Mode → GUARD
+2026-08-23 23:32:21 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:32:21 | INFO    | App        | Incident passed through Evidence Cache (Key: None)
+2026-08-23 23:32:21 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:32:21 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.2s)
+2026-08-23 23:32:21 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.2s confirmation)
+2026-08-23 23:32:21 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-23 23:32:21 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:32:21 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.4s)
+2026-08-23 23:32:21 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:32:21 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> tamper_1_20260823_233221.jpg (1827 bytes, 320x240)
+2026-08-23 23:32:21 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=1 path=tamper_1_20260823_233221.jpg size=1827
+2026-08-23 23:32:21 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 1) initialized with 150 pre-event frames
+2026-08-23 23:32:21 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=150 duration=6.0s
+2026-08-23 23:32:21 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=1
+2026-08-23 23:32:21 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #1: SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:32:21 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=1
+2026-08-23 23:32:21 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.5s confirmation)
+2026-08-23 23:32:21 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-23 23:32:21 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> tamper_1_20260823_233221.mp4 (122185 bytes, 182 frames, 320x240 @ 20fps, 9.1s)
+2026-08-23 23:32:21 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=182 duration=9.1s
+2026-08-23 23:32:21 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_1_20260823_233221.mp4 size=122185 frames=182
+2026-08-23 23:32:21 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:32:21 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: tamper_1_20260823_233221.mp4 Status: COMPLETE
+2026-08-23 23:32:21 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=1
+2026-08-23 23:32:21 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #1 recovered
+2026-08-23 23:32:22 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=True
+2026-08-23 23:32:22 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=True
+2026-08-23 23:41:18 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:41:18 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-23 23:41:18 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:41:19 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-23 23:41:22 | INFO    | App        | Incident 3 saved to Database
+2026-08-23 23:41:22 | INFO    | App        | Incident passed through Evidence Cache (Key: None)
+2026-08-23 23:41:22 | INFO    | App        | Incident passed through Evidence Engine (Subject: Person-99)
+2026-08-23 23:41:24 | INFO    | App        | Incident passed through Evidence Engine (Subject: Person-99)
+2026-08-23 23:41:24 | WARNING | App        | Camera 0: Feed disconnected (Count: 1)
+2026-08-23 23:41:25 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:41:25 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> incident_1_20260823_234125.jpg (5427 bytes, 640x480)
+2026-08-23 23:41:25 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 0 pre-event frames
+2026-08-23 23:41:25 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_1_20260823_234125.jpg
+2026-08-23 23:41:25 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-23 23:41:25 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260823_234125.mp4 (45760 bytes, 102 frames, 640x480 @ 20fps, 5.1s)
+2026-08-23 23:41:25 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:41:25 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260823_234125.mp4 Status: COMPLETE
+2026-08-23 23:41:25 | INFO    | App        | Incident 2 saved to Database
+2026-08-23 23:41:25 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 2 -> incident_2_20260823_234125.jpg (5427 bytes, 640x480)
+2026-08-23 23:41:25 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-23 23:41:25 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_2_20260823_234125.jpg
+2026-08-23 23:41:25 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-23 23:41:25 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:41:25 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:41:25 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> incident_1_20260823_234125.jpg (13614 bytes, 640x480)
+2026-08-23 23:41:25 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 10 pre-event frames
+2026-08-23 23:41:25 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 90.0 Snapshot: incident_1_20260823_234125.jpg
+2026-08-23 23:41:25 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-23 23:41:26 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260823_234126.mp4 (102105 bytes, 72 frames, 640x480 @ 20fps, 3.6s)
+2026-08-23 23:41:26 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:41:26 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260823_234126.mp4 Status: COMPLETE
+2026-08-23 23:41:26 | INFO    | App        | Incident 2 saved to Database
+2026-08-23 23:41:26 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 2 -> incident_2_20260823_234126.jpg (13614 bytes, 640x480)
+2026-08-23 23:41:26 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-23 23:41:26 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_2_20260823_234126.jpg
+2026-08-23 23:41:26 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-23 23:41:26 | INFO    | App        | Incident 3 saved to Database
+2026-08-23 23:41:26 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 3 -> tamper_3_20260823_234126.jpg (5427 bytes, 640x480)
+2026-08-23 23:41:26 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=3 path=tamper_3_20260823_234126.jpg size=5427
+2026-08-23 23:41:26 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 3) initialized with 10 pre-event frames
+2026-08-23 23:41:26 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=10 duration=0.4s
+2026-08-23 23:41:26 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=3
+2026-08-23 23:41:26 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #3: SUDDEN DARKNESS / LENS COVERED
+2026-08-23 23:41:26 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=3
+2026-08-23 23:41:28 | INFO    | App        | [VIDEO_FINALIZED] Incident 3 -> tamper_3_20260823_234128.mp4 (34825 bytes, 42 frames, 640x480 @ 20fps, 2.1s)
+2026-08-23 23:41:28 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=42 duration=2.1s
+2026-08-23 23:41:28 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_3_20260823_234128.mp4 size=34825 frames=42
+2026-08-23 23:41:28 | INFO    | App        | Incident 3 finalized and closed in Database
+2026-08-23 23:41:28 | INFO    | App        | [INCIDENT_CLOSED] #3 Video: tamper_3_20260823_234128.mp4 Status: COMPLETE
+2026-08-23 23:41:28 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=3
+2026-08-23 23:41:28 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #3 recovered
+2026-08-23 23:41:28 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 101 -> incident_101_20260823_234128.jpg (8743 bytes, 640x480)
+2026-08-23 23:41:28 | ERROR   | App        | [MEDIA RECORDER] Empty frame passed for snapshot (Incident: 102)
+2026-08-23 23:41:28 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1:BREACH (Incident: 201) initialized with 10 pre-event frames
+2026-08-23 23:41:28 | INFO    | App        | [VIDEO_FINALIZED] Incident 201 -> incident_201_20260823_234128.mp4 (11585 bytes, 25 frames, 320x240 @ 10fps, 2.5s)
+2026-08-23 23:41:30 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:41:30 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:41:30 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: Test Varun [KNOWN]
+2026-08-23 23:41:30 | INFO    | App        | [PEOPLE_DB] Added reference face #1 to person person_001
+2026-08-23 23:41:30 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: API Guard [KNOWN]
+2026-08-23 23:41:31 | INFO    | App        | [PEOPLE_DB] Updated Person Profile person_001: Name=API Guard Updated, Class=SUSPICIOUS, Status=ACTIVE
+2026-08-23 23:41:31 | INFO    | App        | [PEOPLE_DB] Deactivated Person Profile person_001
+2026-08-23 23:41:31 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:41:31 | INFO    | App        | Incident passed through Evidence Cache (Key: 2026-08-23T18:11:31.358043)
+2026-08-23 23:41:31 | INFO    | App        | Mode → GUARD
+2026-08-23 23:41:34 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:41:34 | INFO    | App        | Incident passed through Evidence Cache (Key: None)
+2026-08-23 23:41:34 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:41:34 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.2s)
+2026-08-23 23:41:34 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.2s confirmation)
+2026-08-23 23:41:34 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-23 23:41:34 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:41:34 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.4s)
+2026-08-23 23:41:34 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:41:34 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> tamper_1_20260823_234134.jpg (1827 bytes, 320x240)
+2026-08-23 23:41:34 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=1 path=tamper_1_20260823_234134.jpg size=1827
+2026-08-23 23:41:34 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 1) initialized with 150 pre-event frames
+2026-08-23 23:41:34 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=150 duration=6.0s
+2026-08-23 23:41:34 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=1
+2026-08-23 23:41:34 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #1: SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:41:34 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=1
+2026-08-23 23:41:34 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.5s confirmation)
+2026-08-23 23:41:34 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-23 23:41:35 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> tamper_1_20260823_234135.mp4 (122185 bytes, 182 frames, 320x240 @ 20fps, 9.1s)
+2026-08-23 23:41:35 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=182 duration=9.1s
+2026-08-23 23:41:35 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_1_20260823_234135.mp4 size=122185 frames=182
+2026-08-23 23:41:35 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:41:35 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: tamper_1_20260823_234135.mp4 Status: COMPLETE
+2026-08-23 23:41:35 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=1
+2026-08-23 23:41:35 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #1 recovered
+2026-08-23 23:41:35 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=True
+2026-08-23 23:41:35 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=True
+2026-08-23 23:42:12 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:42:12 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-23 23:42:12 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:42:12 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-23 23:42:12 | INFO    | App        | Started pipeline for camera 0 (source: 0)
+2026-08-23 23:42:12 | INFO    | App        | Starting CUSTOS Command Center at http://localhost:5000
+2026-08-23 23:42:13 | INFO    | Camera-0   | Opened with DSHOW backend
+2026-08-23 23:42:13 | INFO    | Camera-0   | Camera Ready
+2026-08-23 23:46:30 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:46:30 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-23 23:46:30 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:46:30 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-23 23:46:30 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:46:31 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:46:31 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: Test Varun [KNOWN]
+2026-08-23 23:46:31 | INFO    | App        | [PEOPLE_DB] Added reference face #1 to person person_001
+2026-08-23 23:46:31 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: API Guard [KNOWN]
+2026-08-23 23:46:31 | INFO    | App        | [PEOPLE_DB] Updated Person Profile person_001: Name=API Guard Updated, Class=SUSPICIOUS, Status=ACTIVE
+2026-08-23 23:46:31 | INFO    | App        | [PEOPLE_DB] Deactivated Person Profile person_001
+2026-08-23 23:47:11 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:47:11 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-23 23:47:11 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:47:11 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-23 23:47:11 | INFO    | App        | Started pipeline for camera 0 (source: 0)
+2026-08-23 23:47:11 | INFO    | App        | Starting CUSTOS Command Center at http://localhost:5000
+2026-08-23 23:47:11 | INFO    | Camera-0   | Opened with DSHOW backend
+2026-08-23 23:47:11 | INFO    | Camera-0   | Camera Ready
+2026-08-23 23:47:32 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=False
+2026-08-23 23:47:32 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=False
+2026-08-23 23:47:32 | INFO    | Camera-0   | 1 zone(s) monitoring=False
+2026-08-23 23:47:32 | INFO    | App        | Reference saved for Zone 1
+2026-08-23 23:47:34 | INFO    | App        | ZoneStore: Updated Camera 0 with 0 zone(s), monitoring=False
+2026-08-23 23:47:34 | INFO    | App        | ZoneStore: Updated Camera 0 with 0 zone(s), monitoring=False
+2026-08-23 23:47:34 | INFO    | Camera-0   | 0 zone(s) monitoring=False
+2026-08-23 23:47:39 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=False
+2026-08-23 23:47:39 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=False
+2026-08-23 23:47:39 | INFO    | Camera-0   | 1 zone(s) monitoring=False
+2026-08-23 23:47:39 | INFO    | App        | Reference saved for Zone 1
+2026-08-23 23:47:44 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=False
+2026-08-23 23:47:44 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=False
+2026-08-23 23:47:44 | INFO    | Camera-0   | 2 zone(s) monitoring=False
+2026-08-23 23:47:44 | INFO    | App        | Reference saved for Zone 1
+2026-08-23 23:47:44 | INFO    | App        | Reference saved for Zone 2
+2026-08-23 23:47:45 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=True
+2026-08-23 23:47:45 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=True
+2026-08-23 23:47:45 | INFO    | Camera-0   | 2 zone(s) monitoring=True
+2026-08-23 23:47:45 | INFO    | App        | Reference saved for Zone 1
+2026-08-23 23:47:45 | INFO    | App        | Reference saved for Zone 2
+2026-08-23 23:47:53 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:47:53 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 1 -> incident_1_20260823_234753.jpg (68378 bytes, 640x480)
+2026-08-23 23:47:53 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 410 pre-event frames
+2026-08-23 23:47:53 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 60.0 Snapshot: incident_1_20260823_234753.jpg
+2026-08-23 23:47:53 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-23 23:48:00 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260823_234759.mp4 (9162184 bytes, 598 frames, 640x480 @ 20fps, 29.9s)
+2026-08-23 23:48:00 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:48:00 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260823_234759.mp4 Status: COMPLETE
+2026-08-23 23:49:16 | INFO    | App        | [PEOPLE_DB] Linked Cluster cluster_001 to Profile person_001 (Varun Thej)
+2026-08-23 23:49:27 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=CAMERA SHIFT / DISPLACEMENT
+2026-08-23 23:49:28 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=CAMERA SHIFT / DISPLACEMENT (Sustained 0.84s)
+2026-08-23 23:49:28 | INFO    | App        | Incident 2 saved to Database
+2026-08-23 23:49:28 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 2 -> tamper_2_20260823_234928.jpg (60664 bytes, 640x480)
+2026-08-23 23:49:28 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=2 path=tamper_2_20260823_234928.jpg size=60664
+2026-08-23 23:49:28 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 2) initialized with 449 pre-event frames
+2026-08-23 23:49:28 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=449 duration=18.0s
+2026-08-23 23:49:28 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=2
+2026-08-23 23:49:28 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #2: CAMERA SHIFT / DISPLACEMENT
+2026-08-23 23:49:28 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=2
+2026-08-23 23:49:31 | INFO    | App        | Incident 3 saved to Database
+2026-08-23 23:49:32 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 3 -> incident_3_20260823_234931.jpg (57612 bytes, 640x480)
+2026-08-23 23:49:32 | INFO    | App        | [VIDEO_STARTED] Session suspicious:0:person_001:SUSPICIOUS_PERSON (Incident: 3) initialized with 441 pre-event frames
+2026-08-23 23:49:32 | WARNING | App        | [INCIDENT_CREATED] #3 (suspicious:0:person_001:SUSPICIOUS_PERSON) Score: 100.0 Snapshot: incident_3_20260823_234931.jpg
+2026-08-23 23:49:32 | INFO    | App        | [ALERT_CREATED] #3 Alert Center synchronized
+2026-08-23 23:49:33 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 3.0s confirmation)
+2026-08-23 23:49:36 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-23 23:49:40 | INFO    | App        | [VIDEO_FINALIZED] Incident 2 -> tamper_2_20260823_234939.mp4 (10073627 bytes, 768 frames, 640x480 @ 20fps, 38.4s)
+2026-08-23 23:49:40 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=768 duration=38.4s
+2026-08-23 23:49:40 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_2_20260823_234939.mp4 size=10073627 frames=768
+2026-08-23 23:49:40 | INFO    | App        | Incident 2 finalized and closed in Database
+2026-08-23 23:49:40 | INFO    | App        | [INCIDENT_CLOSED] #2 Video: tamper_2_20260823_234939.mp4 Status: COMPLETE
+2026-08-23 23:49:40 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=2
+2026-08-23 23:49:40 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #2 recovered
+2026-08-23 23:49:40 | INFO    | App        | [INCIDENT_UPDATED] #3 Dwell: 9.0s (No duplicate alerts generated)
+2026-08-23 23:49:48 | INFO    | App        | [INCIDENT_UPDATED] #3 Dwell: 17.0s (No duplicate alerts generated)
+2026-08-23 23:49:56 | INFO    | App        | [INCIDENT_UPDATED] #3 Dwell: 25.0s (No duplicate alerts generated)
+2026-08-23 23:50:00 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION, CAMERA SHIFT / DISPLACEMENT
+2026-08-23 23:50:01 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION, CAMERA SHIFT / DISPLACEMENT, FRAME FREEZING DETECTED (Sustained 0.84s)
+2026-08-23 23:50:01 | INFO    | App        | Incident 4 saved to Database
+2026-08-23 23:50:01 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 4 -> tamper_4_20260823_235001.jpg (5427 bytes, 640x480)
+2026-08-23 23:50:01 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=4 path=tamper_4_20260823_235001.jpg size=5427
+2026-08-23 23:50:01 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 4) initialized with 441 pre-event frames
+2026-08-23 23:50:01 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=441 duration=17.6s
+2026-08-23 23:50:01 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=4
+2026-08-23 23:50:01 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #4: SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION, CAMERA SHIFT / DISPLACEMENT, FRAME FREEZING DETECTED
+2026-08-23 23:50:01 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=4
+2026-08-23 23:50:11 | INFO    | App        | [TAMPER_UPDATED] #4 Continuous obstruction (10.0s) — 0 duplicate alerts
+2026-08-23 23:50:21 | INFO    | App        | [TAMPER_UPDATED] #4 Continuous obstruction (20.1s) — 0 duplicate alerts
+2026-08-23 23:50:31 | INFO    | App        | [TAMPER_UPDATED] #4 Continuous obstruction (30.1s) — 0 duplicate alerts
+2026-08-23 23:50:31 | INFO    | App        | [PEOPLE_DB] Deactivated Person Profile person_001
+2026-08-23 23:50:37 | INFO    | App        | Incident 5 saved to Database
+2026-08-23 23:50:37 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 5 -> incident_5_20260823_235037.jpg (40694 bytes, 640x480)
+2026-08-23 23:50:37 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-3:Zone-1 (HIGH):ZONE_BREACH (Incident: 5) initialized with 354 pre-event frames
+2026-08-23 23:50:37 | WARNING | App        | [INCIDENT_CREATED] #5 (zone:0:Person-3:Zone-1 (HIGH):ZONE_BREACH) Score: 100.0 Snapshot: incident_5_20260823_235037.jpg
+2026-08-23 23:50:37 | INFO    | App        | [ALERT_CREATED] #5 Alert Center synchronized
+2026-08-23 23:50:38 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 3.0s confirmation)
+2026-08-23 23:50:41 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-23 23:50:43 | INFO    | App        | [VIDEO_FINALIZED] Incident 5 -> incident_5_20260823_235043.mp4 (2567787 bytes, 511 frames, 640x480 @ 20fps, 25.6s)
+2026-08-23 23:50:43 | INFO    | App        | Incident 5 finalized and closed in Database
+2026-08-23 23:50:43 | INFO    | App        | [INCIDENT_CLOSED] #5 Video: incident_5_20260823_235043.mp4 Status: COMPLETE
+2026-08-23 23:50:45 | INFO    | App        | [VIDEO_FINALIZED] Incident 4 -> tamper_4_20260823_235044.mp4 (3086291 bytes, 900 frames, 640x480 @ 20fps, 45.0s)
+2026-08-23 23:50:45 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=900 duration=45.0s
+2026-08-23 23:50:45 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_4_20260823_235044.mp4 size=3086291 frames=900
+2026-08-23 23:50:45 | INFO    | App        | Incident 4 finalized and closed in Database
+2026-08-23 23:50:45 | INFO    | App        | [INCIDENT_CLOSED] #4 Video: tamper_4_20260823_235044.mp4 Status: COMPLETE
+2026-08-23 23:50:45 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=4
+2026-08-23 23:50:45 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #4 recovered
+2026-08-23 23:50:52 | INFO    | App        | Incident 6 saved to Database
+2026-08-23 23:50:52 | INFO    | App        | [SNAPSHOT_CAPTURED] Incident 6 -> incident_6_20260823_235052.jpg (68331 bytes, 640x480)
+2026-08-23 23:50:52 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-3:Zone-1 (HIGH):ZONE_BREACH (Incident: 6) initialized with 399 pre-event frames
+2026-08-23 23:50:52 | WARNING | App        | [INCIDENT_CREATED] #6 (zone:0:Person-3:Zone-1 (HIGH):ZONE_BREACH) Score: 60.0 Snapshot: incident_6_20260823_235052.jpg
+2026-08-23 23:50:52 | INFO    | App        | [ALERT_CREATED] #6 Alert Center synchronized
+2026-08-23 23:50:57 | INFO    | App        | [VIDEO_FINALIZED] Incident 6 -> incident_6_20260823_235056.mp4 (7798272 bytes, 521 frames, 640x480 @ 20fps, 26.1s)
+2026-08-23 23:50:57 | INFO    | App        | Incident 6 finalized and closed in Database
+2026-08-23 23:50:57 | INFO    | App        | [INCIDENT_CLOSED] #6 Video: incident_6_20260823_235056.mp4 Status: COMPLETE
+2026-08-23 23:51:09 | INFO    | App        | ZoneStore: Updated Camera 0 with 0 zone(s), monitoring=False
+2026-08-23 23:51:09 | INFO    | App        | ZoneStore: Updated Camera 0 with 0 zone(s), monitoring=False
+2026-08-23 23:51:09 | INFO    | Camera-0   | 0 zone(s) monitoring=False
+2026-08-23 23:59:50 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-23 23:59:50 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-23 23:59:50 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-23 23:59:50 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-23 23:59:50 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Person-17 (Track #17)
+2026-08-23 23:59:50 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:59:50 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=1
+2026-08-23 23:59:50 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=1 path=incident_1_20260823_235950.jpg
+2026-08-23 23:59:50 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=1 path=incident_1_20260823_235950.jpg size=9197 dims=640x480
+2026-08-23 23:59:50 | INFO    | App        | [VIDEO_STARTED] Session zone:0:person_017:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 0 pre-event frames
+2026-08-23 23:59:50 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:person_017:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_1_20260823_235950.jpg
+2026-08-23 23:59:50 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-23 23:59:51 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260823_235951.mp4 (16279 bytes, 17 frames, 640x480 @ 20fps, 0.8s)
+2026-08-23 23:59:51 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:59:51 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260823_235951.mp4 Status: COMPLETE
+2026-08-23 23:59:51 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Person-17 (Track #17)
+2026-08-23 23:59:51 | INFO    | App        | Incident 2 saved to Database
+2026-08-23 23:59:51 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=2
+2026-08-23 23:59:51 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=2 path=incident_2_20260823_235951.jpg
+2026-08-23 23:59:51 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=2 path=incident_2_20260823_235951.jpg size=11633 dims=640x480
+2026-08-23 23:59:51 | INFO    | App        | [VIDEO_STARTED] Session zone:0:person_017:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-23 23:59:51 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:person_017:Zone-1 (HIGH):ZONE_BREACH) Score: 88.0 Snapshot: incident_2_20260823_235951.jpg
+2026-08-23 23:59:51 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-23 23:59:51 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:59:51 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.2s)
+2026-08-23 23:59:51 | INFO    | App        | Incident 1 saved to Database
+2026-08-23 23:59:51 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=1
+2026-08-23 23:59:51 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=1 path=tamper_1_20260823_235951.jpg
+2026-08-23 23:59:51 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=1 path=tamper_1_20260823_235951.jpg size=1827 dims=320x240
+2026-08-23 23:59:51 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=1 path=tamper_1_20260823_235951.jpg size=1827
+2026-08-23 23:59:51 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 1) initialized with 100 pre-event frames
+2026-08-23 23:59:51 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=100 duration=4.0s
+2026-08-23 23:59:51 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=1
+2026-08-23 23:59:51 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #1: SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-23 23:59:51 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=1
+2026-08-23 23:59:51 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.3s confirmation)
+2026-08-23 23:59:51 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-23 23:59:51 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> tamper_1_20260823_235951.mp4 (108722 bytes, 122 frames, 320x240 @ 20fps, 6.1s)
+2026-08-23 23:59:51 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=122 duration=6.1s
+2026-08-23 23:59:51 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_1_20260823_235951.mp4 size=108722 frames=122
+2026-08-23 23:59:51 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-23 23:59:51 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: tamper_1_20260823_235951.mp4 Status: COMPLETE
+2026-08-23 23:59:51 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=1
+2026-08-23 23:59:51 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #1 recovered
+2026-08-23 23:59:51 | ERROR   | App        | [MEDIA RECORDER] Empty frame passed for snapshot (Incident: 999)
+2026-08-24 00:00:19 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-24 00:00:19 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-24 00:00:19 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-24 00:00:19 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-24 00:00:19 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Person-17 (Track #17)
+2026-08-24 00:00:19 | INFO    | App        | Incident 1 saved to Database
+2026-08-24 00:00:19 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=1
+2026-08-24 00:00:19 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=1 path=incident_1_20260824_000019.jpg
+2026-08-24 00:00:19 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=1 path=incident_1_20260824_000019.jpg size=9197 dims=640x480
+2026-08-24 00:00:19 | INFO    | App        | [VIDEO_STARTED] Session zone:0:person_017:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 0 pre-event frames
+2026-08-24 00:00:19 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:person_017:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_1_20260824_000019.jpg
+2026-08-24 00:00:19 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-24 00:00:20 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260824_000020.mp4 (16279 bytes, 17 frames, 640x480 @ 20fps, 0.8s)
+2026-08-24 00:00:20 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-24 00:00:20 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260824_000020.mp4 Status: COMPLETE
+2026-08-24 00:00:20 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Person-17 (Track #17)
+2026-08-24 00:00:20 | INFO    | App        | Incident 2 saved to Database
+2026-08-24 00:00:20 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=2
+2026-08-24 00:00:20 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=2 path=incident_2_20260824_000020.jpg
+2026-08-24 00:00:20 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=2 path=incident_2_20260824_000020.jpg size=11633 dims=640x480
+2026-08-24 00:00:20 | INFO    | App        | [VIDEO_STARTED] Session zone:0:person_017:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-24 00:00:20 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:person_017:Zone-1 (HIGH):ZONE_BREACH) Score: 88.0 Snapshot: incident_2_20260824_000020.jpg
+2026-08-24 00:00:20 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-24 00:00:20 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-24 00:00:20 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.2s)
+2026-08-24 00:00:20 | INFO    | App        | Incident 1 saved to Database
+2026-08-24 00:00:20 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=1
+2026-08-24 00:00:20 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=1 path=tamper_1_20260824_000020.jpg
+2026-08-24 00:00:20 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=1 path=tamper_1_20260824_000020.jpg size=1827 dims=320x240
+2026-08-24 00:00:20 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=1 path=tamper_1_20260824_000020.jpg size=1827
+2026-08-24 00:00:20 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 1) initialized with 100 pre-event frames
+2026-08-24 00:00:20 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=100 duration=4.0s
+2026-08-24 00:00:20 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=1
+2026-08-24 00:00:20 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #1: SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-24 00:00:20 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=1
+2026-08-24 00:00:20 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.3s confirmation)
+2026-08-24 00:00:20 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-24 00:00:20 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> tamper_1_20260824_000020.mp4 (108733 bytes, 122 frames, 320x240 @ 20fps, 6.1s)
+2026-08-24 00:00:20 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=122 duration=6.1s
+2026-08-24 00:00:20 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_1_20260824_000020.mp4 size=108733 frames=122
+2026-08-24 00:00:20 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-24 00:00:20 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: tamper_1_20260824_000020.mp4 Status: COMPLETE
+2026-08-24 00:00:20 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=1
+2026-08-24 00:00:20 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #1 recovered
+2026-08-24 00:00:20 | ERROR   | App        | [MEDIA RECORDER] Empty frame passed for snapshot (Incident: 999)
+2026-08-24 00:00:39 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-24 00:00:39 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-24 00:00:39 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-24 00:00:39 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-24 00:00:43 | INFO    | App        | Incident 3 saved to Database
+2026-08-24 00:00:43 | INFO    | App        | Incident passed through Evidence Cache (Key: None)
+2026-08-24 00:00:43 | INFO    | App        | Incident passed through Evidence Engine (Subject: Person-99)
+2026-08-24 00:00:43 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Person-17 (Track #17)
+2026-08-24 00:00:43 | INFO    | App        | Incident 1 saved to Database
+2026-08-24 00:00:43 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=1
+2026-08-24 00:00:43 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=1 path=incident_1_20260824_000043.jpg
+2026-08-24 00:00:43 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=1 path=incident_1_20260824_000043.jpg size=9197 dims=640x480
+2026-08-24 00:00:43 | INFO    | App        | [VIDEO_STARTED] Session zone:0:person_017:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 0 pre-event frames
+2026-08-24 00:00:43 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:person_017:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_1_20260824_000043.jpg
+2026-08-24 00:00:43 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-24 00:00:44 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260824_000044.mp4 (16279 bytes, 17 frames, 640x480 @ 20fps, 0.8s)
+2026-08-24 00:00:44 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-24 00:00:44 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260824_000044.mp4 Status: COMPLETE
+2026-08-24 00:00:44 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Person-17 (Track #17)
+2026-08-24 00:00:44 | INFO    | App        | Incident 2 saved to Database
+2026-08-24 00:00:44 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=2
+2026-08-24 00:00:44 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=2 path=incident_2_20260824_000044.jpg
+2026-08-24 00:00:44 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=2 path=incident_2_20260824_000044.jpg size=11633 dims=640x480
+2026-08-24 00:00:44 | INFO    | App        | [VIDEO_STARTED] Session zone:0:person_017:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-24 00:00:44 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:person_017:Zone-1 (HIGH):ZONE_BREACH) Score: 88.0 Snapshot: incident_2_20260824_000044.jpg
+2026-08-24 00:00:44 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-24 00:00:44 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-24 00:00:44 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.2s)
+2026-08-24 00:00:44 | INFO    | App        | Incident 1 saved to Database
+2026-08-24 00:00:44 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=1
+2026-08-24 00:00:44 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=1 path=tamper_1_20260824_000044.jpg
+2026-08-24 00:00:44 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=1 path=tamper_1_20260824_000044.jpg size=1827 dims=320x240
+2026-08-24 00:00:44 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=1 path=tamper_1_20260824_000044.jpg size=1827
+2026-08-24 00:00:44 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 1) initialized with 100 pre-event frames
+2026-08-24 00:00:44 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=100 duration=4.0s
+2026-08-24 00:00:44 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=1
+2026-08-24 00:00:44 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #1: SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-24 00:00:44 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=1
+2026-08-24 00:00:44 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.3s confirmation)
+2026-08-24 00:00:44 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-24 00:00:44 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> tamper_1_20260824_000044.mp4 (108769 bytes, 122 frames, 320x240 @ 20fps, 6.1s)
+2026-08-24 00:00:44 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=122 duration=6.1s
+2026-08-24 00:00:44 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_1_20260824_000044.mp4 size=108769 frames=122
+2026-08-24 00:00:44 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-24 00:00:44 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: tamper_1_20260824_000044.mp4 Status: COMPLETE
+2026-08-24 00:00:44 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=1
+2026-08-24 00:00:44 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #1 recovered
+2026-08-24 00:00:44 | ERROR   | App        | [MEDIA RECORDER] Empty frame passed for snapshot (Incident: 999)
+2026-08-24 00:00:46 | INFO    | App        | Incident passed through Evidence Engine (Subject: Person-99)
+2026-08-24 00:00:46 | WARNING | App        | Camera 0: Feed disconnected (Count: 1)
+2026-08-24 00:00:47 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Person-1 (Track #1)
+2026-08-24 00:00:47 | INFO    | App        | Incident 1 saved to Database
+2026-08-24 00:00:47 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=1
+2026-08-24 00:00:47 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=1 path=incident_1_20260824_000047.jpg
+2026-08-24 00:00:47 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=1 path=incident_1_20260824_000047.jpg size=5427 dims=640x480
+2026-08-24 00:00:47 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 0 pre-event frames
+2026-08-24 00:00:47 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_1_20260824_000047.jpg
+2026-08-24 00:00:47 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-24 00:00:47 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260824_000047.mp4 (45760 bytes, 102 frames, 640x480 @ 20fps, 5.1s)
+2026-08-24 00:00:47 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-24 00:00:47 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260824_000047.mp4 Status: COMPLETE
+2026-08-24 00:00:47 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Person-1 (Track #1)
+2026-08-24 00:00:47 | INFO    | App        | Incident 2 saved to Database
+2026-08-24 00:00:47 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=2
+2026-08-24 00:00:47 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=2 path=incident_2_20260824_000047.jpg
+2026-08-24 00:00:47 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=2 path=incident_2_20260824_000047.jpg size=5427 dims=640x480
+2026-08-24 00:00:47 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-24 00:00:47 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_2_20260824_000047.jpg
+2026-08-24 00:00:47 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-24 00:00:47 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-24 00:00:47 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Person-1 (Track #1)
+2026-08-24 00:00:47 | INFO    | App        | Incident 1 saved to Database
+2026-08-24 00:00:47 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=1
+2026-08-24 00:00:47 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=1 path=incident_1_20260824_000047.jpg
+2026-08-24 00:00:47 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=1 path=incident_1_20260824_000047.jpg size=13614 dims=640x480
+2026-08-24 00:00:47 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 1) initialized with 10 pre-event frames
+2026-08-24 00:00:47 | WARNING | App        | [INCIDENT_CREATED] #1 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 90.0 Snapshot: incident_1_20260824_000047.jpg
+2026-08-24 00:00:47 | INFO    | App        | [ALERT_CREATED] #1 Alert Center synchronized
+2026-08-24 00:00:48 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> incident_1_20260824_000048.mp4 (102105 bytes, 72 frames, 640x480 @ 20fps, 3.6s)
+2026-08-24 00:00:48 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-24 00:00:48 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: incident_1_20260824_000048.mp4 Status: COMPLETE
+2026-08-24 00:00:48 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Person-1 (Track #1)
+2026-08-24 00:00:48 | INFO    | App        | Incident 2 saved to Database
+2026-08-24 00:00:48 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=2
+2026-08-24 00:00:48 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=2 path=incident_2_20260824_000048.jpg
+2026-08-24 00:00:48 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=2 path=incident_2_20260824_000048.jpg size=13614 dims=640x480
+2026-08-24 00:00:48 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 0 pre-event frames
+2026-08-24 00:00:48 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 85.0 Snapshot: incident_2_20260824_000048.jpg
+2026-08-24 00:00:48 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-24 00:00:48 | INFO    | App        | Incident 3 saved to Database
+2026-08-24 00:00:48 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=3
+2026-08-24 00:00:48 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=3 path=tamper_3_20260824_000048.jpg
+2026-08-24 00:00:48 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=3 path=tamper_3_20260824_000048.jpg size=5427 dims=640x480
+2026-08-24 00:00:48 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=3 path=tamper_3_20260824_000048.jpg size=5427
+2026-08-24 00:00:48 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 3) initialized with 10 pre-event frames
+2026-08-24 00:00:48 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=10 duration=0.4s
+2026-08-24 00:00:48 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=3
+2026-08-24 00:00:48 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #3: SUDDEN DARKNESS / LENS COVERED
+2026-08-24 00:00:48 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=3
+2026-08-24 00:00:50 | INFO    | App        | [VIDEO_FINALIZED] Incident 3 -> tamper_3_20260824_000050.mp4 (34825 bytes, 42 frames, 640x480 @ 20fps, 2.1s)
+2026-08-24 00:00:50 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=42 duration=2.1s
+2026-08-24 00:00:50 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_3_20260824_000050.mp4 size=34825 frames=42
+2026-08-24 00:00:50 | INFO    | App        | Incident 3 finalized and closed in Database
+2026-08-24 00:00:50 | INFO    | App        | [INCIDENT_CLOSED] #3 Video: tamper_3_20260824_000050.mp4 Status: COMPLETE
+2026-08-24 00:00:50 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=3
+2026-08-24 00:00:50 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #3 recovered
+2026-08-24 00:00:50 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=101
+2026-08-24 00:00:50 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=101 path=incident_101_20260824_000050.jpg
+2026-08-24 00:00:50 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=101 path=incident_101_20260824_000050.jpg size=8743 dims=640x480
+2026-08-24 00:00:50 | ERROR   | App        | [MEDIA RECORDER] Empty frame passed for snapshot (Incident: 102)
+2026-08-24 00:00:50 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1:BREACH (Incident: 201) initialized with 10 pre-event frames
+2026-08-24 00:00:50 | INFO    | App        | [VIDEO_FINALIZED] Incident 201 -> incident_201_20260824_000050.mp4 (11585 bytes, 25 frames, 320x240 @ 10fps, 2.5s)
+2026-08-24 00:00:52 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-24 00:00:52 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-24 00:00:52 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: Test Varun [KNOWN]
+2026-08-24 00:00:52 | INFO    | App        | [PEOPLE_DB] Added reference face #1 to person person_001
+2026-08-24 00:00:52 | INFO    | App        | [PEOPLE_DB] Created Person Profile person_001: API Guard [KNOWN]
+2026-08-24 00:00:52 | INFO    | App        | [PEOPLE_DB] Updated Person Profile person_001: Name=API Guard Updated, Class=SUSPICIOUS, Status=ACTIVE
+2026-08-24 00:00:52 | INFO    | App        | [PEOPLE_DB] Deactivated Person Profile person_001
+2026-08-24 00:00:53 | INFO    | App        | Incident 1 saved to Database
+2026-08-24 00:00:53 | INFO    | App        | Incident passed through Evidence Cache (Key: 2026-08-23T18:30:53.284218)
+2026-08-24 00:00:53 | INFO    | App        | Mode → GUARD
+2026-08-24 00:00:56 | INFO    | App        | Incident 1 saved to Database
+2026-08-24 00:00:56 | INFO    | App        | Incident passed through Evidence Cache (Key: None)
+2026-08-24 00:00:56 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-24 00:00:56 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.2s)
+2026-08-24 00:00:56 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.2s confirmation)
+2026-08-24 00:00:56 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-24 00:00:56 | INFO    | App        | [TAMPER_POSSIBLE] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-24 00:00:56 | WARNING | App        | [TAMPER_CONFIRMED] camera=0 reason=SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION (Sustained 0.4s)
+2026-08-24 00:00:56 | INFO    | App        | Incident 1 saved to Database
+2026-08-24 00:00:56 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=1
+2026-08-24 00:00:56 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=1 path=tamper_1_20260824_000056.jpg
+2026-08-24 00:00:56 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=1 path=tamper_1_20260824_000056.jpg size=1827 dims=320x240
+2026-08-24 00:00:56 | INFO    | App        | [TAMPER_SNAPSHOT_CAPTURED] incident_id=1 path=tamper_1_20260824_000056.jpg size=1827
+2026-08-24 00:00:56 | INFO    | App        | [VIDEO_STARTED] Session tamper:0:TAMPER (Incident: 1) initialized with 150 pre-event frames
+2026-08-24 00:00:56 | INFO    | App        | [TAMPER_PREROLL_CAPTURED] frames=150 duration=6.0s
+2026-08-24 00:00:56 | INFO    | App        | [TAMPER_RECORDING_STARTED] incident_id=1
+2026-08-24 00:00:56 | WARNING | App        | [TAMPER_STARTED] Camera 0 Tamper #1: SUDDEN DARKNESS / LENS COVERED, CAMERA BLUR / LENS OBSTRUCTION
+2026-08-24 00:00:56 | INFO    | App        | [TAMPER_INCIDENT_CREATED] incident_id=1
+2026-08-24 00:00:56 | INFO    | App        | [TAMPER_RECOVERY_DETECTED] camera=0 (Starting 0.5s confirmation)
+2026-08-24 00:00:56 | INFO    | App        | [TAMPER_RECOVERED] camera=0 Normal feed fully restored
+2026-08-24 00:00:56 | INFO    | App        | [VIDEO_FINALIZED] Incident 1 -> tamper_1_20260824_000056.mp4 (122185 bytes, 182 frames, 320x240 @ 20fps, 9.1s)
+2026-08-24 00:00:56 | INFO    | App        | [TAMPER_RECORDING_FINALIZED] frames=182 duration=9.1s
+2026-08-24 00:00:56 | INFO    | App        | [TAMPER_VIDEO_VALIDATED] path=tamper_1_20260824_000056.mp4 size=122185 frames=182
+2026-08-24 00:00:56 | INFO    | App        | Incident 1 finalized and closed in Database
+2026-08-24 00:00:56 | INFO    | App        | [INCIDENT_CLOSED] #1 Video: tamper_1_20260824_000056.mp4 Status: COMPLETE
+2026-08-24 00:00:56 | INFO    | App        | [TAMPER_INCIDENT_CLOSED] incident_id=1
+2026-08-24 00:00:56 | INFO    | App        | [TAMPER_RESOLVED] Camera 0 Incident #1 recovered
+2026-08-24 00:00:57 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=True
+2026-08-24 00:00:57 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=True
+2026-08-24 00:04:04 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-24 00:04:04 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-24 00:04:04 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-24 00:04:05 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-24 00:04:05 | INFO    | App        | Started pipeline for camera 0 (source: 0)
+2026-08-24 00:04:05 | INFO    | App        | Starting CUSTOS Command Center at http://localhost:5000
+2026-08-24 00:04:05 | INFO    | Camera-0   | Opened with DSHOW backend
+2026-08-24 00:04:05 | INFO    | Camera-0   | Camera Ready
+2026-08-24 00:04:31 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=False
+2026-08-24 00:04:31 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=False
+2026-08-24 00:04:31 | INFO    | Camera-0   | 1 zone(s) monitoring=False
+2026-08-24 00:04:31 | INFO    | App        | Reference saved for Zone 1
+2026-08-24 00:04:40 | INFO    | App        | ZoneStore: Updated Camera 0 with 0 zone(s), monitoring=False
+2026-08-24 00:04:40 | INFO    | App        | ZoneStore: Updated Camera 0 with 0 zone(s), monitoring=False
+2026-08-24 00:04:40 | INFO    | Camera-0   | 0 zone(s) monitoring=False
+2026-08-24 00:04:44 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=False
+2026-08-24 00:04:44 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=False
+2026-08-24 00:04:44 | INFO    | Camera-0   | 1 zone(s) monitoring=False
+2026-08-24 00:04:44 | INFO    | App        | Reference saved for Zone 1
+2026-08-24 00:04:49 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=False
+2026-08-24 00:04:49 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=False
+2026-08-24 00:04:49 | INFO    | Camera-0   | 2 zone(s) monitoring=False
+2026-08-24 00:04:49 | INFO    | App        | Reference saved for Zone 1
+2026-08-24 00:04:49 | INFO    | App        | Reference saved for Zone 2
+2026-08-24 00:04:50 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=True
+2026-08-24 00:04:50 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=True
+2026-08-24 00:04:50 | INFO    | Camera-0   | 2 zone(s) monitoring=True
+2026-08-24 00:04:50 | INFO    | App        | Reference saved for Zone 1
+2026-08-24 00:04:50 | INFO    | App        | Reference saved for Zone 2
+2026-08-24 00:04:58 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Unknown (cluster_001) (Track #1)
+2026-08-24 00:04:58 | INFO    | App        | Incident 2 saved to Database
+2026-08-24 00:04:58 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=2
+2026-08-24 00:04:58 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=2 path=incident_2_20260824_000458.jpg
+2026-08-24 00:04:58 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=2 path=incident_2_20260824_000458.jpg size=75169 dims=640x480
+2026-08-24 00:04:58 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 2) initialized with 409 pre-event frames
+2026-08-24 00:04:58 | WARNING | App        | [INCIDENT_CREATED] #2 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 60.0 Snapshot: incident_2_20260824_000458.jpg
+2026-08-24 00:04:58 | INFO    | App        | [ALERT_CREATED] #2 Alert Center synchronized
+2026-08-24 00:04:58 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Unknown (cluster_002) (Track #3)
+2026-08-24 00:04:58 | INFO    | App        | Incident 3 saved to Database
+2026-08-24 00:04:58 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=3
+2026-08-24 00:04:58 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=3 path=incident_3_20260824_000458.jpg
+2026-08-24 00:04:58 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=3 path=incident_3_20260824_000458.jpg size=75169 dims=640x480
+2026-08-24 00:04:58 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-3:Zone-1 (HIGH):ZONE_BREACH (Incident: 3) initialized with 409 pre-event frames
+2026-08-24 00:04:58 | WARNING | App        | [INCIDENT_CREATED] #3 (zone:0:Person-3:Zone-1 (HIGH):ZONE_BREACH) Score: 60.0 Snapshot: incident_3_20260824_000458.jpg
+2026-08-24 00:04:58 | INFO    | App        | [ALERT_CREATED] #3 Alert Center synchronized
+2026-08-24 00:05:03 | INFO    | App        | [VIDEO_FINALIZED] Incident 3 -> incident_3_20260824_000502.mp4 (10373487 bytes, 517 frames, 640x480 @ 20fps, 25.9s)
+2026-08-24 00:05:03 | INFO    | App        | Incident 3 finalized and closed in Database
+2026-08-24 00:05:03 | INFO    | App        | [INCIDENT_CLOSED] #3 Video: incident_3_20260824_000502.mp4 Status: COMPLETE
+2026-08-24 00:05:04 | INFO    | App        | [VIDEO_FINALIZED] Incident 2 -> incident_2_20260824_000503.mp4 (10395682 bytes, 518 frames, 640x480 @ 20fps, 25.9s)
+2026-08-24 00:05:04 | INFO    | App        | Incident 2 finalized and closed in Database
+2026-08-24 00:05:04 | INFO    | App        | [INCIDENT_CLOSED] #2 Video: incident_2_20260824_000503.mp4 Status: COMPLETE
+2026-08-24 00:05:17 | INFO    | App        | [PEOPLE_DB] Linked Cluster cluster_002 to Profile person_001 (abhi)
+2026-08-24 00:05:28 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Unknown (cluster_002) (Track #2)
+2026-08-24 00:05:28 | INFO    | App        | Incident 4 saved to Database
+2026-08-24 00:05:28 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=4
+2026-08-24 00:05:28 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=4 path=incident_4_20260824_000528.jpg
+2026-08-24 00:05:28 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=4 path=incident_4_20260824_000528.jpg size=69316 dims=640x480
+2026-08-24 00:05:28 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-2:Zone-1 (HIGH):ZONE_BREACH (Incident: 4) initialized with 448 pre-event frames
+2026-08-24 00:05:28 | WARNING | App        | [INCIDENT_CREATED] #4 (zone:0:Person-2:Zone-1 (HIGH):ZONE_BREACH) Score: 60.0 Snapshot: incident_4_20260824_000528.jpg
+2026-08-24 00:05:28 | INFO    | App        | [ALERT_CREATED] #4 Alert Center synchronized
+2026-08-24 00:05:32 | INFO    | App        | [VIDEO_FINALIZED] Incident 4 -> incident_4_20260824_000531.mp4 (11060110 bytes, 552 frames, 640x480 @ 20fps, 27.6s)
+2026-08-24 00:05:32 | INFO    | App        | Incident 4 finalized and closed in Database
+2026-08-24 00:05:32 | INFO    | App        | [INCIDENT_CLOSED] #4 Video: incident_4_20260824_000531.mp4 Status: COMPLETE
+2026-08-24 00:05:55 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Unknown (cluster_002) (Track #2)
+2026-08-24 00:05:55 | INFO    | App        | Incident 5 saved to Database
+2026-08-24 00:05:55 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=5
+2026-08-24 00:05:55 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=5 path=incident_5_20260824_000555.jpg
+2026-08-24 00:05:55 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=5 path=incident_5_20260824_000555.jpg size=81040 dims=640x480
+2026-08-24 00:05:55 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-2:Zone-1 (HIGH):ZONE_BREACH (Incident: 5) initialized with 446 pre-event frames
+2026-08-24 00:05:55 | WARNING | App        | [INCIDENT_CREATED] #5 (zone:0:Person-2:Zone-1 (HIGH):ZONE_BREACH) Score: 60.0 Snapshot: incident_5_20260824_000555.jpg
+2026-08-24 00:05:55 | INFO    | App        | [ALERT_CREATED] #5 Alert Center synchronized
+2026-08-24 00:06:00 | INFO    | App        | [VIDEO_FINALIZED] Incident 5 -> incident_5_20260824_000559.mp4 (11752023 bytes, 566 frames, 640x480 @ 20fps, 28.3s)
+2026-08-24 00:06:00 | INFO    | App        | Incident 5 finalized and closed in Database
+2026-08-24 00:06:00 | INFO    | App        | [INCIDENT_CLOSED] #5 Video: incident_5_20260824_000559.mp4 Status: COMPLETE
+2026-08-24 00:06:10 | WARNING | App        | [SUSPICIOUS_PERSON_CONFIRMED] camera=0 subject=abhi (Track #6)
+2026-08-24 00:06:10 | INFO    | App        | Incident 6 saved to Database
+2026-08-24 00:06:10 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=6
+2026-08-24 00:06:10 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=6 path=incident_6_20260824_000610.jpg
+2026-08-24 00:06:10 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=6 path=incident_6_20260824_000610.jpg size=81741 dims=640x480
+2026-08-24 00:06:10 | INFO    | App        | [VIDEO_STARTED] Session suspicious:0:person_001:SUSPICIOUS_PERSON (Incident: 6) initialized with 416 pre-event frames
+2026-08-24 00:06:10 | WARNING | App        | [INCIDENT_CREATED] #6 (suspicious:0:person_001:SUSPICIOUS_PERSON) Score: 75.0 Snapshot: incident_6_20260824_000610.jpg
+2026-08-24 00:06:10 | INFO    | App        | [ALERT_CREATED] #6 Alert Center synchronized
+2026-08-24 00:06:18 | INFO    | App        | [INCIDENT_UPDATED] #6 Dwell: 8.8s (No duplicate alerts generated)
+2026-08-24 00:06:28 | INFO    | App        | [INCIDENT_UPDATED] #6 Dwell: 18.3s (No duplicate alerts generated)
+2026-08-24 00:06:36 | INFO    | App        | [INCIDENT_UPDATED] #6 Dwell: 26.7s (No duplicate alerts generated)
+2026-08-24 00:07:18 | INFO    | App        | [PEOPLE_DB] Deactivated Person Profile person_001
+2026-08-24 00:07:18 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Person-13 (Track #13)
+2026-08-24 00:07:18 | INFO    | App        | Incident 7 saved to Database
+2026-08-24 00:07:18 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=7
+2026-08-24 00:07:18 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=7 path=incident_7_20260824_000718.jpg
+2026-08-24 00:07:18 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=7 path=incident_7_20260824_000718.jpg size=86541 dims=640x480
+2026-08-24 00:07:18 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-13:Zone-1 (HIGH):ZONE_BREACH (Incident: 7) initialized with 448 pre-event frames
+2026-08-24 00:07:18 | WARNING | App        | [INCIDENT_CREATED] #7 (zone:0:Person-13:Zone-1 (HIGH):ZONE_BREACH) Score: 60.0 Snapshot: incident_7_20260824_000718.jpg
+2026-08-24 00:07:18 | INFO    | App        | [ALERT_CREATED] #7 Alert Center synchronized
+2026-08-24 00:07:18 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Unknown (cluster_002) (Track #2)
+2026-08-24 00:07:18 | INFO    | App        | Incident 8 saved to Database
+2026-08-24 00:07:18 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=8
+2026-08-24 00:07:18 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=8 path=incident_8_20260824_000718.jpg
+2026-08-24 00:07:18 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=8 path=incident_8_20260824_000718.jpg size=85860 dims=640x480
+2026-08-24 00:07:19 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-2:Zone-1 (HIGH):ZONE_BREACH (Incident: 8) initialized with 440 pre-event frames
+2026-08-24 00:07:19 | WARNING | App        | [INCIDENT_CREATED] #8 (zone:0:Person-2:Zone-1 (HIGH):ZONE_BREACH) Score: 60.0 Snapshot: incident_8_20260824_000718.jpg
+2026-08-24 00:07:19 | INFO    | App        | [ALERT_CREATED] #8 Alert Center synchronized
+2026-08-24 00:07:23 | INFO    | App        | [VIDEO_FINALIZED] Incident 7 -> incident_7_20260824_000722.mp4 (10718542 bytes, 547 frames, 640x480 @ 20fps, 27.4s)
+2026-08-24 00:07:23 | INFO    | App        | Incident 7 finalized and closed in Database
+2026-08-24 00:07:23 | INFO    | App        | [INCIDENT_CLOSED] #7 Video: incident_7_20260824_000722.mp4 Status: COMPLETE
+2026-08-24 00:07:24 | INFO    | App        | [VIDEO_FINALIZED] Incident 8 -> incident_8_20260824_000723.mp4 (10532594 bytes, 538 frames, 640x480 @ 20fps, 26.9s)
+2026-08-24 00:07:24 | INFO    | App        | Incident 8 finalized and closed in Database
+2026-08-24 00:07:24 | INFO    | App        | [INCIDENT_CLOSED] #8 Video: incident_8_20260824_000723.mp4 Status: COMPLETE
+2026-08-24 00:07:33 | INFO    | App        | ZoneStore: Updated Camera 0 with 0 zone(s), monitoring=False
+2026-08-24 00:07:33 | INFO    | App        | ZoneStore: Updated Camera 0 with 0 zone(s), monitoring=False
+2026-08-24 00:07:33 | INFO    | Camera-0   | 0 zone(s) monitoring=False
+2026-08-26 18:14:26 | INFO    | App        | [FACE ENGINE] Initialized YuNet & SFace (Match Threshold: 0.4)
+2026-08-26 18:14:26 | INFO    | App        | [AI ENGINE] Initialized CUSTOS 2.8 Modular Perception, Face Intelligence & Behavior Architecture
+2026-08-26 18:14:28 | INFO    | App        | Admin credentials guaranteed: username=admin | password=admin123
+2026-08-26 18:14:28 | INFO    | App        | [STORAGE QUEUE] Hardened Storage Queue Worker Started
+2026-08-26 18:14:28 | INFO    | App        | Started pipeline for camera 0 (source: 0)
+2026-08-26 18:14:28 | INFO    | App        | Starting CUSTOS Command Center at http://localhost:5000
+2026-08-26 18:14:29 | INFO    | Camera-0   | Opened with DSHOW backend
+2026-08-26 18:14:29 | INFO    | Camera-0   | Camera Ready
+2026-08-26 18:15:46 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=False
+2026-08-26 18:15:46 | INFO    | App        | ZoneStore: Updated Camera 0 with 1 zone(s), monitoring=False
+2026-08-26 18:15:46 | INFO    | Camera-0   | 1 zone(s) monitoring=False
+2026-08-26 18:15:46 | INFO    | App        | Reference saved for Zone 1
+2026-08-26 18:15:52 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=False
+2026-08-26 18:15:52 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=False
+2026-08-26 18:15:52 | INFO    | Camera-0   | 2 zone(s) monitoring=False
+2026-08-26 18:15:52 | INFO    | App        | Reference saved for Zone 1
+2026-08-26 18:15:52 | INFO    | App        | Reference saved for Zone 2
+2026-08-26 18:15:54 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=True
+2026-08-26 18:15:54 | INFO    | App        | ZoneStore: Updated Camera 0 with 2 zone(s), monitoring=True
+2026-08-26 18:15:54 | INFO    | Camera-0   | 2 zone(s) monitoring=True
+2026-08-26 18:15:54 | INFO    | App        | Reference saved for Zone 1
+2026-08-26 18:15:54 | INFO    | App        | Reference saved for Zone 2
+2026-08-26 18:15:57 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Unknown (cluster_001) (Track #1)
+2026-08-26 18:15:57 | INFO    | App        | Incident 9 saved to Database
+2026-08-26 18:15:57 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=9
+2026-08-26 18:15:57 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=9 path=incident_9_20260826_181557.jpg
+2026-08-26 18:15:57 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=9 path=incident_9_20260826_181557.jpg size=56830 dims=640x480
+2026-08-26 18:15:57 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH (Incident: 9) initialized with 355 pre-event frames
+2026-08-26 18:15:57 | WARNING | App        | [INCIDENT_CREATED] #9 (zone:0:Person-1:Zone-1 (HIGH):ZONE_BREACH) Score: 60.0 Snapshot: incident_9_20260826_181557.jpg
+2026-08-26 18:15:57 | INFO    | App        | [ALERT_CREATED] #9 Alert Center synchronized
+2026-08-26 18:16:02 | WARNING | App        | [ZONE_BREACH_CONFIRMED] camera=0 zone=Zone-1 (HIGH) subject=Person-3 (Track #3)
+2026-08-26 18:16:02 | INFO    | App        | Incident 10 saved to Database
+2026-08-26 18:16:02 | INFO    | App        | [SNAPSHOT_CAPTURE_STARTED] incident_id=10
+2026-08-26 18:16:02 | INFO    | App        | [SNAPSHOT_CAPTURED] incident_id=10 path=incident_10_20260826_181602.jpg
+2026-08-26 18:16:02 | INFO    | App        | [SNAPSHOT_VALIDATED] incident_id=10 path=incident_10_20260826_181602.jpg size=59288 dims=640x480
+2026-08-26 18:16:02 | INFO    | App        | [VIDEO_STARTED] Session zone:0:Person-3:Zone-1 (HIGH):ZONE_BREACH (Incident: 10) initialized with 350 pre-event frames
+2026-08-26 18:16:02 | WARNING | App        | [INCIDENT_CREATED] #10 (zone:0:Person-3:Zone-1 (HIGH):ZONE_BREACH) Score: 60.0 Snapshot: incident_10_20260826_181602.jpg
+2026-08-26 18:16:02 | INFO    | App        | [ALERT_CREATED] #10 Alert Center synchronized
+2026-08-26 18:16:04 | INFO    | App        | ZoneStore: Updated Camera 0 with 0 zone(s), monitoring=False
+2026-08-26 18:16:04 | INFO    | App        | ZoneStore: Updated Camera 0 with 0 zone(s), monitoring=False
+2026-08-26 18:16:04 | INFO    | Camera-0   | 0 zone(s) monitoring=False

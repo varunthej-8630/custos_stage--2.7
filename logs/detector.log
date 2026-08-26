@@ -262,3 +262,85 @@
 2026-08-22 04:09:20 | INFO    | Detector   | Perception Engine Ready!
 2026-08-22 04:13:52 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
 2026-08-22 04:13:52 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:26:36 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:26:36 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:27:40 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:27:40 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:28:12 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:28:12 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:29:19 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:29:19 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:29:31 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:29:31 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:29:48 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:29:48 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:29:48 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:29:48 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:29:48 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:29:48 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:29:48 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:29:48 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:30:51 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:30:51 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:31:07 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:31:07 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:31:07 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:31:07 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:31:07 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:31:07 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:31:07 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:31:07 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:31:34 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:31:34 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:31:50 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:31:50 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:31:50 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:31:50 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:31:50 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:31:50 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:31:50 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:31:50 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:32:06 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:32:06 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:32:22 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:32:22 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:32:22 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:32:22 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:32:22 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:32:22 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:32:22 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:32:22 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:41:18 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:41:18 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:41:35 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:41:35 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:41:35 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:41:35 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:41:35 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:41:35 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:41:35 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:41:35 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:42:12 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:42:12 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:46:30 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:46:30 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:47:11 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:47:11 | INFO    | Detector   | Perception Engine Ready!
+2026-08-23 23:59:50 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-23 23:59:50 | INFO    | Detector   | Perception Engine Ready!
+2026-08-24 00:00:19 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-24 00:00:19 | INFO    | Detector   | Perception Engine Ready!
+2026-08-24 00:00:39 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-24 00:00:39 | INFO    | Detector   | Perception Engine Ready!
+2026-08-24 00:00:57 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-24 00:00:57 | INFO    | Detector   | Perception Engine Ready!
+2026-08-24 00:00:57 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-24 00:00:57 | INFO    | Detector   | Perception Engine Ready!
+2026-08-24 00:00:57 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-24 00:00:57 | INFO    | Detector   | Perception Engine Ready!
+2026-08-24 00:00:57 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-24 00:00:57 | INFO    | Detector   | Perception Engine Ready!
+2026-08-24 00:04:04 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-24 00:04:04 | INFO    | Detector   | Perception Engine Ready!
+2026-08-26 18:14:26 | INFO    | Detector   | Loading Perception Model: data/weights/yolov8n.pt (conf=0.4, size=480)
+2026-08-26 18:14:26 | INFO    | Detector   | Perception Engine Ready!

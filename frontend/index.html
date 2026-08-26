@@ -332,6 +332,60 @@ a{text-decoration:none;color:inherit;}
 .cam-apply{width:100%;background:var(--blue);color:#fff;border-radius:var(--r);padding:12px;font-size:13px;font-weight:700;cursor:pointer;}
 .cam-apply:disabled{opacity:0.5;cursor:not-allowed;}
 
+/* ── AI ANALYTICS & PEOPLE INTELLIGENCE ── */
+.people-subnav{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:10px;}
+.people-tabs{display:flex;align-items:center;gap:6px;}
+.people-tab-btn{padding:8px 18px;border-radius:var(--r);border:1px solid var(--border);background:var(--white);font-size:12px;font-weight:700;cursor:pointer;color:var(--txt2);transition:all 0.15s;}
+.people-tab-btn:hover{background:var(--bg);color:var(--txt);}
+.people-tab-btn.on{background:var(--blue-bg);color:var(--blue);border-color:rgba(37,99,235,0.3);}
+.people-tab-btn.suspicious-tab.on{background:var(--red-bg);color:var(--red);border-color:rgba(220,38,38,0.3);}
+.add-person-btn{padding:8px 18px;border-radius:var(--r);background:var(--blue);color:#fff;border:none;font-size:12px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(37,99,235,0.25);}
+.add-person-btn:hover{background:var(--blue2);}
+
+.faces-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));gap:16px;}
+.face-card{background:var(--white);border-radius:var(--r2);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow);transition:transform 0.18s ease, box-shadow 0.18s ease;cursor:pointer;display:flex;flex-direction:column;}
+.face-card:hover{transform:translateY(-3px);box-shadow:var(--shadow2);border-color:var(--border-strong);}
+.face-thumb-wrap{position:relative;width:100%;height:180px;background:var(--bg2);overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.face-thumb-img{width:100%;height:100%;object-fit:cover;display:block;}
+.face-avatar-placeholder{width:64px;height:64px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--txt3);}
+.face-badge-top{position:absolute;top:8px;left:8px;padding:3px 8px;border-radius:12px;font-size:10px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;font-family:var(--mono);}
+.face-app-count{position:absolute;bottom:8px;right:8px;background:rgba(15,23,42,0.75);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;backdrop-filter:blur(4px);font-family:var(--mono);}
+.face-card-body{padding:12px;display:flex;flex-direction:column;gap:4px;}
+.face-name{font-size:14px;font-weight:800;color:var(--txt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.face-sub{font-size:11px;color:var(--txt3);display:flex;align-items:center;justify-content:space-between;}
+
+.class-pill{padding:3px 8px;border-radius:12px;font-size:10px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;font-family:var(--mono);display:inline-block;}
+.class-pill.known{background:var(--green-bg);color:var(--green);border:1px solid rgba(22,163,74,0.25);}
+.class-pill.unknown{background:var(--bg2);color:var(--txt2);border:1px solid var(--border);}
+.class-pill.suspicious{background:var(--red-bg);color:var(--red);border:1px solid rgba(220,38,38,0.3);}
+
+.profiles-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:16px;}
+.profile-card{background:var(--white);border-radius:var(--r2);border:1px solid var(--border);padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;transition:all 0.15s;}
+.profile-card:hover{box-shadow:var(--shadow2);border-color:var(--border-strong);}
+.profile-head{display:flex;align-items:center;gap:14px;}
+.profile-avatar-box{width:56px;height:56px;border-radius:50%;background:var(--bg2);overflow:hidden;flex-shrink:0;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;}
+.profile-avatar-img{width:100%;height:100%;object-fit:cover;}
+.profile-meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:var(--bg);padding:10px;border-radius:var(--r);font-size:11px;}
+.profile-meta-lbl{color:var(--txt3);font-size:10px;text-transform:uppercase;font-weight:700;letter-spacing:0.04em;}
+.profile-meta-val{font-weight:700;color:var(--txt);margin-top:2px;font-family:var(--mono);}
+.profile-foot-btns{display:flex;align-items:center;gap:8px;margin-top:auto;}
+.profile-action-btn{flex:1;padding:8px;border-radius:var(--r);border:1px solid var(--border);background:var(--white);color:var(--txt2);font-size:11px;font-weight:700;cursor:pointer;text-align:center;}
+.profile-action-btn:hover{background:var(--bg);color:var(--txt);}
+.profile-action-btn.primary{background:var(--blue-bg);color:var(--blue);border-color:rgba(37,99,235,0.25);}
+
+.suspicious-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));gap:16px;}
+.suspicious-card{background:var(--white);border-radius:var(--r2);border:1.5px solid rgba(220,38,38,0.3);padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;background:linear-gradient(to bottom, #fff, var(--red-bg) 180%);}
+
+.ref-photos-gallery{display:grid;grid-template-columns:repeat(auto-fill, minmax(100px, 1fr));gap:10px;margin-top:8px;}
+.ref-photo-item{position:relative;height:100px;border-radius:var(--r);background:var(--bg2);overflow:hidden;border:1px solid var(--border);}
+.ref-photo-img{width:100%;height:100%;object-fit:cover;}
+.ref-del-btn{position:absolute;top:4px;right:4px;width:22px;height:22px;border-radius:50%;background:rgba(220,38,38,0.85);color:#fff;border:none;cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;}
+.ref-del-btn:hover{background:var(--red);}
+
+.photo-upload-dropzone{border:2px dashed var(--border-strong);border-radius:var(--r2);padding:24px;text-align:center;background:var(--bg);cursor:pointer;transition:all 0.15s;}
+.photo-upload-dropzone:hover{border-color:var(--blue);background:var(--blue-bg);}
+.photo-preview-wrap{width:140px;height:140px;border-radius:var(--r2);background:var(--bg2);margin:0 auto 12px;overflow:hidden;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;}
+
 @media(max-width:768px){
   .shell{flex-direction:column;}
   .sidebar{width:100%!important;min-width:100%!important;height:auto;flex-direction:row;border-right:none;border-bottom:1px solid var(--border);}
@@ -342,6 +396,7 @@ a{text-decoration:none;color:inherit;}
   .sec-stats-bar{grid-template-columns:1fr 1fr;}
 }
 </style>
+
 </head>
 <body>
 
@@ -447,13 +502,177 @@ a{text-decoration:none;color:inherit;}
   </div>
 </div>
 
+<!-- ADD PERSON MODAL -->
+<div class="sec-modal-backdrop" id="addPersonModal">
+  <div class="sec-modal-box" style="max-width:560px;">
+    <div class="sm-head">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="sm-title">➕ Add Person to AI Analytics</span>
+      </div>
+      <button class="sm-close" onclick="closeAddPersonModal()">✕</button>
+    </div>
+    <div class="sm-body">
+      <!-- Method Selector -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
+        <button class="people-tab-btn on" id="methodBtnUpload" onclick="selectAddPersonMethod('upload')">📸 Upload Photo</button>
+        <button class="people-tab-btn" id="methodBtnCluster" onclick="selectAddPersonMethod('cluster')">🔍 Select Detected Face</button>
+      </div>
+
+      <!-- METHOD B: UPLOAD PHOTO -->
+      <div id="methodUploadSection">
+        <input type="file" id="enrollPhotoInput" accept="image/jpeg,image/png" style="display:none;" onchange="onEnrollPhotoSelected(event)">
+        <div class="photo-upload-dropzone" onclick="document.getElementById('enrollPhotoInput').click()">
+          <div class="photo-preview-wrap" id="enrollPreviewWrap">
+            <span style="font-size:36px;color:var(--txt3);" id="enrollPlaceholderIcon">📷</span>
+            <img id="enrollPreviewImg" src="" style="width:100%;height:100%;object-fit:cover;display:none;">
+          </div>
+          <div style="font-size:13px;font-weight:700;color:var(--txt);" id="uploadPromptText">Click or Drag & Drop face photograph</div>
+          <div style="font-size:11px;color:var(--txt3);margin-top:4px;">High quality JPG or PNG containing one clear face</div>
+        </div>
+        <div id="uploadFeedbackBox" style="margin-top:10px;display:none;padding:10px 14px;border-radius:var(--r);font-size:12px;font-weight:600;"></div>
+      </div>
+
+      <!-- METHOD A: SELECT DETECTED FACE CLUSTER -->
+      <div id="methodClusterSection" style="display:none;">
+        <label style="display:block;font-size:11px;font-weight:800;color:var(--txt3);text-transform:uppercase;margin-bottom:6px;">Select Detected Unknown Cluster</label>
+        <select class="sec-select" id="clusterSelectDropdown" style="width:100%;padding:10px 12px;font-size:13px;" onchange="onClusterDropdownChange()">
+          <option value="">-- Loading detected face clusters... --</option>
+        </select>
+        <div id="selectedClusterPreview" style="margin-top:10px;display:none;align-items:center;gap:12px;padding:10px;background:var(--bg);border-radius:var(--r);">
+          <img id="selClusterImg" src="" style="width:50px;height:50px;border-radius:50%;object-fit:cover;">
+          <div>
+            <div style="font-weight:800;color:var(--txt);" id="selClusterCode"></div>
+            <div style="font-size:11px;color:var(--txt3);" id="selClusterMeta"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Person Metadata Inputs -->
+      <div style="margin-top:16px;">
+        <label style="display:block;font-size:11px;font-weight:800;color:var(--txt3);text-transform:uppercase;margin-bottom:6px;">Person Name / Label *</label>
+        <input type="text" id="personNameInput" class="sec-search-input" style="width:100%;padding:10px 12px;font-size:13px;" placeholder="e.g. Varun, Security Guard, Staff...">
+      </div>
+
+      <div style="margin-top:14px;">
+        <label style="display:block;font-size:11px;font-weight:800;color:var(--txt3);text-transform:uppercase;margin-bottom:6px;">Security Classification *</label>
+        <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:8px;">
+          <label style="display:flex;align-items:center;gap:8px;padding:10px;background:var(--bg);border-radius:var(--r);cursor:pointer;border:1.5px solid transparent;" id="lblClassKnown">
+            <input type="radio" name="personClassRadio" value="KNOWN" checked>
+            <div><strong style="color:var(--green);font-size:12px;">KNOWN</strong><div style="font-size:10px;color:var(--txt3);">Authorized person</div></div>
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;padding:10px;background:var(--bg);border-radius:var(--r);cursor:pointer;border:1.5px solid transparent;" id="lblClassUnknown">
+            <input type="radio" name="personClassRadio" value="UNKNOWN">
+            <div><strong style="color:var(--txt2);font-size:12px;">UNKNOWN</strong><div style="font-size:10px;color:var(--txt3);">Track appearance</div></div>
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;padding:10px;background:var(--bg);border-radius:var(--r);cursor:pointer;border:1.5px solid transparent;" id="lblClassSuspicious">
+            <input type="radio" name="personClassRadio" value="SUSPICIOUS">
+            <div><strong style="color:var(--red);font-size:12px;">SUSPICIOUS</strong><div style="font-size:10px;color:var(--txt3);">Security Alert</div></div>
+          </label>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;">
+        <label style="display:block;font-size:11px;font-weight:800;color:var(--txt3);text-transform:uppercase;margin-bottom:6px;">Notes (Optional)</label>
+        <input type="text" id="personNotesInput" class="sec-search-input" style="width:100%;padding:8px 12px;font-size:12px;" placeholder="Optional context or role details...">
+      </div>
+    </div>
+    <div class="sm-foot">
+      <button class="arc-btn" onclick="closeAddPersonModal()">Cancel</button>
+      <button class="arc-btn primary" id="btnSubmitAddPerson" onclick="submitAddPerson()">Save Person Profile</button>
+    </div>
+  </div>
+</div>
+
+<!-- PERSON DETAIL MODAL -->
+<div class="sec-modal-backdrop" id="personDetailModal">
+  <div class="sec-modal-box" style="max-width:680px;">
+    <div class="sm-head">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="class-pill" id="pdmClassPill">KNOWN</span>
+        <span class="sm-title" id="pdmName">Person Detail</span>
+      </div>
+      <button class="sm-close" onclick="closePersonDetailModal()">✕</button>
+    </div>
+    <div class="sm-body">
+      <!-- Profile Header Summary -->
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;background:var(--bg);padding:14px;border-radius:var(--r2);border:1px solid var(--border);">
+        <div style="width:72px;height:72px;border-radius:50%;overflow:hidden;background:var(--bg2);flex-shrink:0;border:2px solid var(--border);" id="pdmAvatarWrap">
+          <img id="pdmAvatarImg" src="" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div style="flex:1;">
+          <div style="font-size:18px;font-weight:900;color:var(--txt);font-family:var(--display);letter-spacing:0.04em;" id="pdmHeaderName">--</div>
+          <div style="font-size:11px;color:var(--txt3);font-family:var(--mono);" id="pdmHeaderId">--</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-top:6px;font-size:11px;color:var(--txt2);">
+            <span>Appearances: <strong id="pdmAppCount">0</strong></span>
+            <span>·</span>
+            <span>References: <strong id="pdmRefCount">0</strong></span>
+            <span>·</span>
+            <span id="pdmStatusTag">Active</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Facts -->
+      <div class="sm-grid-facts" style="margin-bottom:16px;">
+        <div><div class="sm-fact-lbl">First Seen</div><div class="sm-fact-val" id="pdmFirstSeen">--</div></div>
+        <div><div class="sm-fact-lbl">Last Seen</div><div class="sm-fact-val" id="pdmLastSeen">--</div></div>
+        <div><div class="sm-fact-lbl">Cameras</div><div class="sm-fact-val" id="pdmCameras">--</div></div>
+      </div>
+
+      <!-- Reference Photos Gallery -->
+      <div style="margin-bottom:16px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+          <div class="sm-sec-title" style="margin-bottom:0;">📸 Reference Face Photographs</div>
+          <button class="zb" style="font-size:11px;padding:4px 10px;" onclick="openAddReferencePhotoInput()">+ Add Reference Photo</button>
+        </div>
+        <input type="file" id="addRefPhotoInput" accept="image/jpeg,image/png" style="display:none;" onchange="onAddReferencePhotoSelected(event)">
+        <div class="ref-photos-gallery" id="pdmRefGallery">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Chronological Activity History -->
+      <div>
+        <div class="sm-sec-title">⏱ Chronological Appearance History</div>
+        <div style="max-height:220px;overflow-y:auto;background:var(--bg);border-radius:var(--r);padding:10px;border:1px solid var(--border);" id="pdmAppearancesList">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Profile Edit Controls -->
+      <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);">
+        <div class="sm-sec-title">⚙ Edit Profile</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+          <div>
+            <label style="font-size:10px;font-weight:800;color:var(--txt3);text-transform:uppercase;">Name</label>
+            <input type="text" id="pdmEditName" class="sec-search-input" style="width:100%;padding:6px 10px;font-size:12px;">
+          </div>
+          <div>
+            <label style="font-size:10px;font-weight:800;color:var(--txt3);text-transform:uppercase;">Classification</label>
+            <select id="pdmEditClassification" class="sec-select" style="width:100%;padding:6px 10px;font-size:12px;">
+              <option value="KNOWN">KNOWN</option>
+              <option value="UNKNOWN">UNKNOWN</option>
+              <option value="SUSPICIOUS">SUSPICIOUS</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sm-foot">
+      <button class="arc-btn" id="pdmDeactivateBtn" onclick="toggleProfileActiveStatus()">Deactivate Profile</button>
+      <button class="arc-btn primary" onclick="saveProfileChanges()">Save Changes</button>
+      <button class="arc-btn" onclick="closePersonDetailModal()">Close</button>
+    </div>
+  </div>
+</div>
+
 <div class="shell">
 
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
   <div class="sb-top">
     <div class="sb-brand">
-      <div class="sb-brand-text"><strong>CUSTOS</strong><span>Security AI 2.7</span></div>
+      <div class="sb-brand-text"><strong>CUSTOS</strong><span>Security AI 2.8</span></div>
     </div>
   </div>
   <div class="nav">
@@ -466,7 +685,8 @@ a{text-decoration:none;color:inherit;}
       <div class="nav-grp-lbl">Intelligence</div>
       <div class="ni" id="ni-alerts" onclick="gotoPage('alerts')"><span class="ni-ico">⚑</span><span class="ni-label">Alert Center</span><span class="ni-badge" id="alertBadge">0</span></div>
       <div class="ni" id="ni-evidence" onclick="gotoPage('evidence')"><span class="ni-ico">⊡</span><span class="ni-label">Evidence Center</span></div>
-      <div class="ni" id="ni-analytics" onclick="gotoPage('analytics')"><span class="ni-ico">◈</span><span class="ni-label">Analytics</span></div>
+      <div class="ni" id="ni-people" onclick="gotoPage('people')"><span class="ni-ico">👥</span><span class="ni-label">AI Analytics</span></div>
+      <div class="ni" id="ni-analytics" onclick="gotoPage('analytics')"><span class="ni-ico">◈</span><span class="ni-label">System Stats</span></div>
     </div>
     <div class="nav-grp">
       <div class="nav-grp-lbl">System</div>
@@ -480,6 +700,7 @@ a{text-decoration:none;color:inherit;}
   </div>
   <div class="sb-toggle" id="sbToggle" onclick="toggleSb()">◀</div>
 </div>
+
 
 <!-- MAIN AREA -->
 <div class="main">
@@ -748,8 +969,60 @@ a{text-decoration:none;color:inherit;}
     </div>
 
 
+    <!-- AI ANALYTICS / PEOPLE INTELLIGENCE -->
+    <div class="page" id="page-people">
+      <div class="pg-head">
+        <div>
+          <div class="pg-title">AI Analytics & People Intelligence</div>
+          <div style="font-size:12px;color:var(--txt3);margin-top:2px;">Real-time face recognition, unknown clustering & cross-camera identity tracking</div>
+        </div>
+      </div>
+
+      <!-- People Intelligence Stats -->
+      <div class="sec-stats-bar" style="grid-template-columns:repeat(5, 1fr);">
+        <div class="sec-stat-box"><div class="sec-stat-ico blue">👥</div><div><div class="sec-stat-val" id="statTotalPeople">0</div><div class="sec-stat-lbl">Total Profiles</div></div></div>
+        <div class="sec-stat-box"><div class="sec-stat-ico green">✓</div><div><div class="sec-stat-val" id="statKnownPeople" style="color:var(--green)">0</div><div class="sec-stat-lbl">Known Enrolled</div></div></div>
+        <div class="sec-stat-box"><div class="sec-stat-ico amber">🔍</div><div><div class="sec-stat-val" id="statUnknownClusters" style="color:var(--orange)">0</div><div class="sec-stat-lbl">Unknown Clusters</div></div></div>
+        <div class="sec-stat-box"><div class="sec-stat-ico red">⚠</div><div><div class="sec-stat-val" id="statSuspiciousPeople" style="color:var(--red)">0</div><div class="sec-stat-lbl">Suspicious Watchlist</div></div></div>
+        <div class="sec-stat-box"><div class="sec-stat-ico blue">⏱</div><div><div class="sec-stat-val" id="statTotalAppearances">0</div><div class="sec-stat-lbl">Total Appearances</div></div></div>
+      </div>
+
+      <!-- Action & Sub-Navigation Bar -->
+      <div class="people-subnav">
+        <div class="people-tabs">
+          <button class="people-tab-btn on" id="subtabAllFaces" onclick="switchPeopleTab('all_faces')">All Faces</button>
+          <button class="people-tab-btn" id="subtabProfiles" onclick="switchPeopleTab('profiles')">People / Profiles</button>
+          <button class="people-tab-btn suspicious-tab" id="subtabSuspicious" onclick="switchPeopleTab('suspicious')">⚠ Suspicious People</button>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:10px;">
+          <input type="text" id="peopleSearchInput" class="sec-search-input" style="width:240px;padding:7px 12px;font-size:12px;" placeholder="Search name, cluster, notes..." oninput="onPeopleSearchInput()">
+          <button class="add-person-btn" onclick="openAddPersonModal('upload')"><span>+</span> Add Person</button>
+        </div>
+      </div>
+
+      <!-- Tab View 1: ALL FACES -->
+      <div id="viewAllFaces">
+        <div class="faces-grid" id="allFacesGrid"></div>
+        <div id="allFacesState" class="state-box" style="display:none;"></div>
+      </div>
+
+      <!-- Tab View 2: PROFILES -->
+      <div id="viewProfiles" style="display:none;">
+        <div class="profiles-grid" id="profilesGrid"></div>
+        <div id="profilesState" class="state-box" style="display:none;"></div>
+      </div>
+
+      <!-- Tab View 3: SUSPICIOUS -->
+      <div id="viewSuspicious" style="display:none;">
+        <div class="suspicious-grid" id="suspiciousGrid"></div>
+        <div id="suspiciousState" class="state-box" style="display:none;"></div>
+      </div>
+    </div>
+
     <!-- ANALYTICS -->
     <div class="page" id="page-analytics">
+
       <div class="pg-head"><div class="pg-title">Analytics</div></div>
       <div class="sec-stats-bar">
         <div class="sec-stat-box"><div class="sec-stat-ico blue">📊</div><div><div class="sec-stat-val" id="anTotal">0</div><div class="sec-stat-lbl">Total Incidents</div></div></div>
@@ -836,6 +1109,25 @@ const evidenceState = {
   replay: { active: false, timer: null, step: 0, steps: [] }
 };
 
+// People Intelligence State
+const peopleState = {
+
+  activeTab: 'all_faces', // 'all_faces', 'profiles', 'suspicious'
+  profiles: [],
+  clusters: [],
+  suspicious: [],
+  stats: { total_profiles: 0, known_profiles: 0, unknown_profiles: 0, suspicious_profiles: 0, total_appearances: 0, active_clusters: 0 },
+  searchQuery: '',
+  loading: false,
+  error: null,
+  selectedPerson: null,
+  addModal: {
+    method: 'upload',
+    file: null,
+    selectedClusterId: null
+  }
+};
+
 // ═══════════════════════════════════════════════════════
 // INITIALIZATION & NAVIGATION
 // ═══════════════════════════════════════════════════════
@@ -850,8 +1142,10 @@ function gotoPage(p) {
 
   if (p === 'alerts') loadAlertsCenter();
   if (p === 'evidence') loadEvidenceCenter();
+  if (p === 'people') loadPeopleCenter();
   if (p === 'analytics') initCharts();
 }
+
 
 function toggleSb() {
   const sb = document.getElementById('sidebar');
@@ -1496,15 +1790,752 @@ socket.on('evidence_created', ev => {
   fetchEvidenceStats();
 });
 
-socket.on('evidence_updated', ev => {
-  console.log('[CUSTOS] Evidence finalized / updated:', ev.id);
-  const idx = evidenceState.items.findIndex(x => x.id === ev.id);
-  if (idx !== -1) {
-    evidenceState.items[idx] = ev;
-    renderEvidenceGrid();
+// ═══════════════════════════════════════════════════════
+// AI ANALYTICS / PEOPLE INTELLIGENCE — CLIENT LOGIC
+// ═══════════════════════════════════════════════════════
+
+async function loadPeopleCenter() {
+  await Promise.all([
+    fetchPeopleStats(),
+    fetchPeopleProfiles(),
+    fetchFaceClusters(),
+    fetchSuspiciousPeople()
+  ]);
+  renderActivePeopleTab();
+}
+
+async function fetchPeopleStats() {
+  try {
+    const res = await fetch('/api/people/stats');
+    const json = await res.json();
+    if (json.success && json.data) {
+      const d = json.data;
+      peopleState.stats = d;
+      document.getElementById('statTotalPeople').textContent = d.total_profiles || 0;
+      document.getElementById('statKnownPeople').textContent = d.known_profiles || 0;
+      document.getElementById('statUnknownClusters').textContent = d.active_clusters || 0;
+      document.getElementById('statSuspiciousPeople').textContent = d.suspicious_profiles || 0;
+      document.getElementById('statTotalAppearances').textContent = d.total_appearances || 0;
+    }
+  } catch (err) {
+    console.error('[CUSTOS] Error fetching people stats:', err);
   }
-  fetchEvidenceStats();
+}
+
+async function fetchPeopleProfiles() {
+  try {
+    const res = await fetch('/api/people?limit=100');
+    const json = await res.json();
+    if (json.success && json.data) {
+      peopleState.profiles = json.data.items || [];
+      if (peopleState.activeTab === 'profiles' || peopleState.activeTab === 'all_faces') {
+        renderActivePeopleTab();
+      }
+    }
+  } catch (err) {
+    console.error('[CUSTOS] Error fetching profiles:', err);
+  }
+}
+
+async function fetchFaceClusters() {
+  try {
+    const res = await fetch('/api/faces/clusters?status=ACTIVE');
+    const json = await res.json();
+    if (json.success && json.data) {
+      peopleState.clusters = json.data || [];
+      if (peopleState.activeTab === 'all_faces') {
+        renderActivePeopleTab();
+      }
+    }
+  } catch (err) {
+    console.error('[CUSTOS] Error fetching clusters:', err);
+  }
+}
+
+async function fetchSuspiciousPeople() {
+  try {
+    const res = await fetch('/api/people/suspicious');
+    const json = await res.json();
+    if (json.success && json.data) {
+      peopleState.suspicious = json.data || [];
+      if (peopleState.activeTab === 'suspicious') {
+        renderActivePeopleTab();
+      }
+    }
+  } catch (err) {
+    console.error('[CUSTOS] Error fetching suspicious people:', err);
+  }
+}
+
+function switchPeopleTab(tab) {
+  peopleState.activeTab = tab;
+  ['AllFaces', 'Profiles', 'Suspicious'].forEach(t => {
+    const btn = document.getElementById('subtab' + t);
+    if (btn) btn.classList.remove('on');
+  });
+
+  const activeBtn = document.getElementById('subtab' + (tab === 'all_faces' ? 'AllFaces' : tab === 'profiles' ? 'Profiles' : 'Suspicious'));
+  if (activeBtn) activeBtn.classList.add('on');
+
+  document.getElementById('viewAllFaces').style.display = (tab === 'all_faces') ? 'block' : 'none';
+  document.getElementById('viewProfiles').style.display = (tab === 'profiles') ? 'block' : 'none';
+  document.getElementById('viewSuspicious').style.display = (tab === 'suspicious') ? 'block' : 'none';
+
+  renderActivePeopleTab();
+}
+
+function onPeopleSearchInput() {
+  peopleState.searchQuery = (document.getElementById('peopleSearchInput').value || '').trim().toLowerCase();
+  renderActivePeopleTab();
+}
+
+function renderActivePeopleTab() {
+  if (peopleState.activeTab === 'all_faces') renderAllFacesTab();
+  else if (peopleState.activeTab === 'profiles') renderProfilesTab();
+  else if (peopleState.activeTab === 'suspicious') renderSuspiciousTab();
+}
+
+function renderAllFacesTab() {
+  const container = document.getElementById('allFacesGrid');
+  const stateBox = document.getElementById('allFacesState');
+  const q = peopleState.searchQuery;
+
+  // Combine unknown clusters and known profiles
+  let items = [];
+  peopleState.profiles.forEach(p => {
+    if (!q || p.name.toLowerCase().includes(q) || (p.notes && p.notes.toLowerCase().includes(q))) {
+      items.push({
+        type: 'profile',
+        id: p.id,
+        name: p.name,
+        classification: p.classification,
+        appearances_count: p.appearances_count || 0,
+        last_seen: p.last_seen || p.created_at,
+        media_url: `/api/people/${p.id}/media/profile`,
+        status: p.status
+      });
+    }
+  });
+
+  peopleState.clusters.forEach(c => {
+    if (!q || c.cluster_code.toLowerCase().includes(q) || c.id.toLowerCase().includes(q)) {
+      items.push({
+        type: 'cluster',
+        id: c.id,
+        name: c.cluster_code,
+        classification: 'UNKNOWN',
+        appearances_count: c.appearance_count || 0,
+        last_seen: c.last_seen || c.first_seen,
+        media_url: `/api/faces/clusters/${c.id}/media`,
+        status: 'UNLINKED'
+      });
+    }
+  });
+
+  if (items.length === 0) {
+    container.innerHTML = '';
+    stateBox.style.display = 'flex';
+    stateBox.className = 'state-box empty';
+    stateBox.innerHTML = `
+      <div style="font-size:36px;">👤</div>
+      <div class="state-title">No Faces Detected Yet</div>
+      <div class="state-sub">Detected faces from camera feeds or uploaded photo enrollments will appear here.</div>
+      <button class="state-retry-btn" onclick="openAddPersonModal('upload')">+ Enroll First Person</button>
+    `;
+    return;
+  }
+
+  stateBox.style.display = 'none';
+  container.innerHTML = items.map(item => {
+    const isProfile = (item.type === 'profile');
+    const classLower = item.classification.toLowerCase();
+    const classBadge = `<span class="class-pill ${classLower}">${item.classification}</span>`;
+    const actionLabel = isProfile ? 'View Profile' : 'Save as Person';
+    const clickHandler = isProfile ? `openPersonDetailModal('${item.id}')` : `openAddPersonModal('cluster', '${item.id}')`;
+
+    return `
+      <div class="face-card" onclick="${clickHandler}">
+        <div class="face-thumb-wrap">
+          <img class="face-thumb-img" src="${item.media_url}" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\\'face-avatar-placeholder\\'>👤</div>';">
+          <div class="face-badge-top">${classBadge}</div>
+          <div class="face-app-count">👁 ${item.appearances_count} seen</div>
+        </div>
+        <div class="face-card-body">
+          <div class="face-name" title="${item.name}">${item.name}</div>
+          <div class="face-sub">
+            <span>${item.last_seen ? item.last_seen.split('T')[0] : 'Recently'}</span>
+            <span style="color:var(--blue);font-weight:700;">${actionLabel} →</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderProfilesTab() {
+  const container = document.getElementById('profilesGrid');
+  const stateBox = document.getElementById('profilesState');
+  const q = peopleState.searchQuery;
+
+  let profiles = peopleState.profiles;
+  if (q) {
+    profiles = profiles.filter(p => p.name.toLowerCase().includes(q) || (p.notes && p.notes.toLowerCase().includes(q)));
+  }
+
+  if (profiles.length === 0) {
+    container.innerHTML = '';
+    stateBox.style.display = 'flex';
+    stateBox.className = 'state-box empty';
+    stateBox.innerHTML = `
+      <div style="font-size:36px;">👥</div>
+      <div class="state-title">No Profiles Found</div>
+      <div class="state-sub">Create managed permanent profiles to track authorized and unauthorized persons.</div>
+      <button class="state-retry-btn" onclick="openAddPersonModal('upload')">+ Add New Person</button>
+    `;
+    return;
+  }
+
+  stateBox.style.display = 'none';
+  container.innerHTML = profiles.map(p => {
+    const classLower = p.classification.toLowerCase();
+    const isInactive = (p.status === 'INACTIVE');
+    const statusPill = isInactive ? '<span style="color:var(--txt3);font-size:10px;font-weight:700;">INACTIVE</span>' : '<span style="color:var(--green);font-size:10px;font-weight:700;">ACTIVE</span>';
+    const camerasText = (p.cameras_seen && p.cameras_seen.length > 0) ? p.cameras_seen.map(c => `Cam ${c}`).join(', ') : 'None';
+
+    return `
+      <div class="profile-card" style="${isInactive ? 'opacity:0.6;' : ''}">
+        <div class="profile-head">
+          <div class="profile-avatar-box">
+            <img class="profile-avatar-img" src="/api/people/${p.id}/media/profile" onerror="this.onerror=null;this.parentElement.innerHTML='<span style=\\'font-size:24px;\\'>👤</span>';">
+          </div>
+          <div style="flex:1;overflow:hidden;">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;">
+              <span class="class-pill ${classLower}">${p.classification}</span>
+              ${statusPill}
+            </div>
+            <div style="font-size:15px;font-weight:800;color:var(--txt);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${p.name}">${p.name}</div>
+            <div style="font-size:10px;color:var(--txt3);font-family:var(--mono);">${p.id}</div>
+          </div>
+        </div>
+
+        <div class="profile-meta-grid">
+          <div><div class="profile-meta-lbl">Appearances</div><div class="profile-meta-val">${p.appearances_count || 0}</div></div>
+          <div><div class="profile-meta-lbl">References</div><div class="profile-meta-val">${p.reference_faces_count || 0} photos</div></div>
+          <div><div class="profile-meta-lbl">Cameras</div><div class="profile-meta-val">${camerasText}</div></div>
+          <div><div class="profile-meta-lbl">Last Seen</div><div class="profile-meta-val">${p.last_seen ? p.last_seen.split('T')[0] : '—'}</div></div>
+        </div>
+
+        <div class="profile-foot-btns">
+          <button class="profile-action-btn primary" onclick="openPersonDetailModal('${p.id}')">View Details & History</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderSuspiciousTab() {
+  const container = document.getElementById('suspiciousGrid');
+  const stateBox = document.getElementById('suspiciousState');
+  const suspiciousList = peopleState.suspicious;
+
+  if (suspiciousList.length === 0) {
+    container.innerHTML = '';
+    stateBox.style.display = 'flex';
+    stateBox.className = 'state-box empty';
+    stateBox.innerHTML = `
+      <div style="font-size:36px;color:var(--green);">🛡</div>
+      <div class="state-title" style="color:var(--green);">Watchlist Clear</div>
+      <div class="state-sub">No persons are currently classified as SUSPICIOUS on the perimeter watchlist.</div>
+    `;
+    return;
+  }
+
+  stateBox.style.display = 'none';
+  container.innerHTML = suspiciousList.map(p => {
+    return `
+      <div class="suspicious-card">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div class="profile-avatar-box" style="border-color:var(--red);">
+            <img class="profile-avatar-img" src="/api/people/${p.id}/media/profile" onerror="this.onerror=null;this.parentElement.innerHTML='<span style=\\'font-size:24px;\\'>⚠</span>';">
+          </div>
+          <div style="flex:1;">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <span class="class-pill suspicious">SUSPICIOUS</span>
+              <span style="font-size:10px;font-weight:700;color:var(--red);font-family:var(--mono);">HIGH SECURITY ALERT</span>
+            </div>
+            <div style="font-size:16px;font-weight:900;color:var(--txt);margin-top:2px;">${p.name}</div>
+            <div style="font-size:10px;color:var(--txt3);font-family:var(--mono);">${p.id}</div>
+          </div>
+        </div>
+
+        <div style="background:rgba(220,38,38,0.06);padding:10px;border-radius:var(--r);font-size:11px;border:1px solid rgba(220,38,38,0.15);">
+          <div style="font-weight:700;color:var(--red);margin-bottom:2px;">Security Protocol:</div>
+          <div style="color:var(--txt2);">Detection triggers instant perimeter security incident and audio dispatch alerts.</div>
+        </div>
+
+        <div class="profile-meta-grid">
+          <div><div class="profile-meta-lbl">Total Sighting</div><div class="profile-meta-val" style="color:var(--red);">${p.appearances_count || 0} times</div></div>
+          <div><div class="profile-meta-lbl">Last Incident</div><div class="profile-meta-val">${p.last_seen ? p.last_seen.split('T')[0] : '—'}</div></div>
+        </div>
+
+        <div class="profile-foot-btns">
+          <button class="profile-action-btn primary" style="background:var(--red-bg);color:var(--red);border-color:rgba(220,38,38,0.3);" onclick="openPersonDetailModal('${p.id}')">Review Security Record</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+// ADD PERSON MODAL & ENROLLMENT
+// ═══════════════════════════════════════════════════════
+
+function openAddPersonModal(method = 'upload', clusterId = null) {
+  peopleState.addModal.method = method;
+  peopleState.addModal.file = null;
+  peopleState.addModal.selectedClusterId = clusterId;
+
+  document.getElementById('personNameInput').value = '';
+  document.getElementById('personNotesInput').value = '';
+  document.querySelector('input[name="personClassRadio"][value="KNOWN"]').checked = true;
+
+  // Reset upload preview
+  document.getElementById('enrollPreviewImg').style.display = 'none';
+  document.getElementById('enrollPreviewImg').src = '';
+  document.getElementById('enrollPlaceholderIcon').style.display = 'block';
+  document.getElementById('uploadFeedbackBox').style.display = 'none';
+
+  // Populate clusters dropdown
+  const select = document.getElementById('clusterSelectDropdown');
+  select.innerHTML = '<option value="">-- Choose detected unknown cluster --</option>' +
+    peopleState.clusters.map(c => `<option value="${c.id}" ${c.id === clusterId ? 'selected' : ''}>${c.cluster_code} (${c.appearance_count} sightings)</option>`).join('');
+
+  selectAddPersonMethod(method);
+  if (clusterId) {
+    onClusterDropdownChange();
+  }
+
+  document.getElementById('addPersonModal').classList.add('on');
+}
+
+function closeAddPersonModal() {
+  document.getElementById('addPersonModal').classList.remove('on');
+}
+
+function selectAddPersonMethod(method) {
+  peopleState.addModal.method = method;
+  document.getElementById('methodBtnUpload').classList.toggle('on', method === 'upload');
+  document.getElementById('methodBtnCluster').classList.toggle('on', method === 'cluster');
+  document.getElementById('methodUploadSection').style.display = (method === 'upload') ? 'block' : 'none';
+  document.getElementById('methodClusterSection').style.display = (method === 'cluster') ? 'block' : 'none';
+}
+
+function onEnrollPhotoSelected(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  peopleState.addModal.file = file;
+
+  const reader = new FileReader();
+  reader.onload = function(evt) {
+    document.getElementById('enrollPlaceholderIcon').style.display = 'none';
+    const img = document.getElementById('enrollPreviewImg');
+    img.src = evt.target.result;
+    img.style.display = 'block';
+    document.getElementById('uploadPromptText').textContent = file.name;
+
+    const fb = document.getElementById('uploadFeedbackBox');
+    fb.style.display = 'block';
+    fb.style.background = 'var(--blue-bg)';
+    fb.style.color = 'var(--blue)';
+    fb.textContent = 'Photo selected: ' + file.name + ' (' + (file.size / 1024).toFixed(0) + ' KB)';
+  };
+  reader.readAsDataURL(file);
+}
+
+function onClusterDropdownChange() {
+  const cid = document.getElementById('clusterSelectDropdown').value;
+  peopleState.addModal.selectedClusterId = cid;
+  const cluster = peopleState.clusters.find(c => c.id === cid);
+  const preview = document.getElementById('selectedClusterPreview');
+
+  if (cluster) {
+    preview.style.display = 'flex';
+    document.getElementById('selClusterImg').src = `/api/faces/clusters/${cluster.id}/media`;
+    document.getElementById('selClusterCode').textContent = cluster.cluster_code;
+    document.getElementById('selClusterMeta').textContent = `Seen ${cluster.appearance_count} times · Last seen: ${cluster.last_seen ? cluster.last_seen.split('T')[0] : 'Recently'}`;
+  } else {
+    preview.style.display = 'none';
+  }
+}
+
+async function submitAddPerson() {
+  const name = (document.getElementById('personNameInput').value || '').trim();
+  if (!name) {
+    alert('Please enter a person name.');
+    return;
+  }
+
+  const classification = document.querySelector('input[name="personClassRadio"]:checked').value;
+  const notes = document.getElementById('personNotesInput').value.trim();
+  const btn = document.getElementById('btnSubmitAddPerson');
+  btn.disabled = true;
+  btn.textContent = 'Saving...';
+
+  try {
+    if (peopleState.addModal.method === 'upload') {
+      if (!peopleState.addModal.file) {
+        alert('Please upload a clear photograph of the person face.');
+        btn.disabled = false;
+        btn.textContent = 'Save Person Profile';
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append('photo', peopleState.addModal.file);
+      formData.append('name', name);
+      formData.append('classification', classification);
+      formData.append('notes', notes);
+
+      const res = await fetch('/api/people/enroll', {
+        method: 'POST',
+        body: formData
+      });
+
+      let json = null;
+      try {
+        json = await res.json();
+      } catch (e) {}
+
+      if (!res.ok || (json && json.success === false)) {
+        let errMsg = 'Face validation or enrollment failed.';
+        if (json) {
+          if (json.error && typeof json.error === 'object' && json.error.message) {
+            errMsg = json.error.message;
+          } else if (typeof json.error === 'string') {
+            errMsg = json.message || json.error;
+          } else if (json.message) {
+            errMsg = json.message;
+          }
+        } else if (res.status === 401 || res.status === 403) {
+          errMsg = 'Authentication required or insufficient permissions. Please log in.';
+        } else {
+          errMsg = `Server error (HTTP ${res.status})`;
+        }
+
+        const fb = document.getElementById('uploadFeedbackBox');
+        fb.style.display = 'block';
+        fb.style.background = 'var(--red-bg)';
+        fb.style.color = 'var(--red)';
+        fb.textContent = '⚠ ' + errMsg;
+        btn.disabled = false;
+        btn.textContent = 'Save Person Profile';
+        return;
+      }
+
+
+      showBanner('PERSON ENROLLED', `${name} enrolled successfully. AI will recognize this person on camera.`);
+      closeAddPersonModal();
+      loadPeopleCenter();
+    } else {
+      // Cluster Link Method
+      const cid = peopleState.addModal.selectedClusterId;
+      if (!cid) {
+        alert('Please select a detected face cluster.');
+        btn.disabled = false;
+        btn.textContent = 'Save Person Profile';
+        return;
+      }
+
+      const res = await fetch(`/api/faces/clusters/${cid}/profile`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, classification, notes })
+      });
+      const json = await res.json();
+
+      if (!res.ok || !json.success) {
+        alert('Failed to save profile from cluster.');
+        btn.disabled = false;
+        btn.textContent = 'Save Person Profile';
+        return;
+      }
+
+      showBanner('PERSON SAVED', `Cluster linked as permanent profile for ${name}.`);
+      closeAddPersonModal();
+      loadPeopleCenter();
+    }
+  } catch (err) {
+    console.error('[CUSTOS] Error saving person:', err);
+    alert('An unexpected error occurred while saving.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Save Person Profile';
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// PERSON DETAIL MODAL & REFERENCE MANAGEMENT
+// ═══════════════════════════════════════════════════════
+
+async function openPersonDetailModal(personId) {
+  try {
+    const res = await fetch(`/api/people/${personId}`);
+    const json = await res.json();
+    if (!json.success || !json.data) {
+      alert('Could not load person profile details.');
+      return;
+    }
+
+    const p = json.data;
+    peopleState.selectedPerson = p;
+
+    document.getElementById('pdmName').textContent = p.name;
+    document.getElementById('pdmHeaderName').textContent = p.name;
+    document.getElementById('pdmHeaderId').textContent = p.id;
+    document.getElementById('pdmAvatarImg').src = `/api/people/${p.id}/media/profile`;
+
+    const classPill = document.getElementById('pdmClassPill');
+    classPill.textContent = p.classification;
+    classPill.className = `class-pill ${p.classification.toLowerCase()}`;
+
+    document.getElementById('pdmAppCount').textContent = p.appearances_count || 0;
+    document.getElementById('pdmRefCount').textContent = (p.reference_faces || []).length;
+    document.getElementById('pdmStatusTag').textContent = (p.status === 'ACTIVE') ? '● Active' : '○ Inactive';
+    document.getElementById('pdmStatusTag').style.color = (p.status === 'ACTIVE') ? 'var(--green)' : 'var(--txt3)';
+
+    document.getElementById('pdmFirstSeen').textContent = p.first_seen ? p.first_seen.replace('T', ' ') : '—';
+    document.getElementById('pdmLastSeen').textContent = p.last_seen ? p.last_seen.replace('T', ' ') : '—';
+    document.getElementById('pdmCameras').textContent = (p.cameras_seen && p.cameras_seen.length > 0) ? p.cameras_seen.map(c => `Camera ${c}`).join(', ') : 'None recorded';
+
+    document.getElementById('pdmEditName').value = p.name;
+    document.getElementById('pdmEditClassification').value = p.classification;
+    document.getElementById('pdmDeactivateBtn').textContent = (p.status === 'ACTIVE') ? 'Deactivate Profile' : 'Reactivate Profile';
+
+    // Render Reference Photos Gallery
+    const refGallery = document.getElementById('pdmRefGallery');
+    const refFaces = p.reference_faces || [];
+    if (refFaces.length === 0) {
+      refGallery.innerHTML = '<div style="font-size:11px;color:var(--txt3);grid-column:1/-1;padding:10px 0;">No reference photos enrolled yet. Click above to add clear face photos.</div>';
+    } else {
+      refGallery.innerHTML = refFaces.map(f => `
+        <div class="ref-photo-item">
+          <img class="ref-photo-img" src="/api/people/${p.id}/media/face_${f.id}" onerror="this.onerror=null;this.src='/api/people/${p.id}/media/profile';">
+          <button class="ref-del-btn" onclick="deleteReferencePhoto(${f.id})" title="Remove reference face">✕</button>
+        </div>
+      `).join('');
+    }
+
+    // Render Chronological Appearance History
+    const appList = document.getElementById('pdmAppearancesList');
+    const apps = p.appearances || [];
+    if (apps.length === 0) {
+      appList.innerHTML = '<div style="font-size:11px;color:var(--txt3);padding:8px 0;text-align:center;">No appearances recorded on cameras yet.</div>';
+    } else {
+      appList.innerHTML = apps.map(a => `
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:8px;border-bottom:1px solid var(--border);font-size:11px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:36px;height:36px;border-radius:var(--r);overflow:hidden;background:var(--bg2);flex-shrink:0;">
+              <img src="/api/people/appearances/${a.id}/media" style="width:100%;height:100%;object-fit:cover;" onerror="this.onerror=null;this.parentElement.innerHTML='<span style=\\'font-size:18px;display:flex;align-items:center;justify-content:center;height:100%;\\'>👤</span>';">
+            </div>
+            <div>
+              <div style="font-weight:700;color:var(--txt);">Camera ${a.camera_id} · <span style="color:var(--txt2);">${a.zone_name || 'Monitored Area'}</span></div>
+              <div style="font-size:10px;color:var(--txt3);font-family:var(--mono);">${a.timestamp ? a.timestamp.replace('T', ' ') : ''}</div>
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-family:var(--mono);font-weight:800;color:var(--blue);">${(a.recognition_score * 100).toFixed(0)}% Match</div>
+            <div style="font-size:10px;color:var(--txt3);">${a.identity_status}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    document.getElementById('personDetailModal').classList.add('on');
+  } catch (err) {
+    console.error('[CUSTOS] Error opening person detail modal:', err);
+  }
+}
+
+function closePersonDetailModal() {
+  document.getElementById('personDetailModal').classList.remove('on');
+  peopleState.selectedPerson = null;
+}
+
+function openAddReferencePhotoInput() {
+  document.getElementById('addRefPhotoInput').click();
+}
+
+async function onAddReferencePhotoSelected(e) {
+  const file = e.target.files[0];
+  if (!file || !peopleState.selectedPerson) return;
+
+  const formData = new FormData();
+  formData.append('photo', file);
+
+  try {
+    const res = await fetch(`/api/people/${peopleState.selectedPerson.id}/faces`, {
+      method: 'POST',
+      body: formData
+    });
+    const json = await res.json();
+    if (!res.ok || !json.success) {
+      const msg = (json && json.error && json.error.message) ? json.error.message : (json && (json.message || json.error) ? (json.message || json.error) : 'Invalid face');
+      alert('Failed to add reference photo: ' + msg);
+      return;
+    }
+
+
+    showBanner('REFERENCE ADDED', 'Additional reference face photo enrolled successfully.');
+    openPersonDetailModal(peopleState.selectedPerson.id);
+    fetchPeopleProfiles();
+  } catch (err) {
+    console.error('[CUSTOS] Error uploading reference photo:', err);
+  }
+}
+
+async function deleteReferencePhoto(faceId) {
+  if (!confirm('Remove this reference face photograph?')) return;
+  if (!peopleState.selectedPerson) return;
+
+  try {
+    const res = await fetch(`/api/people/${peopleState.selectedPerson.id}/faces/${faceId}`, {
+      method: 'DELETE'
+    });
+    const json = await res.json();
+    if (json.success) {
+      openPersonDetailModal(peopleState.selectedPerson.id);
+      fetchPeopleProfiles();
+    }
+  } catch (err) {
+    console.error('[CUSTOS] Error deleting reference face:', err);
+  }
+}
+
+async function saveProfileChanges() {
+  if (!peopleState.selectedPerson) return;
+
+  const pid = peopleState.selectedPerson.id;
+  const name = document.getElementById('pdmEditName').value.trim();
+  const classification = document.getElementById('pdmEditClassification').value;
+
+  if (!name) {
+    alert('Name cannot be empty.');
+    return;
+  }
+
+  try {
+    const res = await fetch(`/api/people/${pid}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, classification })
+    });
+    const json = await res.json();
+    if (json.success) {
+      showBanner('PROFILE UPDATED', `Changes saved for ${name}.`);
+      closePersonDetailModal();
+      loadPeopleCenter();
+    }
+  } catch (err) {
+    console.error('[CUSTOS] Error saving profile changes:', err);
+  }
+}
+
+async function toggleProfileActiveStatus() {
+  if (!peopleState.selectedPerson) return;
+  const pid = peopleState.selectedPerson.id;
+  const isCurrentlyActive = (peopleState.selectedPerson.status === 'ACTIVE');
+
+  if (isCurrentlyActive) {
+    if (!confirm(`Deactivate profile for ${peopleState.selectedPerson.name}? Historical appearance data will be preserved.`)) return;
+    try {
+      const res = await fetch(`/api/people/${pid}`, { method: 'DELETE' });
+      const json = await res.json();
+      if (json.success) {
+        showBanner('PROFILE DEACTIVATED', `Profile ${pid} has been deactivated.`);
+        closePersonDetailModal();
+        loadPeopleCenter();
+      }
+    } catch (err) {
+      console.error('[CUSTOS] Error deactivating profile:', err);
+    }
+  } else {
+    try {
+      const res = await fetch(`/api/people/${pid}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: 'ACTIVE' })
+      });
+      const json = await res.json();
+      if (json.success) {
+        showBanner('PROFILE ACTIVATED', `Profile ${pid} has been reactivated.`);
+        closePersonDetailModal();
+        loadPeopleCenter();
+      }
+    } catch (err) {
+      console.error('[CUSTOS] Error reactivating profile:', err);
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// PEOPLE INTELLIGENCE — REAL-TIME SOCKET.IO LISTENERS
+// ═══════════════════════════════════════════════════════
+
+socket.on('person_appearance', d => {
+  console.log('[CUSTOS] Person appearance:', d);
+  fetchPeopleStats();
+  if (curPage === 'people') {
+    if (peopleState.activeTab === 'all_faces') {
+      fetchPeopleProfiles();
+      fetchFaceClusters();
+    }
+  }
 });
+
+socket.on('person_recognized', d => {
+  console.log('[CUSTOS] Person recognized on camera:', d.name);
+});
+
+socket.on('suspicious_person_detected', d => {
+  console.log('[CUSTOS] SUSPICIOUS PERSON DETECTED:', d.name);
+  showBanner('SUSPICIOUS PERSON SIGHTING', `Watchlist target ${d.name} sighted on Camera ${d.camera_id} in ${d.zone}`);
+  playAlertSound('suspicious');
+  fetchPeopleStats();
+  fetchSuspiciousPeople();
+});
+
+socket.on('person_profile_created', p => {
+  console.log('[CUSTOS] Person profile created:', p.id);
+  fetchPeopleStats();
+  fetchPeopleProfiles();
+});
+
+socket.on('person_profile_updated', p => {
+  console.log('[CUSTOS] Person profile updated:', p.id);
+  fetchPeopleStats();
+  fetchPeopleProfiles();
+  fetchSuspiciousPeople();
+});
+
+socket.on('person_profile_deactivated', d => {
+  console.log('[CUSTOS] Person profile deactivated:', d.person_id);
+  fetchPeopleStats();
+  fetchPeopleProfiles();
+});
+
+socket.on('cluster_created', c => {
+  console.log('[CUSTOS] Unknown face cluster created:', c.id);
+  fetchPeopleStats();
+  fetchFaceClusters();
+});
+
+socket.on('cluster_updated', d => {
+  console.log('[CUSTOS] Face cluster updated:', d);
+  fetchPeopleStats();
+  fetchFaceClusters();
+  fetchPeopleProfiles();
+});
+
 
 socket.on('incident_updated', data => {
   console.log('[CUSTOS] Incident updated:', data.id);

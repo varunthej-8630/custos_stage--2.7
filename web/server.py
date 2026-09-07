@@ -1,6 +1,7 @@
 # web/server.py — CUSTOS Optimised with RBAC
-import cv2, time, os, sys, functools, json
+import cv2, time, os, sys, functools, json, secrets
 from datetime import datetime
+import numpy as np
 
 _PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if _PROJECT_ROOT not in sys.path:
@@ -28,14 +29,36 @@ os.environ['OPENCV_VIDEOIO_PRIORITY_MSMF'] = '0'
 os.environ['OPENCV_LOG_LEVEL'] = 'ERROR'
 
 app = Flask(__name__)
-app.secret_key = os.getenv('CUSTOS_SECRET', 'custos_production_secret_key_fixed_2026')
-app.config['SECRET_KEY'] = app.secret_key
+
+# Secret Key Setup with persistent fallback
+secret = os.getenv('CUSTOS_SECRET')
+if not secret:
+    secret_file = os.path.join(_PROJECT_ROOT, 'instance', '.session_secret')
+    if os.path.exists(secret_file):
+        try:
+            with open(secret_file, 'r', encoding='utf-8') as f:
+                secret = f.read().strip()
+        except Exception:
+            secret = None
+    if not secret:
+        secret = secrets.token_hex(32)
+        try:
+            os.makedirs(os.path.dirname(secret_file), exist_ok=True)
+            with open(secret_file, 'w', encoding='utf-8') as f:
+                f.write(secret)
+        except Exception:
+            pass
+
+app.secret_key = secret
+app.config['SECRET_KEY'] = secret
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
 # Database Setup
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('CUSTOS_DATABASE_URI', 'sqlite:///custos.db')
+default_db_path = os.path.join(_PROJECT_ROOT, 'instance', 'custos.db').replace('\\', '/')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('CUSTOS_DATABASE_URI', f'sqlite:///{default_db_path}')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'connect_args': {'timeout': 30}}
 db.init_app(app)
 
 # Login Manager Setup
@@ -57,7 +80,8 @@ def unauthorized_callback():
 db_manager.init_db(app)
 
 # SocketIO Setup
-socket = SocketIO(app, cors_allowed_origins="*", async_mode='threading', ping_timeout=10, ping_interval=5)
+cors_origins = os.getenv('CUSTOS_CORS_ORIGINS', '*').split(',') if os.getenv('CUSTOS_CORS_ORIGINS') else "*"
+socket = SocketIO(app, cors_allowed_origins=cors_origins, async_mode='threading', ping_timeout=10, ping_interval=5)
 
 # Initialize Storage Queue Worker
 storage_queue.set_app(app)
@@ -1047,7 +1071,7 @@ def delete_evidence(filename):
 
 @app.route('/list_evidence')
 @login_required
-def list_legacy_evidence():
+def list_evidence():
     d = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), config.SNAPSHOT_DIR)
     files = []
     if os.path.exists(d):
@@ -1066,16 +1090,6 @@ def list_snapshots():
             if f.endswith(('.jpg', '.mp4')):
                 files.append({'name': f, 'path': f'/snapshots/{f}'})
     return jsonify({'snapshots': files})
-
-@app.route('/list_evidence')
-@login_required
-def list_evidence():
-    d = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), config.SNAPSHOT_DIR)
-    files = []
-    if os.path.exists(d):
-        for f in sorted(os.listdir(d), reverse=True):
-            if f.endswith(('.jpg', '.mp4')): files.append({'name': f})
-    return jsonify({'files': files})
 
 
 @app.route('/list_cameras')

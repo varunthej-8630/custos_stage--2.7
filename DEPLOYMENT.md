@@ -1,67 +1,73 @@
-# Custos - Deployment & Packaging Guide
+# CUSTOS Stage 2.8 — Deployment & Production Guide
 
-This document outlines the steps required to package the Custos AI Surveillance System into a standalone Windows Desktop Application (`.exe`), manage updates, and handle user authentication.
-
-## 1. Authentication (Google OAuth)
-Custos now supports **Sign in with Google** alongside the default local admin login.
-
-### Setup Instructions:
-1. Ensure your Google Cloud Console project is set up with an **OAuth Client ID** (Web Application).
-2. The authorized redirect URIs must include: `http://localhost:5000/auth/callback`
-3. The Client ID and Client Secret are stored securely in the local `.env` file.
-4. When users launch the app, they will be greeted with the login screen where they can authenticate via their Google Account.
-
-*Note: For local admin access without Google, the default credentials are `admin` / `Varunthej@8630` (configurable in the `.env` file).*
+This document outlines the deployment, security hardening, and operational guidelines for running CUSTOS Stage 2.8 in edge and on-premise production environments.
 
 ---
 
-## 2. The Auto-Updater System
-Custos features an **Over-The-Air (OTA) Auto-Updater**. 
+## 1. Production Runtime Architecture
 
-### How it works:
-1. Upon startup, `run_server.py` triggers the `updater.py` module.
-2. The updater checks a remote `version.json` file (configurable via `UPDATE_URL` in `config/settings.py`).
-3. If the remote version is higher than the local `APP_VERSION`, a native Windows prompt alerts the user.
-4. If accepted, the app silently downloads the `.zip` update, extracts it, closes the active Python process, applies the new files via a batch script, and restarts itself instantly.
-
-### How to push an update to users:
-1. Make your code changes locally.
-2. Zip the updated files into `update.zip`.
-3. Host `update.zip` and a `version.json` file (e.g., on GitHub Releases).
-4. Update your hosted `version.json` to reflect the new version number and download URL.
-5. The next time users launch Custos, they will be prompted to install it.
+CUSTOS Stage 2.8 uses a hybrid threaded architecture:
+- **Web Application & API**: Served via `Waitress` WSGI production server (`run_production.py`) or Flask-SocketIO threaded runner (`run_server.py`).
+- **Computer Vision Pipelines**: Multi-camera threaded pipelines running OpenCV + YOLOv8 + YuNet + SFace.
+- **Asynchronous Storage**: Background queue worker processing snapshots and video buffer clips without blocking the main CV threads.
+- **Database**: SQLite with Write-Ahead Logging (WAL) and 30s busy timeout, or remote PostgreSQL via `CUSTOS_DATABASE_URI`.
 
 ---
 
-## 3. Packaging into a Standalone `.exe`
-To distribute Custos to users who do not have Python installed, you must package the application using **PyInstaller**. 
+## 2. Environment Configuration (`.env`)
 
-We use the `--onedir` strategy. Unlike `--onefile` (which takes 60 seconds to silently extract massive AI libraries like PyTorch every time the app opens), `--onedir` creates a folder that launches instantly.
+Copy `.env.example` to `.env` in the project root and configure the required settings:
 
-### Build Instructions:
-1. Open your terminal in the project folder.
-2. Ensure your virtual environment is active (if you used `setup.bat`, it should be).
-3. Run the automated build script:
-   ```cmd
-   python build.py
-   ```
-4. The script will:
-   - Install `pyinstaller`.
-   - Download the YOLOv8 weights (if missing).
-   - Package the Python backend, Flask UI, config files, and YOLO models.
+```ini
+# Application Secrets
+CUSTOS_SECRET=your_secure_random_secret_here
+CUSTOS_ADMIN_PASSWORD=your_initial_admin_password
 
-### Output:
-Once the build completes (usually 3-5 minutes), you will see a new `dist` folder.
-Navigate to: **`dist/Custos/`**
-Inside this folder, you will find `Custos.exe`. Double-clicking this will launch the entire application seamlessly.
+# Database Configuration (Defaults to instance/custos.db)
+# CUSTOS_DATABASE_URI=sqlite:///instance/custos.db
+# CUSTOS_DATABASE_URI=postgresql://user:pass@localhost:5432/custos
+
+# Socket.IO & CORS (Comma-separated origins, or * for all)
+CUSTOS_CORS_ORIGINS=*
+
+# Telegram Incident Dispatch (Optional)
+TELEGRAM_TOKEN=your_bot_token
+TELEGRAM_CHAT_ID=your_chat_id
+
+# Google OAuth Single Sign-On (Optional)
+GOOGLE_CLIENT_ID=your_client_id
+GOOGLE_CLIENT_SECRET=your_client_secret
+```
 
 ---
 
-## 4. Distribution Guide
-To share Custos with clients or other laptops:
+## 3. Starting the Production Server
 
-1. Right-click the **`dist/Custos`** folder.
-2. Select **Send to > Compressed (zipped) folder**.
-3. Share this `.zip` file with your users (via Google Drive, USB, etc.).
-4. Instruct the user to **unzip** the folder on their desktop.
-5. They simply double-click `Custos.exe` to launch the security dashboard. No Python installation, terminal commands, or setup required!
+### Windows Service or Scheduled Task
+To launch the production server using Waitress:
+
+```powershell
+python run_production.py
+```
+
+Or using the standard development server:
+
+```powershell
+python run_server.py
+```
+
+### Windows Startup Batch Files
+- `setup.bat`: Creates virtual environment and installs dependencies.
+- `start.bat`: Starts the CUSTOS server.
+- `stop.bat`: Stops background server processes.
+
+---
+
+## 4. Verification & Health Checks
+
+Verify that the system is running and healthy:
+1. Access the web dashboard at `http://localhost:5000`
+2. Check system status API at `GET /state`
+3. Check camera listings at `GET /list_cameras`
+4. Inspect application logs in `logs/app.log`
+

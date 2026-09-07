@@ -1,3 +1,4 @@
+import os
 import json
 import threading
 import uuid
@@ -37,17 +38,28 @@ class DatabaseManager:
     def init_db(self, app):
         with app.app_context():
             db.create_all()
+            try:
+                # Enable WAL mode for SQLite for non-blocking concurrent reads/writes
+                engine = db.engine
+                if engine.url.drivername == 'sqlite':
+                    with engine.connect() as conn:
+                        conn.execute(db.text("PRAGMA journal_mode=WAL;"))
+                        conn.execute(db.text("PRAGMA busy_timeout=30000;"))
+                        conn.commit()
+            except Exception as e:
+                app_logger.debug(f"[DB] SQLite pragma notice: {e}")
+
             admin_user = User.query.filter_by(username='admin').first()
             if not admin_user:
+                # Only bootstrap default admin if no admin user exists
+                default_pass = os.getenv('CUSTOS_ADMIN_PASSWORD', 'admin123')
                 admin_user = User(username='admin', email='admin@custos.local', role=UserRole.ADMIN)
-                admin_user.set_password('admin123')
+                admin_user.set_password(default_pass)
                 db.session.add(admin_user)
+                db.session.commit()
+                app_logger.info("Default administrator account initialized (username=admin)")
             else:
-                admin_user.role = UserRole.ADMIN
-                admin_user.is_active = True
-                admin_user.set_password('admin123')
-            db.session.commit()
-            app_logger.info("Admin credentials guaranteed: username=admin | password=admin123")
+                app_logger.info(f"Administrator account '{admin_user.username}' verified (credentials preserved)")
 
 
     def save_incident(self, app, incident_data):

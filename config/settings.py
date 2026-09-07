@@ -27,8 +27,16 @@ TELEGRAM_TOKEN   = os.getenv('TELEGRAM_TOKEN',   '')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_CHAT_ID', '')
 
 
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+def _resolve_path(env_var_name: str, default_rel: str) -> str:
+    val = os.getenv(env_var_name)
+    if val:
+        return os.path.abspath(val) if not os.path.isabs(val) else val
+    return os.path.join(PROJECT_ROOT, default_rel)
+
 # ── AI MODEL ─────────────────────────────────────────────
-MODEL_PATH   = 'data/weights/yolov8n.pt'
+MODEL_PATH   = _resolve_path('CUSTOS_MODEL_PATH', 'data/weights/yolov8n.pt')
 CONFIDENCE   = 0.40
 INPUT_SIZE   = 480
 FRAME_SKIP   = 2
@@ -84,7 +92,7 @@ AUTO_GUARD_IDLE_MIN  = 30     # minutes of no activity = auto Guard Mode
 
 # ── RECORDING ────────────────────────────────────────────
 RECORDING_ENABLED    = True
-RECORDING_DIR        = 'data/recordings'
+RECORDING_DIR        = _resolve_path('CUSTOS_RECORDING_DIR', 'data/recordings')
 RECORDING_CHUNK_MIN  = 5      # save a new video file every 5 minutes
 RECORDING_KEEP_HOURS = 24     # delete recordings older than this
 
@@ -96,7 +104,7 @@ TAMPER_CONFIRM_SEC   = 2.0    # must be covered this long before alerting
 
 # ── DISPLAY ──────────────────────────────────────────────
 SHOW_PREVIEW   = True
-SNAPSHOT_DIR   = 'data/snapshots'
+SNAPSHOT_DIR   = _resolve_path('CUSTOS_SNAPSHOT_DIR', 'data/snapshots')
 
 # ── YOLO CLASS IDs (COCO) ────────────────────────────────
 CLASS_PERSON     = 0
@@ -106,16 +114,16 @@ CLASS_HANDBAG    = 26
 CLASS_SUITCASE   = 28
 
 # ── PEOPLE INTELLIGENCE & FACE RECOGNITION ───────────────
-FACE_DETECTOR_PATH       = 'data/weights/face_detection_yunet_2023mar.onnx'
-FACE_RECOGNIZER_PATH     = 'data/weights/face_recognition_sface_2021dec.onnx'
+FACE_DETECTOR_PATH       = _resolve_path('CUSTOS_FACE_DETECTOR_PATH', 'data/weights/face_detection_yunet_2023mar.onnx')
+FACE_RECOGNIZER_PATH     = _resolve_path('CUSTOS_FACE_RECOGNIZER_PATH', 'data/weights/face_recognition_sface_2021dec.onnx')
 FACE_MATCH_THRESHOLD     = 0.40    # SFace cosine similarity threshold (OpenCV benchmark default: 0.363)
 FACE_CLUSTER_THRESHOLD   = 0.38    # Minimum similarity to cluster unknown face appearances
 FACE_MIN_SIZE_PX         = 36      # Minimum face bounding box size in pixels
 FACE_MIN_BLUR_VAR        = 35.0    # Minimum Laplacian variance for blur filter
 FACE_MIN_CONFIDENCE      = 0.60    # YuNet face detection confidence threshold
 FACE_CACHE_PER_TRACK     = True    # Cache resolved identity per active track for maximum performance
-PEOPLE_DATA_DIR          = 'data/people'
-PEOPLE_PROFILES_DIR      = 'data/people/profiles'
-PEOPLE_CLUSTERS_DIR      = 'data/people/clusters'
-PEOPLE_APPEARANCES_DIR   = 'data/people/appearances'
+PEOPLE_DATA_DIR          = _resolve_path('CUSTOS_PEOPLE_DATA_DIR', 'data/people')
+PEOPLE_PROFILES_DIR      = _resolve_path('CUSTOS_PEOPLE_PROFILES_DIR', 'data/people/profiles')
+PEOPLE_CLUSTERS_DIR      = _resolve_path('CUSTOS_PEOPLE_CLUSTERS_DIR', 'data/people/clusters')
+PEOPLE_APPEARANCES_DIR   = _resolve_path('CUSTOS_PEOPLE_APPEARANCES_DIR', 'data/people/appearances')
 

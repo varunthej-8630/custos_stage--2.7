@@ -3,15 +3,28 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Environment variables
+# Environment variables & secrets
 .env
+instance/.session_secret
+instance/*.db-wal
+instance/*.db-shm
 
 # Data & Evidence (Private)
 data/snapshots/
 data/recordings/
+data/people/appearances/
+data/people/clusters/
+data/people/profiles/
 !data/weights/
 data/weights/*
 !data/weights/yolov8n.pt
+
+# Logs
+logs/*.log
+*.log
+
+# Pytest cache
+.pytest_cache/
 
 # Virtual environments
 venv/
